@@ -3,7 +3,7 @@
         
     <!-- logo -->
     <a href="#" aria-label="Home page">
-      <div class="logo w-20 h-21.25 bg-[url(src/assets/logo.png)]"></div>
+  <div class="logo w-20 h-21.25 bg-[url('/assets/logo.png')]"></div>
     </a>
     
     <!-- start of navigation -->

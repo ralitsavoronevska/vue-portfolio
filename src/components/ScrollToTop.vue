@@ -1,7 +1,7 @@
 <template>
   <div class="scrollToTop w-16 h-16 fixed center rounded-full cursor-pointer transition-discrete z-1000" v-if="visible" :class="{ active: visible }"
       @click="scrollToTop">
-    <img src="../assets/icons/home-btn.svg" alt="Scroll to Top" 
+  <img src="/assets/icons/home-btn.svg" alt="Scroll to Top" 
       class="w-10 h-10"
     >
   </div>

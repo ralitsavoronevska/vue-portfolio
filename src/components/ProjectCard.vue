@@ -47,7 +47,7 @@
                       hover:scale-110"
             >
               <img
-                :src="`src/assets/icons/${tech.svg}.svg`"
+                :src="`/assets/icons/${tech.svg}.svg`"
                 :alt="`${tech.name} Logo`"
                 class="w-6 h-6"
                 loading="lazy"
@@ -93,7 +93,7 @@ defineProps<{
   isVisible: boolean
 }>()
 
-const projectImage = (image: string) => image ? image : 'src/assets/projects/coming-soon.webp';
+const projectImage = (image: string) => image ? image : '/assets/projects/coming-soon.webp';
 
 
 const iconsRef = ref<HTMLElement | null>(null)

@@ -1,6 +1,6 @@
 <template>
   <div class="hero-img-container center mx-auto rounded-full">
-    <img src="../assets/images/hero.webp" alt="Ralitsa Voronevska" class="hero-img border-2 border-transparent rounded-full object-cover w-50 h-50" loading="eager" />
+  <img src="/assets/images/hero.webp" alt="Ralitsa Voronevska" class="hero-img border-2 border-transparent rounded-full object-cover w-50 h-50" loading="eager" />
   </div>
 </template>
 

@@ -35,7 +35,7 @@
 
   .background-container {
     @apply -z-2 bg-cover bg-center bg-no-repeat bg-fixed;
-    background-image: url('./assets/images/full-background.webp');
+  background-image: url('/assets/images/full-background.webp');
     will-change: transform;
   }
 

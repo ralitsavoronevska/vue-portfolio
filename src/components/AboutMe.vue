@@ -44,7 +44,7 @@
               @click.prevent
             >
               <img
-                :src="`src/assets/icons/${tech.svg}.svg`"
+                :src="`/assets/icons/${tech.svg}.svg`"
                 :alt="`${tech.name} Logo`"
                 class="w-6 h-6 md:w-7 md:h-7 lg:w-9 lg:h-9"
                 loading="lazy"
