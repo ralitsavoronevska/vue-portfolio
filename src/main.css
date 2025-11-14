@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Play Fair", sans-serif;
+  --color-white: #fff;
+  --color-pink: oklch(0.72 0.2 346.34);
+  --color-purple: oklch(0.64 0.16 280);
+  --color-deep-purple: oklch(0.22 0 0 / 0.85);
+  --color-dark-overlay: oklch(0.22 0.03 314.94);
+  --transition: .3s;
+  --rounded-3: .5rem;
+  --rounded-2: .25rem;
+  --animate-pulse: pulse 2s infinite;
+}
+
+/* === Base Styles === */
+@layer base {
+  body {
+    @apply text-white text-base min-h-screen leading-relaxed font-['Playfair_Display'] m-0 p-0 antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  section {
+    scroll-margin-top: 5.3125rem; /* 85px */
+  }
+
+  /* Fixed background + overlay */
+  .background-container,
+  .overlay {
+    @apply fixed inset-0;
+  }
+
+  .background-container {
+    @apply -z-2 bg-cover bg-center bg-no-repeat bg-fixed;
+    background-image: url('./assets/images/full-background.webp');
+    will-change: transform;
+  }
+
+  .overlay {
+    @apply -z-1;
+    background: var(--color-deep-purple);
+  }
+
+  .content-wrapper {
+    @apply relative z-1 min-h-screen;
+  }
+
+  /* Responsive: disable fixed attachment on mobile */
+  @media (max-width: 768px) {
+    .background-container,
+    .overlay {
+      @apply bg-scroll;
+    }
+  }
+}
+
+/* === Components === */
+@layer components {
+  /* Flex centering */
+  .center {
+    @apply flex items-center justify-center;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, var(--color-pink), var(--color-purple));
+  }
+
+  /* Headings */
+  h1, h2, h3 {
+    &.sm-heading {
+      padding: .2rem 0; /* 3.2px 0 */
+    }
+  }
+
+  h2, h3, h4, p {
+    &.sm-heading {
+      font-size: calc(1.275rem + .9vw); /* 2.4px + .9% of viewport width */
+    }
+  }
+
+  /* SVG icons */
+  .svg-icon {
+    .icon-path {
+      fill: var(--color-purple);
+      transition: fill var(--transition) ease-out;
+    }
+    &:hover {
+      .icon-path {
+        fill: url(#linearGradient);
+      }
+    }
+  }
+
+  /* SVG icons */
+  .svg-greyed-out-icon {
+    .icon-path {
+      fill: var(--light-grey);
+      transition: fill .3s ease-out;
+    }
+    &:hover {
+      .icon-path {
+        fill: url(#linearGradientGrey);
+      }
+    }
+  }
+
+  /* Hero Section */
+  #welcome-section {
+    .display-1 { 
+      font-size: calc(1.125rem + 4.5vw);
+      @media (min-width: 1200px) {
+        font-size: 4.25rem;
+      }
+    }
+    .hero-and-socials {
+      margin-top: 3.35rem; /* 53.6px */
+      @media (min-width: 768px) {
+        margin-top: 8.5rem; /* 136px */
+      }
+      @media (min-width: 1200px) {
+        margin-top: 3.35rem; /* 53.6px */
+      }
+    }
+  }
+
+  /* Common styles for the rest of the sections */
+  #about, #projects, #contact {
+    padding-top: 5.3125rem; /* 85px */
+    padding-bottom: 5.3125rem; /* 85px */
+  }
+
+  /* About me Section */
+  #about {
+    .display-2 {
+      font-size: calc(1.575rem + 3.9vw);
+      @media (min-width: 1200px) {
+        font-size: 4.25rem;
+      }
+    }
+    .hero-and-skills { 
+      @media (min-width: 992px) {
+        min-width: 16rem; /* 256px */
+      }
+      @media (min-width: 1200px) {
+        min-width: 21.875rem; /* 350px */
+      }
+      @media (min-width: 1400px) {
+        min-width: 26.5625rem; /* 425px */
+      }
+      @media (min-width: 1600px) {
+        min-width: 21.875rem; /* 350px */
+      }
+      @media (min-width: 1920px) {
+        min-width: 30.3125rem; /* 485px */
+      }
+    }
+    .bio {
+      .bio-text {
+        @media (min-width: 1200px) {
+          font-size: 1.875rem !important; /* 30px */
+        }
+        @media (min-width: 1600px) {
+          font-size: 2rem !important; /* 32px */
+        }
+      } 
+    }
+  }
+}
