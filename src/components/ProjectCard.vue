@@ -1,4 +1,5 @@
 <template>
+  <!-- start of Project Card -->
   <article
     class="group"
     :class="[
@@ -9,7 +10,7 @@
     ]"
   >
     <div
-      class="card rounded-3xl p-4 important-el backdrop-blur-sm
+      class="card rounded-3xl p-4 important-el
               shadow-lg hover:shadow-2xl transition-all duration-300
               hover:scale-[1.02] hover:-translate-y-1
               focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2"
@@ -23,65 +24,42 @@
       />
 
       <div class="space-y-4">
+
         <!-- Title -->
         <h4 class="text-2xl font-bold gradient-text">{{ title }}</h4>
 
         <!-- Description -->
         <p class="font-semibold text-lg">{{ description }}</p>
 
-        <!-- Tech Stack (Glow Icons) -->
-        <div class="flex justify-center gap-3 flex-wrap" ref="iconsRef">
-          <div
-            v-for="tech in techStack"
+        <!-- start of glow-icons -->
+        <div ref="iconsRef" class="glow-icons flex justify-center flex-wrap" :class="techStack.length > 5 ? 'gap-2' : 'gap-3'">
+          <!-- Glow Icons -->
+          <GlowIcon v-for="(tech, i) in techStack"
             :key="tech.name"
-            class="group/tech relative"
-            tabindex="0"
-          >
-            <div
-              class="w-10 h-10 rounded-3xl flex items-center justify-center
-                      bg-white/10 backdrop-blur-sm
-                      shadow-[0_0_5px_var(--dark-overlay),0_0_10px_var(--dark-overlay)]
-                      animate-pulse hover:animate-none
-                      transition-all duration-300
-                      hover:shadow-[0_0_10px_var(--text-color)]
-                      hover:scale-110"
-            >
-              <img
-                :src="`/assets/icons/${tech.svg}.svg`"
-                :alt="`${tech.name} Logo`"
-                class="w-6 h-6"
-                loading="lazy"
-              />
-            </div>
-            <span
-              class="tooltip pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2
-                      bg-gray-900 text-white text-xs px-2 py-1 rounded-xl
-                      opacity-0 invisible translate-y-2
-                      group-hover/tech:opacity-100 group-hover/tech:visible group-hover/tech:translate-y-0
-                      group-focus/tech:opacity-100 group-focus/tech:visible group-focus/tech:translate-y-0
-                      transition-all duration-300 z-10 whitespace-nowrap"
-            >
-              {{ tech.name }}
-              <span
-                class="absolute bottom-[-7px] left-1/2 -translate-x-1/2
-                        w-0 h-0 border-4 border-transparent border-t-gray-900"
-              ></span>
-            </span>
-          </div>
+            :tech="tech"
+            :index="i"
+            :isVisible="isVisible"
+            />
         </div>
-
-        <!-- Links -->
+        <!-- end of glow-icons -->  
+        
+        <!-- start of social-links -->
         <div class="center gap-5 p-3">
+          <!-- Social Links -->
           <Links :links="links" :aria="title" />
         </div>
+        <!-- end of social-links -->
+
       </div>
     </div>
+
   </article>    
+  <!-- end of Project Card -->
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
 import Links from './Links.vue'
+import GlowIcon from './GlowIcon.vue';
 
 defineProps<{
   image: string
@@ -95,24 +73,6 @@ defineProps<{
 
 const projectImage = (image: string) => image ? image : '/assets/projects/coming-soon.webp';
 
-
-const iconsRef = ref<HTMLElement | null>(null)
-const isVisible = ref(false)
-
-onMounted(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const entry = entries[0]
-      if (entry?.isIntersecting) {
-        isVisible.value = true
-        observer.disconnect()
-      }
-    },
-    { threshold: 0.3 }
-  )
-
-  if (iconsRef.value) observer.observe(iconsRef.value)
-})
 </script>
 
 <style scoped>

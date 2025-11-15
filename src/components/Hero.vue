@@ -1,7 +1,8 @@
 <template>
-
-  <!-- Hero Content -->
+  <!-- start of Hero Section -->
   <section id="welcome-section" class="hero-section center w-full min-h-screen flex-col">
+
+    <!-- start of hero-and-socials -->
     <div class="hero-and-socials flex flex-col">
 
       <!-- Hero Image -->
@@ -16,7 +17,9 @@
 
       </div>  
       <!-- end of name-and-info -->
+
     </div>
+    <!-- end of hero-and-socials -->
 
     <!-- start of social-links -->
     <div class="center gap-6 mt-6 md:mb-5 lg:mb-5">
@@ -26,6 +29,7 @@
     <!-- end of social-links -->  
 
   </section>
+  <!-- end of Hero Section -->
 </template>
 
 <script setup lang="ts">
@@ -33,6 +37,5 @@ import HeroImage from './HeroImage.vue'
 import Links from './Links.vue'
 import Typewriter from './Typewriter.vue'
 import { usePortfolioData } from '@/composables/usePortfolioData'
-
 const { heroSocialLinks } = usePortfolioData()
 </script>

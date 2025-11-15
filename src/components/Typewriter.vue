@@ -25,7 +25,7 @@ useTypewriter(typedEl, { texts, pause: 3000 })
 <style scoped>
 .cursor {
   opacity: 0;
-  color: var(--color-purple);
+  color: var(--purple);
   animation: blink 1s step-end infinite;
 }
 @keyframes blink {

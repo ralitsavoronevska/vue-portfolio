@@ -1,9 +1,9 @@
-<svg class="svg-icon w-15 h-15" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#7b7beb">
+<svg class="svg-icon common w-15 h-15" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#7b7beb">
   <title>LinkedIn icon</title>
   <defs>
     <linearGradient id="linearGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color: #f864bd; stop-opacity: 1;" />
-      <stop offset="85%" style="stop-color: #7b7beb; stop-opacity: 1;" />
+      <stop offset="0%" style="stop-color:#f864bd;stop-opacity:1;" />
+      <stop offset="85%" style="stop-color:#7b7beb;stop-opacity:1;" />
     </linearGradient>
   </defs>
   <circle class="icon-path" cx="24" cy="24" r="20"/>

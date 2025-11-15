@@ -1,10 +1,10 @@
 <template>
   <div
-    class="fixed bottom-[800px] right-5 w-16 h-16 rounded-full cursor-pointer z-1000
-           bg-purple opacity-0 invisible translate-y-[30%] 
+    class="center fixed bottom-[800px] right-5 w-16 h-16 rounded-full cursor-pointer z-1000
+           bg-(--purple) opacity-0 invisible translate-y-[30%] 
            transition-all duration-500 ease-out shadow-[0_16px_50px_16px_rgba(255,255,255,0.35)]
-           hover:bg-linear-to-r hover:from-pink hover:to-purple
-           focus:bg-linear-to-r focus:from-pink focus:to-purple
+           hover:bg-linear-90 hover:from-(--pink) hover:to-(--purple) hover:to-75%
+           focus:bg-linear-90 focus:from-(--pink) focus:to-(--purple) focus:to-75%
            data-[active=true]:visible data-[active=true]:opacity-100 data-[active=true]:bottom-[10%]"
     :data-active="visible"
     @click="scrollToTop"
@@ -25,7 +25,7 @@ const scrollToTop = () => {
 }
 
 const update = () => {
-  visible.value = window.scrollY > 500
+  visible.value = window.scrollY > 400
   ticking = false
 }
 

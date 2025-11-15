@@ -8,6 +8,6 @@
 .hero-img-container {
   padding: 0.125rem; /* 2px */
   box-sizing: border-box;
-  background: linear-gradient(to right, var(--color-pink), var(--color-purple)) border-box;
+  background: linear-gradient(to right, var(--pink), var(--purple)) border-box;
 }
 </style>

@@ -73,6 +73,20 @@
   }
 
   /* Headings */
+  .display-1 { 
+    font-size: calc(1.125rem + 4.5vw);
+    @media (min-width: 1200px) {
+      font-size: 4.25rem;
+    }
+  }
+
+  .display-2 {
+    font-size: calc(1.575rem + 3.9vw);
+    @media (min-width: 1200px) {
+      font-size: 4.25rem;
+    }
+  }
+
   h1, h2, h3 {
     &.sm-heading {
       padding: .2rem 0; /* 3.2px 0 */
@@ -82,6 +96,19 @@
   h2, h3, h4, p {
     &.sm-heading {
       font-size: calc(1.275rem + .9vw); /* 2.4px + .9% of viewport width */
+    }
+  }
+
+  /* Headings and paragraphs with small heading style */
+  h2, p {
+    &.sm-heading:not(.bio-text, .info) { 
+      @media (min-width: 768px) {
+        padding-left: 2.1875rem; /* 35px */
+        font-size: calc(1.325rem + .9vw); /* 2.12px + .9% of viewport width */
+      }
+      @media (min-width: 1200px) {
+        padding-left: 2.75rem; /* 44px */
+      }
     }
   }
 
@@ -113,12 +140,6 @@
 
   /* Hero Section */
   #welcome-section {
-    .display-1 { 
-      font-size: calc(1.125rem + 4.5vw);
-      @media (min-width: 1200px) {
-        font-size: 4.25rem;
-      }
-    }
     .hero-and-socials {
       margin-top: 3.35rem; /* 53.6px */
       @media (min-width: 768px) {
@@ -138,12 +159,6 @@
 
   /* About me Section */
   #about {
-    .display-2 {
-      font-size: calc(1.575rem + 3.9vw);
-      @media (min-width: 1200px) {
-        font-size: 4.25rem;
-      }
-    }
     .hero-and-skills { 
       @media (min-width: 992px) {
         min-width: 16rem; /* 256px */
@@ -160,6 +175,13 @@
       @media (min-width: 1920px) {
         min-width: 30.3125rem; /* 485px */
       }
+      .glow-icon {
+        @apply w-[42px] h-[42px] 
+            md:w-[45px] md:h-[45px] lg:w-[45px] lg:h-[45px] 2xl:w-[45px] 2xl:h-[45px];
+        .glow-box-parent {
+          @apply w-[42px] h-[42px] md:w-[45px] md:h-[45px] lg:w-[45px] lg:h-[45px] 2xl:w-[45px] 2xl:h-[45px] rounded-lg;
+        }
+      }
     }
     .bio {
       .bio-text {
@@ -170,6 +192,24 @@
           font-size: 2rem !important; /* 32px */
         }
       } 
+    }
+  }
+
+  /* Projects Section */
+  .card {
+    .glow-box-parent {
+      @apply w-11 h-11 md:w-12 md:h-12 lg:w-13 lg:h-13 rounded-3xl;
+    }
+  }
+
+  /* Contact me Section */
+  #contact {
+    /* SVG icons */
+    .svg-icon {
+      &.common {
+        width: 4.6875rem !important; /* 75px */
+        height: 4.6875rem !important; /* 75px */
+      }
     }
   }
 }
