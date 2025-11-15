@@ -4,11 +4,9 @@
     id="projects"
     class="projects-section flex flex-col text-center relative mx-3 py-16"
   >
-    <h2 class="display-2 leading-[1.2] mb-2">
-      My <span class="gradient-text">Projects</span>
-    </h2>
+    <h2 class="display-2 leading-[1.2] mb-2">My <span class="gradient-text">Projects</span></h2>
     <h3 class="sm-heading mt-2 mb-4">
-      My <span class="gradient-text">FCC</span> Responsive Web Design Certification Projects
+      My <span class="gradient-text">latest</span> projects built with <span class="gradient-text">cutting-edge technologies!</span>
     </h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
       <ProjectCard
