@@ -2,11 +2,13 @@
 
 @theme {
   --font-display: "Play Fair", sans-serif;
-  --color-white: #fff;
-  --color-pink: oklch(0.72 0.2 346.34);
-  --color-purple: oklch(0.64 0.16 280);
-  --color-deep-purple: oklch(0.22 0 0 / 0.85);
-  --color-dark-overlay: oklch(0.22 0.03 314.94);
+  --white: #fff;
+  --pink: oklch(0.72 0.2 346.34);
+  --purple: oklch(0.64 0.16 280);
+  --light-gray: oklch(0.6 0 0);
+
+  --deep-purple: oklch(0.22 0 0 / 0.85);
+  --dark-overlay: oklch(0.22 0.03 314.94);
   --transition: .3s;
   --rounded-3: .5rem;
   --rounded-2: .25rem;
@@ -30,18 +32,18 @@
   /* Fixed background + overlay */
   .background-container,
   .overlay {
-    @apply fixed inset-0;
+    @apply fixed top-0 left-0 w-full h-screen;
   }
 
   .background-container {
     @apply -z-2 bg-cover bg-center bg-no-repeat bg-fixed;
-  background-image: url('/assets/images/full-background.webp');
+    background-image: url('/assets/images/full-background.webp');
     will-change: transform;
   }
 
   .overlay {
     @apply -z-1;
-    background: var(--color-deep-purple);
+    background: var(--deep-purple);
   }
 
   .content-wrapper {
@@ -67,7 +69,7 @@
   /* Gradient text */
   .gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(to right, var(--color-pink), var(--color-purple));
+    background-image: linear-gradient(to right, var(--pink), var(--purple));
   }
 
   /* Headings */
@@ -86,7 +88,7 @@
   /* SVG icons */
   .svg-icon {
     .icon-path {
-      fill: var(--color-purple);
+      fill: var(--purple);
       transition: fill var(--transition) ease-out;
     }
     &:hover {
@@ -97,14 +99,14 @@
   }
 
   /* SVG icons */
-  .svg-greyed-out-icon {
+  .svg-grayed-out-icon {
     .icon-path {
-      fill: var(--light-grey);
+      fill: var(--light-gray);
       transition: fill .3s ease-out;
     }
     &:hover {
       .icon-path {
-        fill: url(#linearGradientGrey);
+        fill: url(#linearGradientGray);
       }
     }
   }

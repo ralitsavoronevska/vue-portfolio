@@ -95,7 +95,3 @@ onMounted(() => {
   if (sectionRef.value) observer.observe(sectionRef.value)
 })
 </script>
-
-<style scoped>
-
-</style>

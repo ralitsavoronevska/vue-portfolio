@@ -1,39 +1,42 @@
 <template>
-  <header class="w-full h-21.25 fixed top-0 flex justify-between z-20">
-        
-    <!-- logo -->
-    <a href="#" aria-label="Home page">
-  <div class="logo w-20 h-21.25 bg-[url('/assets/logo.png')]"></div>
+  <header
+    class="fixed top-0 left-0 right-0 flex justify-between items-center h-[85px] z-20
+           shadow-[3px_3px_12px_rgba(248,99,189,0.25)] backdrop-blur-2xl"
+  >
+    <!-- Logo -->
+    <a href="#" aria-label="Home page" class="block">
+      <div
+        class="logo w-20 h-[85px] bg-[url('/assets/logo.png')] bg-cover bg-center bg-no-repeat
+               scale-[0.7059] transition-transform duration-300 ease-in-out
+               hover:scale-75"
+      ></div>
     </a>
-    
-    <!-- start of navigation -->
-    <nav id="navbar" class="flex">
-      <ul class="center flex-row gap-4 md:gap-12 mb-0 mr-4">
-        <li><a href="#about" class="nav-link text-[20px] transition">About</a></li>
-        <li><a href="#projects" class="nav-link text-[20px] transition">Projects</a></li>
-        <li><a href="#contact" class="nav-link text-[20px] transition">Contact</a></li>
+
+    <!-- Navigation -->
+    <nav class="flex">
+      <ul class="flex items-center gap-4 md:gap-12 mr-4">
+        <li>
+          <a
+            href="#about"
+            class="text-xl font-medium transition-colors hover:text-(--purple)"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="#projects"
+            class="text-xl font-medium transition-colors hover:text-(--purple)"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="text-xl font-medium transition-colors hover:text-(--purple)"
+            >Contact</a
+          >
+        </li>
       </ul>
     </nav>
-    <!-- end of navigation -->
   </header>
-
 </template>
-
-<style scoped>
-header {
-  box-shadow: 3px 3px 12px rgba(248, 99, 189, .25);
-  backdrop-filter: blur(40px);
-}
-.logo {
-  transform: scale(.7059);
-  &:hover {
-    transform: scale(0.75);
-    transition: transform .3s ease-in-out;
-  }
-}
-.nav-link {
-  &:hover {
-    color: var(--color-purple);
-  }
-}
-</style>

@@ -7,7 +7,7 @@
       <!-- Hero Image -->
       <HeroImage />
 
-      <!-- Name + Info -->
+      <!-- start of name-and-info -->
       <div class="name-and-info text-center mt-8">
         <h1 class="display-1 leading-[1.2] font-bold mb-2">Ralitsa <span class="gradient-text">Voronevska</span></h1>
 
@@ -15,6 +15,7 @@
         <Typewriter text="Mid Front-End Developer" />
 
       </div>  
+      <!-- end of name-and-info -->
     </div>
 
     <!-- start of social-links -->
