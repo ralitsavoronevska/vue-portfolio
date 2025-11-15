@@ -6,7 +6,6 @@
   --pink: oklch(0.72 0.2 346.34);
   --purple: oklch(0.64 0.16 280);
   --light-gray: oklch(0.6 0 0);
-
   --deep-purple: oklch(0.22 0 0 / 0.85);
   --dark-overlay: oklch(0.22 0.03 314.94);
   --transition: .3s;

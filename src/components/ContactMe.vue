@@ -3,7 +3,7 @@
   <section id="contact" class="contact-me py-20 px-6 text-center">
 
     <!-- start of headings -->
-    <h2 class="display-2 leading-[1.2] font-bold mb-2">Contact <span class="gradient-text">Me</span></h2>
+    <h2 class="display-2 leading-[1.2] mb-2">Contact <span class="gradient-text">Me</span></h2>
     <p class="sm-heading mt-2 mb-4">
       I'd love if you reach out to me. Even if it's to say: <span class="gradient-text">"Hey!"</span>
       <br>

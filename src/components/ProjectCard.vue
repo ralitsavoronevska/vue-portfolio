@@ -10,7 +10,7 @@
     ]"
   >
     <div
-      class="card rounded-3xl p-4 important-el
+      class="card important-el rounded-3xl p-4 
               shadow-lg hover:shadow-2xl transition-all duration-300
               hover:scale-[1.02] hover:-translate-y-1
               focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2"
@@ -81,7 +81,14 @@ const projectImage = (image: string) => image ? image : '/assets/projects/coming
   box-shadow: .1875rem .1875rem .75rem rgba(248, 99, 189, .25); /* 3px 3px 12px */
 }
 
-.card-img-top {
-  height: calc(100% - 6.8rem);
+.card {
+  &:hover {
+    box-shadow: 0 .4375rem 3.125rem .625rem #ffffff44; /* 0 7px 50px 10px */
+    transform: scale(1.015);
+  }
+  .card-img-top {
+    height: calc(100% - 6.8rem);
+    object-fit: cover;
+  }
 }
 </style>

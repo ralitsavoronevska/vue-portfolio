@@ -3,7 +3,7 @@
   <section ref="sectionRef" id="about" class="about-me flex flex-col text-center relative mx-3">
 
     <!-- headings -->
-    <h2 class="display-2 leading-[1.2] font-bold mb-2">About <span class="gradient-text">Me</span></h2>
+    <h2 class="display-2 leading-[1.2] mb-2">About <span class="gradient-text">Me</span></h2>
     <h3 class="sm-heading mt-2 mb-4">Hi, I'm <span class="gradient-text">Ralitsa Voronevska</span>!</h3>
 
     <!-- start of hero-skills-and-bio -->

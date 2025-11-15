@@ -4,7 +4,7 @@
     id="projects"
     class="projects-section flex flex-col text-center relative mx-3 py-16"
   >
-    <h2 class="display-2 leading-[1.2] font-bold mb-2">
+    <h2 class="display-2 leading-[1.2] mb-2">
       My <span class="gradient-text">Projects</span>
     </h2>
     <h3 class="sm-heading mt-2 mb-4">
