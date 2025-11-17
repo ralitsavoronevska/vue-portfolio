@@ -87,7 +87,7 @@ Mobile:
 <br>
 
 # 🌐 Browser Support:
-(Last updated and tested: 16/11/2025)                                                                                                            
+(Last updated and tested: 17/11/2025)                                                                                                            
 🌟 Chrome 142.0.7444.163 (64-bit)                                                                                                           
 🦊 Firefox 145.0 (64-bit)                                                                                                                 
 🏴‍☠️ Opera 124.0.5705.15 (64-bit)                                                                                                        
