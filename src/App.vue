@@ -2,10 +2,10 @@
   <main>
 
     <!-- Fixed background and overlay -->
-    <div class="background-container"></div>
-    <div class="overlay"></div>
+    <div class="bg-container fixed top-0 left-0 w-full h-screen -z-2 will-change-transform bg-cover bg-center bg-no-repeat bg-fixed bg-[url('/assets/images/full-bg.webp')]"></div>
+    <div class="overlay fixed top-0 left-0 w-full h-screen -z-1"></div>
 
-    <div class="content-wrapper">
+    <div class="content-wrapper relative z-1 min-h-screen">
 
       <!-- ScrollToTop Button -->
       <ScrollToTop />

@@ -2,56 +2,24 @@
 
 @theme {
   --font-display: "Play Fair", sans-serif;
-  --white: #fff;
-  --pink: oklch(0.72 0.2 346.34);
-  --purple: oklch(0.64 0.16 280);
+  --text-color: #ffffff;
+  --pink: #f864bd;
+  --purple: #7b7beb;
   --light-gray: oklch(0.6 0 0);
   --deep-purple: oklch(0.22 0 0 / 0.85);
   --dark-overlay: oklch(0.22 0.03 314.94);
   --transition: .3s;
-  --rounded-3: .5rem;
-  --rounded-2: .25rem;
-  --animate-pulse: pulse 2s infinite;
 }
 
 /* === Base Styles === */
 @layer base {
-  body {
-    @apply text-white text-base min-h-screen leading-relaxed font-['Playfair_Display'] m-0 p-0 antialiased;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  section {
-    scroll-margin-top: 5.3125rem; /* 85px */
-  }
-
-  /* Fixed background + overlay */
-  .background-container,
   .overlay {
-    @apply fixed top-0 left-0 w-full h-screen;
-  }
-
-  .background-container {
-    @apply -z-2 bg-cover bg-center bg-no-repeat bg-fixed;
-    background-image: url('/assets/images/full-background.webp');
-    will-change: transform;
-  }
-
-  .overlay {
-    @apply -z-1;
     background: var(--deep-purple);
-  }
-
-  .content-wrapper {
-    @apply relative z-1 min-h-screen;
   }
 
   /* Responsive: disable fixed attachment on mobile */
   @media (max-width: 768px) {
-    .background-container,
+    .bg-container,
     .overlay {
       @apply bg-scroll;
     }
@@ -66,8 +34,7 @@
   }
 
   /* Gradient text */
-  .gradient-text {
-    @apply bg-clip-text text-transparent;
+  .gradient {
     background-image: linear-gradient(to right, var(--pink), var(--purple));
   }
 
@@ -100,13 +67,15 @@
 
   /* Headings and paragraphs with small heading style */
   h2, p {
-    &.sm-heading:not(.bio-text, .info) { 
-      @media (min-width: 768px) {
-        padding-left: 2.1875rem; /* 35px */
-        font-size: calc(1.325rem + .9vw); /* 2.12px + .9% of viewport width */
-      }
-      @media (min-width: 1200px) {
-        padding-left: 2.75rem; /* 44px */
+    &.sm-heading {
+      &:not(.bio-text, .info) { 
+        @media (min-width: 768px) {
+          padding-left: 2.1875rem; /* 35px */
+          font-size: calc(1.325rem + .9vw); /* 2.12px + .9% of viewport width */
+        }
+        @media (min-width: 1200px) {
+          padding-left: 2.75rem; /* 44px */
+        }
       }
     }
   }
@@ -150,12 +119,6 @@
     }
   }
 
-  /* Common styles for the rest of the sections */
-  #about, #projects, #contact {
-    padding-top: 5.3125rem; /* 85px */
-    padding-bottom: 5.3125rem; /* 85px */
-  }
-
   /* About me Section */
   #about {
     .hero-and-skills { 
@@ -175,10 +138,9 @@
         min-width: 30.3125rem; /* 485px */
       }
       .glow-icon {
-        @apply w-[42px] h-[42px] 
-            md:w-[45px] md:h-[45px] lg:w-[45px] lg:h-[45px] 2xl:w-[45px] 2xl:h-[45px];
+        @apply w-11 h-11 md:w-12 md:h-12 lg:w-11 lg:h-11;
         .glow-box-parent {
-          @apply w-[42px] h-[42px] md:w-[45px] md:h-[45px] lg:w-[45px] lg:h-[45px] 2xl:w-[45px] 2xl:h-[45px] rounded-lg;
+          @apply w-11 h-11 md:w-12 md:h-12 lg:w-11 lg:h-11 rounded-lg;
         }
       }
     }

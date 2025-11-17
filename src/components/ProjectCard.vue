@@ -26,7 +26,7 @@
       <div class="space-y-4">
 
         <!-- Title -->
-        <h4 class="text-2xl font-bold gradient-text">{{ title }}</h4>
+        <h4 class="text-2xl font-bold gradient bg-clip-text text-transparent">{{ title }}</h4>
 
         <!-- Description -->
         <p class="font-semibold text-lg">{{ description }}</p>

@@ -1,6 +1,6 @@
 <template>
   <h2 class="sm-heading info leading-[1.2] font-bold text-left mb-6 pl-4 md:pl-[68px] lg:pl-[100px]">
-    The <span ref="typedEl" class="typed-text gradient-text"></span>
+    The <span ref="typedEl" class="typed-text gradient bg-clip-text text-transparent"></span>
     <span class="cursor animate-pulse">|</span>
   </h2>
 </template>

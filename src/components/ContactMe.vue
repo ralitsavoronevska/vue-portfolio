@@ -1,18 +1,18 @@
 <template>
   <!-- start of Contact Me Section -->
-  <section id="contact" class="contact-me py-20 px-6 text-center">
+  <section id="contact" class="contact-me text-center pt-20 pb-20 scroll-mt-20">
 
     <!-- start of headings -->
-    <h2 class="display-2 leading-[1.2] mb-2">Contact <span class="gradient-text">Me</span></h2>
+    <h2 class="display-2 leading-[1.2] mb-2">Contact <span class="gradient bg-clip-text text-transparent">Me</span></h2>
     <p class="sm-heading mt-2 mb-4">
-      I'd love if you reach out to me. Even if it's to say: <span class="gradient-text">"Hey!"</span>
+      I'd love if you reach out to me. Even if it's to say: <span class="gradient bg-clip-text text-transparent">"Hey!"</span>
       <br>
-      Don't hesitate! Drop me a line and I’ll reply to you <span class="gradient-text">ASAP</span>!
+      Don't hesitate! Drop me a line and I’ll reply to you <span class="gradient bg-clip-text text-transparent">ASAP</span>!
     </p>
 
     <p class="sm-heading center mb-0">
       <img :src="`assets/icons/map-marker.svg`" class="w-8 h-8" alt="Map Marker icon" loading="lazy">
-      <span class="gradient-text ms-2">Varna, Bulgaria</span>
+      <span class="gradient bg-clip-text text-transparent ms-2">Varna, Bulgaria</span>
     </p>
     <!-- end of headings -->
 

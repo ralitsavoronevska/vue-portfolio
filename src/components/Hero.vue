@@ -1,6 +1,6 @@
 <template>
   <!-- start of Hero Section -->
-  <section id="welcome-section" class="hero-section center w-full min-h-screen flex-col">
+  <section id="welcome-section" class="hero-section center w-full min-h-screen flex-col pt-20 pb-20 scroll-mt-20">
 
     <!-- start of hero-and-socials -->
     <div class="hero-and-socials flex flex-col">
@@ -10,7 +10,7 @@
 
       <!-- start of name-and-info -->
       <div class="name-and-info text-center mt-8">
-        <h1 class="display-1 leading-[1.2] font-bold mb-2">Ralitsa <span class="gradient-text">Voronevska</span></h1>
+        <h1 class="display-1 leading-[1.2] font-bold mb-2">Ralitsa <span class="gradient bg-clip-text text-transparent">Voronevska</span></h1>
 
         <!-- Typewriter effect -->
         <Typewriter text="Mid Front-End Developer" />

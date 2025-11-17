@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="font-['Playfair_Display'] scroll-smooth">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -44,8 +44,12 @@
     <link rel="preload" href="assets/icons/gradient-icons/github.svg" as="image" type="image/svg+xml">
     <link rel="preload" href="assets/icons/gradient-icons/codepen.svg" as="image" type="image/svg+xml">
 
+    <!-- noscript fallbacks -->
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
+    </noscript>
   </head>
-  <body>
+  <body class="text-white text-base min-h-screen leading-relaxed m-0 p-0 antialiased">
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
