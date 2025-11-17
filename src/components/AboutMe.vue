@@ -42,7 +42,7 @@
   </section>
   <!-- end of About Section -->
 </template>
-                  :tech="tech"
+  
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import HeroImage from './HeroImage.vue';

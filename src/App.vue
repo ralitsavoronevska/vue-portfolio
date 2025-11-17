@@ -17,7 +17,7 @@
       <Hero />
 
       <!-- About Me Section -->
-      <AboutMe />
+      <AboutMe v-if="currentSection === 'about'" />
 
       <!-- Projects Section -->
       <ProjectsList />
@@ -33,11 +33,16 @@
 </template>
 
 <script setup lang="ts">
+import { defineAsyncComponent, ref } from 'vue'
 import ScrollToTop from './components/ScrollToTop.vue'
 import Header from './components/Header.vue'
 import Hero from './components/Hero.vue'
-import AboutMe from './components/AboutMe.vue'
 import ProjectsList from './components/ProjectsList.vue'
 import ContactMe from './components/ContactMe.vue'
 import Footer from './components/Footer.vue'
+
+const AboutMe = defineAsyncComponent(() => import('@/components/AboutMe.vue'))
+
+// track the current section shown in the template
+const currentSection = ref<string>('')
 </script>
