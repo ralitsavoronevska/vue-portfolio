@@ -69,38 +69,4 @@ onMounted(() => {
   background: rgba(30, 22, 33, .85);
   box-shadow: .1875rem .1875rem .75rem rgba(248, 99, 189, .25); /* 3px 3px 12px */
 }
-
-/* Custom CSS for 3D tilt + pulse */
-.glow-box-parent {
-  transform-style: preserve-3d;
-}
-
-.group {
-  &:hover, &:focus {
-    .glow-box-parent {
-      transform: perspective(1000px) rotateX(10deg) rotateY(10deg) scale(1.1);
-    }
-  }
-}
-
-@keyframes pulse-custom {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
-.animate-pulse-custom {
-  animation: pulse-custom 2s infinite;
-}
-
-.tooltip {
-  &::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border: 5px solid transparent;
-    border-top-color: black;
-  }
-}
 </style>

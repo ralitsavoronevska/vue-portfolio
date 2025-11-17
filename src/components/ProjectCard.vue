@@ -32,7 +32,7 @@
         <p class="font-semibold text-lg">{{ description }}</p>
 
         <!-- start of glow-icons -->
-        <div ref="iconsRef" class="glow-icons flex justify-center flex-wrap" :class="techStack.length > 5 ? 'gap-2' : 'gap-3'">
+        <div ref="iconsRef" class="glow-icons center flex-wrap" :class="techStack.length > 5 ? 'gap-2' : 'gap-3'">
           <!-- Glow Icons -->
           <GlowIcon v-for="(tech, i) in techStack"
             :key="tech.name"

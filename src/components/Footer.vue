@@ -3,8 +3,8 @@
     class="important-el h-[60px] py-3 text-center"
   >
     <p class="m-0 text-lg lg:text-2xl font-bold gradient bg-clip-text text-transparent text-center">
-      <a
-        href="https://ralitsavoronevska.github.io/modern-portfolio/"
+      <a 
+      href="https://ralitsavoronevska.github.io/modern-portfolio/"
         target="_blank"
         rel="noopener"
         class="gradient bg-clip-text text-transparent font-bold no-underline"
