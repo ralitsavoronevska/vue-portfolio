@@ -1,13 +1,13 @@
 <template>
   <footer
-    class="important-el h-[60px] py-3 text-center"
+    class="h-15 py-3 flex justify-center items-center shadow-3xl backdrop-blur-2xl"
   >
-    <p class="m-0 text-lg lg:text-2xl font-bold gradient bg-clip-text text-transparent text-center">
+    <p class="m-0 text-lg lg:text-2xl font-bold bg-linear-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent text-center">
       <a 
       href="https://ralitsavoronevska.github.io/modern-portfolio/"
         target="_blank"
         rel="noopener"
-        class="gradient bg-clip-text text-transparent font-bold no-underline"
+        class="bg-linear-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent font-bold no-underline"
       >
         &lt;Ralitsa Voronevska/&gt;
       </a>
@@ -19,10 +19,3 @@
 <script setup lang="ts">
 const year = new Date().getFullYear()
 </script>
-
-<style scoped>
-.important-el {
-  background: rgba(30, 22, 33, .85);
-  box-shadow: .1875rem .1875rem .75rem rgba(248, 99, 189, .25); /* 3px 3px 12px */
-}
-</style>

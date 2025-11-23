@@ -1,29 +1,30 @@
 <template>
   <div
-    class="group/tech relative center glow-icon cursor-pointer"
+    class="group/tech relative flex items-center justify-center glow-box cursor-pointer"
     :class="[
       isVisible
         ? `opacity-100 scale-100 translate-y-0 delay-${(index + 1) * 100}`
         : 'opacity-0 scale-75 translate-y-4',
       'transition-all duration-500 ease-out'
-    ]"
+    , boxSizes]"
     tabindex="0"
     role="img"
     :aria-label="`${tech.name} Logo`"
   >
     <div
-      class="glow-box-parent center
+      class="glow-icon flex items-center justify-center
               bg-white/10 backdrop-blur-sm
-              shadow-[0_0_5px_var(--dark-overlay),0_0_10px_var(--dark-overlay)]
               animate-pulse hover:animate-none
               transition-all duration-300
               hover:shadow-[0_0_10px_var(--text-color)]
-              hover:scale-110"        
+              hover:scale-110"      
+      :class="`${iconSizes}`"          
     >
       <img
         :src="`/assets/icons/${tech.svg}.svg`"
         :alt="`${tech.name} Logo`"
-        class="w-6 h-6 md:w-7 md:h-7 lg:w-9 lg:h-9"
+        class="glow-img" 
+        :class="`${imgSizes}`"
         loading="lazy"
       />
     </div>
@@ -52,6 +53,9 @@
 defineProps<{
   tech: { name: string; svg: string };
   index: number;
+  boxSizes?: string;
+  iconSizes: string;
+  imgSizes: string
   isVisible: boolean;
 }>()
 </script>

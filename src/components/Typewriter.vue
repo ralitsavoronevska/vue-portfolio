@@ -1,7 +1,7 @@
 <template>
   <h2 class="sm-heading info leading-[1.2] font-bold text-left mb-6 pl-4 md:pl-17 lg:pl-25">
     The
-    <span ref="typedEl" class="typed-text gradient bg-clip-text text-transparent inline-block min-w-[12ch]">
+    <span ref="typedEl" class="typed-text bg-linear-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent inline-block min-w-[12ch]">
       {{ displayedText }}
     </span>
   </h2>
@@ -67,14 +67,3 @@ onUnmounted(() => {
   if (timeoutId) clearTimeout(timeoutId)
 })
 </script>
-
-<style scoped>
-.typed-text {
-  min-width: 12ch; /* Prevents layout shift */
-  display: inline-block;
-  background: linear-gradient(to right, #f864bd, #7b7beb);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-</style>

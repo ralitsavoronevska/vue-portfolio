@@ -3,40 +3,16 @@
 @theme {
   --font-display: "Play Fair", sans-serif;
   --text-color: #ffffff;
-  --pink: #f864bd;
-  --purple: #7b7beb;
+  --pink: oklch(65.6% 0.241 354.308);
+  --purple: oklch(58.5% 0.233 277.117);
   --light-gray: oklch(0.6 0 0);
-  --deep-purple: oklch(0.22 0 0 / 0.85);
-  --dark-overlay: oklch(0.22 0.03 314.94);
+  --shadow-3xl: 3px 3px 12px oklch(71.8% 0.202 349.761 / 0.25);
+  --white-shadow-3xl: 0 .4375rem 3.125rem .625rem oklch(100%, 0%, 89.876%);
   --transition: .3s;
-}
-
-/* === Base Styles === */
-@layer base {
-  .overlay {
-    background: var(--deep-purple);
-  }
-
-  /* Responsive: disable fixed attachment on mobile */
-  @media (max-width: 768px) {
-    .bg-container,
-    .overlay {
-      @apply bg-scroll;
-    }
-  }
 }
 
 /* === Components === */
 @layer components {
-  /* Flex centering */
-  .center {
-    @apply flex items-center justify-center;
-  }
-
-  /* Gradient text */
-  .gradient {
-    background-image: linear-gradient(to right, var(--pink), var(--purple));
-  }
 
   /* Headings */
   .display-1 { 
@@ -105,64 +81,7 @@
       }
     }
   }
-
-  /* Hero Section */
-  #welcome-section {
-    .hero-and-socials {
-      margin-top: 3.35rem; /* 53.6px */
-      @media (min-width: 768px) {
-        margin-top: 8.5rem; /* 136px */
-      }
-      @media (min-width: 1200px) {
-        margin-top: 3.35rem; /* 53.6px */
-      }
-    }
-  }
-
-  /* About me Section */
-  #about {
-    .hero-and-skills { 
-      @media (min-width: 992px) {
-        min-width: 16rem; /* 256px */
-      }
-      @media (min-width: 1200px) {
-        min-width: 21.875rem; /* 350px */
-      }
-      @media (min-width: 1400px) {
-        min-width: 26.5625rem; /* 425px */
-      }
-      @media (min-width: 1600px) {
-        min-width: 21.875rem; /* 350px */
-      }
-      @media (min-width: 1920px) {
-        min-width: 30.3125rem; /* 485px */
-      }
-      .glow-icon {
-        @apply w-11 h-11 md:w-12 md:h-12 lg:w-11 lg:h-11;
-        .glow-box-parent {
-          @apply w-11 h-11 md:w-12 md:h-12 lg:w-11 lg:h-11 rounded-lg;
-        }
-      }
-    }
-    .bio {
-      .bio-text {
-        @media (min-width: 1200px) {
-          font-size: 1.875rem !important; /* 30px */
-        }
-        @media (min-width: 1600px) {
-          font-size: 2rem !important; /* 32px */
-        }
-      } 
-    }
-  }
-
-  /* Projects Section */
-  .card {
-    .glow-box-parent {
-      @apply w-11 h-11 md:w-12 md:h-12 lg:w-13 lg:h-13 rounded-3xl;
-    }
-  }
-
+  
   /* Contact me Section */
   #contact {
     /* SVG icons */

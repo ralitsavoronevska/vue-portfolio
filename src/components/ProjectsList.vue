@@ -2,11 +2,11 @@
   <section
     ref="sectionRef"
     id="projects"
-    class="projects-section flex flex-col text-center relative mx-3 pt-20 pb-20 scroll-mt-20"
+    class="projects-section flex flex-col items-center justify-center text-center relative mx-3 pt-20 pb-20 scroll-mt-20"
   >
-    <h2 class="display-2 leading-[1.2] mb-2">My <span class="gradient bg-clip-text text-transparent">Projects</span></h2>
+    <h2 class="display-2 leading-[1.2] mb-2">My <span class="bg-linear-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent">Projects</span></h2>
     <h3 class="sm-heading mt-2 mb-4">
-      My <span class="gradient bg-clip-text text-transparent">latest</span> projects built with <span class="gradient bg-clip-text text-transparent">cutting-edge technologies!</span>
+      My <span class="bg-linear-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent">latest</span> projects built with <span class="bg-linear-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent">cutting-edge technologies!</span>
     </h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
       <ProjectCard

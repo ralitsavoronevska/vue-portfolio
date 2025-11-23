@@ -10,8 +10,8 @@
     ]"
   >
     <div
-      class="card important-el rounded-3xl p-4 
-              shadow-lg hover:shadow-2xl transition-all duration-300
+      class="card bg-slate-950/75 rounded-3xl p-4 
+              shadow-3xl transition-all duration-300
               hover:scale-[1.02] hover:-translate-y-1
               focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2"
     >
@@ -26,25 +26,27 @@
       <div class="space-y-4">
 
         <!-- Title -->
-        <h4 class="text-2xl font-bold gradient bg-clip-text text-transparent">{{ title }}</h4>
+        <h4 class="text-2xl font-bold bg-linear-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent">{{ title }}</h4>
 
         <!-- Description -->
         <p class="font-semibold text-lg">{{ description }}</p>
 
         <!-- start of glow-icons -->
-        <div ref="iconsRef" class="glow-icons center flex-wrap" :class="techStack.length > 5 ? 'gap-2' : 'gap-3'">
+        <div ref="iconsRef" class="glow-icons flex items-center justify-center flex-wrap gap-4">
           <!-- Glow Icons -->
           <GlowIcon v-for="(tech, i) in techStack"
             :key="tech.name"
             :tech="tech"
             :index="i"
+            :iconSizes="`w-11 h-11 rounded-3xl`"
+            :imgSizes="`w-6 h-6 md:w-7 md:h-7`"
             :isVisible="isVisible"
             />
         </div>
         <!-- end of glow-icons -->  
         
         <!-- start of social-links -->
-        <div class="center gap-5 p-3">
+        <div class="flex items-center justify-center gap-5 p-3">
           <!-- Social Links -->
           <Links :links="links" :aria="title" />
         </div>
@@ -74,21 +76,3 @@ defineProps<{
 const projectImage = (image: string) => image ? image : '/assets/projects/coming-soon.webp';
 
 </script>
-
-<style scoped>
-.important-el {
-  background: rgba(30, 22, 33, .85);
-  box-shadow: .1875rem .1875rem .75rem rgba(248, 99, 189, .25); /* 3px 3px 12px */
-}
-
-.card {
-  &:hover {
-    box-shadow: 0 .4375rem 3.125rem .625rem #ffffff44; /* 0 7px 50px 10px */
-    transform: scale(1.015);
-  }
-  .card-img-top {
-    height: calc(100% - 6.8rem);
-    object-fit: cover;
-  }
-}
-</style>
