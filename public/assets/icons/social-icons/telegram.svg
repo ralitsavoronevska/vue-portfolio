@@ -1,11 +1,4 @@
-<svg class="svg-icon w-16 h-16" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#7b7beb">
-  <title>Telegram icon</title>
-  <defs>
-    <linearGradient id="linearGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#f864bd;stop-opacity:1;" />
-      <stop offset="85%" style="stop-color:#7b7beb;stop-opacity:1;" />
-    </linearGradient>
-  </defs>
+<svg class="svg-icon w-13 h-13" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#615fff">
   <circle class="icon-path" cx="256" cy="256" r="256"/>
   <path class="icon-path" d="M34.133 256C34.133 120.352 139.641 9.364 273.066.579A260 260 0 0 0 256 0C114.615 0 0 114.615 0 256s114.615 256 256 256c5.737 0 11.424-.208 17.067-.579C139.642 502.636 34.133 391.648 34.133 256"/>
   <path style="fill:#e5e5e5" d="M380.263 109.054a8.54 8.54 0 0 0-8.399-.679L96.777 236.433a13.47 13.47 0 0 0-7.766 12.501c.117 5.226 3.28 9.92 8.065 12.015l253.613 110.457c8.468 3.849 18.439-2.21 18.983-11.453l14.314-243.341a8.54 8.54 0 0 0-3.723-7.558"/>

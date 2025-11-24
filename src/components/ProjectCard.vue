@@ -12,14 +12,13 @@
     <div
       class="card bg-slate-950/75 rounded-3xl p-4 
               shadow-3xl transition-all duration-300
-              hover:scale-[1.02] hover:-translate-y-1
-              focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2"
+              hover:scale-[1.02] hover:-translate-y-1"
     >
       <!-- Project Image -->
       <img
         :src="projectImage(image)"
         :alt="description"
-        class="w-full h-85 object-cover rounded-2xl mb-4"
+        class="w-full h-70 md:h-80 object-cover rounded-2xl mb-6"
         loading="lazy"
       />
 
@@ -47,8 +46,7 @@
         
         <!-- start of social-links -->
         <div class="flex items-center justify-center gap-5 p-3">
-          <!-- Social Links -->
-          <Links :links="links" :aria="title" />
+          <SocialIcons :icons="icons" :aria="title" />
         </div>
         <!-- end of social-links -->
 
@@ -60,19 +58,18 @@
 </template>
 
 <script setup lang="ts">
-import Links from './Links.vue'
+import SocialIcons from './SocialIcons.vue'
 import GlowIcon from './GlowIcon.vue';
 
 defineProps<{
   image: string
   title: string
   description: string
-  links: Array<{ name: string; url: string; svg: string }>
-  techStack: Array<{ name: string; svg: string }>
+  icons: Array<{ name: string; url: string; file_name: string }>
+  techStack: Array<{ name: string; file_name: string }>
   index: number
   isVisible: boolean
 }>()
 
 const projectImage = (image: string) => image ? image : '/assets/projects/coming-soon.webp';
-
 </script>

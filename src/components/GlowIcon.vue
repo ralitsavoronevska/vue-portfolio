@@ -16,12 +16,12 @@
               bg-white/10 backdrop-blur-sm
               animate-pulse hover:animate-none
               transition-all duration-300
-              hover:shadow-[0_0_10px_var(--text-color)]
+              hover:shadow-[0_0_10px_rgba(255,255,255,1)]
               hover:scale-110"      
       :class="`${iconSizes}`"          
     >
       <img
-        :src="`/assets/icons/${tech.svg}.svg`"
+        :src="`/assets/icons/${tech.file_name}.svg`"
         :alt="`${tech.name} Logo`"
         class="glow-img" 
         :class="`${imgSizes}`"
@@ -51,7 +51,7 @@
 
 <script setup lang="ts">
 defineProps<{
-  tech: { name: string; svg: string };
+  tech: { name: string; file_name: string };
   index: number;
   boxSizes?: string;
   iconSizes: string;

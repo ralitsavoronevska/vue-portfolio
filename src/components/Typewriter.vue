@@ -1,5 +1,5 @@
 <template>
-  <h2 class="sm-heading info leading-[1.2] font-bold text-left mb-6 pl-4 md:pl-17 lg:pl-25">
+  <h2 class="text-2xl md:text-3xl font-bold text-left mb-6 pl-4 md:pl-12 lg:pl-22">
     The
     <span ref="typedEl" class="typed-text bg-linear-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent inline-block min-w-[12ch]">
       {{ displayedText }}

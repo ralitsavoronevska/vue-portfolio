@@ -21,7 +21,7 @@
         <li v-for="item in navItems" :key="item.href">
           <a
             :href="item.href"
-            class="text-xl font-medium transition-colors hover:text-(--purple)"
+            class="text-xl font-medium transition-colors hover:text-indigo-500"
           >
             {{ item.label }}
           </a>

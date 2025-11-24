@@ -1,22 +1,22 @@
-import linkedInSvg from '/assets/icons/gradient-icons/linkedin.svg?raw'
-import gitHubSvg from '/assets/icons/gradient-icons/github.svg?raw'
-import codePenSvg from '/assets/icons/gradient-icons/codepen.svg?raw'
-import liveLinkSvg from '/assets/icons/gradient-icons/live.svg?raw'
-import grayCodePen from '/assets/icons/gradient-icons/grayCodePen.svg?raw'
-import grayLive from '/assets/icons/gradient-icons/grayLive.svg?raw'
-import discordSvg from '/assets/icons/gradient-icons/discord.svg?raw'
-import telegramSvg from '/assets/icons/gradient-icons/telegram.svg?raw'
-import emailSvg from '/assets/icons/gradient-icons/email.svg?raw'
+// import linkedInSvg from '/assets/icons/gradient-icons/linkedin.svg?raw'
+// import gitHubSvg from '/assets/icons/gradient-icons/github.svg?raw'
+// import codePenSvg from '/assets/icons/gradient-icons/codepen.svg?raw'
+// import liveLinkSvg from '/assets/icons/gradient-icons/live.svg?raw'
+// import grayCodePen from '/assets/icons/gradient-icons/grayCodePen.svg?raw'
+// import grayLive from '/assets/icons/gradient-icons/grayLive.svg?raw'
+// import discordSvg from '/assets/icons/gradient-icons/discord.svg?raw'
+// import telegramSvg from '/assets/icons/gradient-icons/telegram.svg?raw'
+// import emailSvg from '/assets/icons/gradient-icons/email.svg?raw'
 
-export interface SocialLink {
+export interface SocialIcon {
   name: string
   url: string
-  svg: string        
+  file_name: string       
 }
 
 export interface Tech {
   name: string
-  svg: string
+  file_name: string 
 }
 
 export interface Project {
@@ -27,44 +27,44 @@ export interface Project {
   links: object[]
 }
 
-export const HERO_SOCIAL_LINKS: SocialLink[] = [
-  { name: 'LinkedIn', url: 'https://linkedin.com/in/ralitsavoronevska', svg: linkedInSvg },
-  { name: 'GitHub', url: 'https://github.com/ralitsavoronevska', svg: gitHubSvg },
-  { name: 'CodePen', url: 'https://codepen.io/ralitsavoronevska', svg: codePenSvg },
+export const HERO_SOCIAL_LINKS: SocialIcon[] = [
+  { name: 'LinkedIn', url: 'https://linkedin.com/in/ralitsavoronevska', file_name: 'linkedin' },
+  { name: 'GitHub', url: 'https://github.com/ralitsavoronevska', file_name: 'github' },
+  { name: 'CodePen', url: 'https://codepen.io/ralitsavoronevska', file_name: 'codepen' },
 ]
 
-export const CONTACT_SOCIAL_LINKS: SocialLink[] = [
+export const CONTACT_SOCIAL_LINKS: SocialIcon[] = [
   ...HERO_SOCIAL_LINKS,
-  { name: 'Discord', url: 'discordapp.com/users/1425751105060732959', svg: discordSvg },
-  { name: 'Telegram', url: 'https//t.me/ralitsavoronevska/', svg: telegramSvg },
-  { name: 'Email', url: 'mailto:r.voronevska@gmail.com', svg: emailSvg },
+  { name: 'Discord', url: 'discordapp.com/users/1425751105060732959', file_name: 'discord' },
+  { name: 'Telegram', url: 'https//t.me/ralitsavoronevska/', file_name: 'telegram' },
+  { name: 'Email', url: 'mailto:r.voronevska@gmail.com', file_name: 'email' },
 ]
 
 export const TECH_STACK: Tech[] = [
-  { name: 'VSCode', svg: 'vscode' },
-  { name: 'WebStorm', svg: 'webstorm' },
-  { name: 'HTML5', svg: 'html5' },
-  { name: 'CSS3', svg: 'css3' },
-  { name: 'Bootstrap', svg: 'bootstrap' },
-  { name: 'SASS', svg: 'sass' },
-  { name: 'Tailwind CSS', svg: 'tailwind-css' },
-  { name: 'JavaScript', svg: 'javascript' },
-  { name: 'jQuery', svg: 'jquery' },
-  { name: 'Git', svg: 'git' },
-  { name: 'Gulp', svg: 'gulp' },
-  { name: 'Vue.js', svg: 'vue-js' },
-  { name: 'TypeScript', svg: 'typescript' },
-  { name: 'Pinia', svg: 'pinia' },
-  { name: 'Vite.js', svg: 'vite-js' },
-  { name: 'Node.js', svg: 'node-js' },
-  { name: 'Express.js', svg: 'express-js' },
-  { name: 'MongoDB', svg: 'mongo-db' },
-  { name: 'Mongoose', svg: 'mongoose' },
-  { name: 'PostMan', svg: 'postman' },
-  { name: 'FireBase', svg: 'firebase' },
-  { name: 'Netlify', svg: 'netlify' },
-  { name: 'PhotoShop', svg: 'photoshop' },
-  { name: 'JIRA', svg: 'jira' },
+  { name: 'VSCode', file_name: 'vscode' },
+  { name: 'WebStorm', file_name: 'webstorm' },
+  { name: 'HTML5', file_name: 'html5' },
+  { name: 'CSS3', file_name: 'css3' },
+  { name: 'Bootstrap', file_name: 'bootstrap' },
+  { name: 'SASS', file_name: 'sass' },
+  { name: 'Tailwind CSS', file_name: 'tailwind-css' },
+  { name: 'JavaScript', file_name: 'javascript' },
+  { name: 'jQuery', file_name: 'jquery' },
+  { name: 'Git', file_name: 'git' },
+  { name: 'Gulp', file_name: 'gulp' },
+  { name: 'Vue.js', file_name: 'vue-js' },
+  { name: 'TypeScript', file_name: 'typescript' },
+  { name: 'Pinia', file_name: 'pinia' },
+  { name: 'Vite.js', file_name: 'vite-js' },
+  { name: 'Node.js', file_name: 'node-js' },
+  { name: 'Express.js', file_name: 'express-js' },
+  { name: 'MongoDB', file_name: 'mongo-db' },
+  { name: 'Mongoose', file_name: 'mongoose' },
+  { name: 'PostMan', file_name: 'postman' },
+  { name: 'FireBase', file_name: 'firebase' },
+  { name: 'Netlify', file_name: 'netlify' },
+  { name: 'PhotoShop', file_name: 'photoshop' },
+  { name: 'JIRA', file_name: 'jira' },
  ]
 
 export const PROJECTS: Project[] = [
@@ -73,17 +73,17 @@ export const PROJECTS: Project[] = [
     title: 'REST API',
     description: 'Simple Shop RESTful API',
     techStack: [
-      { name: 'Node.js', svg: 'node-js' },
-      { name: 'Express.js', svg: 'express-js' },
-      { name: 'MongoDB', svg: 'mongo-db' },
-      { name: 'Mongoose', svg: 'mongoose' },
-      { name: 'Nodemon', svg: 'nodemon' },
-      { name: 'PostMan', svg: 'postman' },
+      { name: 'Node.js', file_name: 'node-js' },
+      { name: 'Express.js', file_name: 'express-js' },
+      { name: 'MongoDB', file_name: 'mongo-db' },
+      { name: 'Mongoose', file_name: 'mongoose' },
+      { name: 'Nodemon', file_name: 'nodemon' },
+      { name: 'PostMan', file_name: 'postman' },
     ],
     links: [
-      { name: 'GitHub', url: 'https://github.com/ralitsavoronevska/rest-api-with-nodejs/', svg: gitHubSvg },
-      { name: 'CodePen', url: '', svg: grayCodePen },
-      { name: 'Live', url: '', svg: grayLive },
+      { name: 'GitHub', url: 'https://github.com/ralitsavoronevska/rest-api-with-nodejs/', file_name: 'github' },
+      { name: 'CodePen', url: '', file_name: 'grayCodePen' },
+      { name: 'Live', url: '', file_name: 'grayLive' },
     ]
     
   },
@@ -92,17 +92,17 @@ export const PROJECTS: Project[] = [
     title: 'Find a Coach App',
     description: 'Find and Register as a Coach',
     techStack: [
-      { name: 'Vue.js', svg: 'vue-js' },
-      { name: 'Vite.js', svg: 'vite-js' },
-      { name: 'TypeScript', svg: 'typescript' },
-      { name: 'Tailwind CSS', svg: 'tailwind-css' },
-      { name: 'Pinia', svg: 'pinia' },
-      { name: 'PostMan', svg: 'postman' },
+      { name: 'Vue.js', file_name: 'vue-js' },
+      { name: 'Vite.js', file_name: 'vite-js' },
+      { name: 'TypeScript', file_name: 'typescript' },
+      { name: 'Tailwind CSS', file_name: 'tailwind-css' },
+      { name: 'Pinia', file_name: 'pinia' },
+      { name: 'PostMan', file_name: 'postman' },
     ],
     links: [
-      { name: 'GitHub', url: '', svg: gitHubSvg },
-      { name: 'CodePen', url: '', svg: codePenSvg },
-      { name: 'Live', url: '', svg: liveLinkSvg },
+      { name: 'GitHub', url: '', file_name: 'github' },
+      { name: 'CodePen', url: '', file_name: 'codepen' },
+      { name: 'Live', url: '', file_name: 'live' },
     ]
   },
   {
@@ -110,16 +110,16 @@ export const PROJECTS: Project[] = [
     title: 'Forkify App',
     description: 'Cooking Recipes App',
     techStack: [
-      { name: 'Vue.js', svg: 'vue-js' },
-      { name: 'Vite.js', svg: 'vite-js' },
-      { name: 'TypeScript', svg: 'typescript' },
-      { name: 'Tailwind CSS', svg: 'tailwind-css' },
-      { name: 'Pinia', svg: 'pinia' },
+      { name: 'Vue.js', file_name: 'vue-js' },
+      { name: 'Vite.js', file_name: 'vite-js' },
+      { name: 'TypeScript', file_name: 'typescript' },
+      { name: 'Tailwind CSS', file_name: 'tailwind-css' },
+      { name: 'Pinia', file_name: 'pinia' },
     ],
     links: [
-      { name: 'GitHub', url: '', svg: gitHubSvg },
-      { name: 'CodePen', url: '', svg: codePenSvg },
-      { name: 'Live', url: '', svg: liveLinkSvg },
+      { name: 'GitHub', url: '', file_name: 'github' },
+      { name: 'CodePen', url: '', file_name: 'codepen' },
+      { name: 'Live', url: '', file_name: 'live' },
     ]
   },
   {
@@ -127,16 +127,16 @@ export const PROJECTS: Project[] = [
     title: 'Mapty App',
     description: 'Map your Exercise Activities',
     techStack: [
-      { name: 'Vue.js', svg: 'vue-js' },
-      { name: 'Vite.js', svg: 'vite-js' },
-      { name: 'TypeScript', svg: 'typescript' },
-      { name: 'Tailwind CSS', svg: 'tailwind-css' },
-      { name: 'Pinia', svg: 'pinia' },
+      { name: 'Vue.js', file_name: 'vue-js' },
+      { name: 'Vite.js', file_name: 'vite-js' },
+      { name: 'TypeScript', file_name: 'typescript' },
+      { name: 'Tailwind CSS', file_name: 'tailwind-css' },
+      { name: 'Pinia', file_name: 'pinia' },
     ],
     links: [
-      { name: 'GitHub', url: '', svg: gitHubSvg },
-      { name: 'CodePen', url: '', svg: codePenSvg },
-      { name: 'Live', url: '', svg: liveLinkSvg },
+      { name: 'GitHub', url: '', file_name: 'github' },
+      { name: 'CodePen', url: '', file_name: 'codepen' },
+      { name: 'Live', url: '', file_name: 'live' },
     ]
   },
   {
@@ -144,16 +144,16 @@ export const PROJECTS: Project[] = [
     title: 'Monster Slayer Game',
     description: 'Give the Monster A Lesson',
     techStack: [
-      { name: 'Vue.js', svg: 'vue-js' },
-      { name: 'Vite.js', svg: 'vite-js' },
-      { name: 'TypeScript', svg: 'typescript' },
-      { name: 'Tailwind CSS', svg: 'tailwind-css' },
-      { name: 'Pinia', svg: 'pinia' },
+      { name: 'Vue.js', file_name: 'vue-js' },
+      { name: 'Vite.js', file_name: 'vite-js' },
+      { name: 'TypeScript', file_name: 'typescript' },
+      { name: 'Tailwind CSS', file_name: 'tailwind-css' },
+      { name: 'Pinia', file_name: 'pinia' },
     ],
     links: [
-      { name: 'GitHub', url: 'https://github.com/ralitsavoronevska/monster-slayer-game/', svg: gitHubSvg },
-      { name: 'CodePen', url: 'https://codepen.io/ralitsavoronevska/pen/gbPyXbV/', svg: codePenSvg },
-      { name: 'Live', url: 'https://ralitsavoronevska.github.io/monster-slayer-game/', svg: liveLinkSvg },
+      { name: 'GitHub', url: 'https://github.com/ralitsavoronevska/monster-slayer-game/', file_name: 'github' },
+      { name: 'CodePen', url: 'https://codepen.io/ralitsavoronevska/pen/gbPyXbV/', file_name: 'codepen' },
+      { name: 'Live', url: 'https://ralitsavoronevska.github.io/monster-slayer-game/', file_name: 'live' },
     ]
   },
   {
@@ -161,16 +161,16 @@ export const PROJECTS: Project[] = [
     title: 'Pig Game',
     description: 'A Single Dice Game',
     techStack: [
-      { name: 'Vue.js', svg: 'vue-js' },
-      { name: 'Vite.js', svg: 'vite-js' },
-      { name: 'TypeScript', svg: 'typescript' },
-      { name: 'Tailwind CSS', svg: 'tailwind-css' },
-      { name: 'Pinia', svg: 'pinia' },
+      { name: 'Vue.js', file_name: 'vue-js' },
+      { name: 'Vite.js', file_name: 'vite-js' },
+      { name: 'TypeScript', file_name: 'typescript' },
+      { name: 'Tailwind CSS', file_name: 'tailwind-css' },
+      { name: 'Pinia', file_name: 'pinia' },
     ],
     links: [
-      { name: 'GitHub', url: '', svg: gitHubSvg },
-      { name: 'CodePen', url: '', svg: codePenSvg },
-      { name: 'Live', url: '', svg: liveLinkSvg },
+      { name: 'GitHub', url: '', file_name: 'github' },
+      { name: 'CodePen', url: '', file_name: 'codepen' },
+      { name: 'Live', url: '', file_name: 'live' },
     ]
   },
 ]
