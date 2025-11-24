@@ -45,7 +45,7 @@
         <!-- end of glow-icons -->  
         
         <!-- start of social-links -->
-        <div class="flex items-center justify-center gap-5 p-3">
+        <div class="flex items-center justify-center gap-10 p-3">
           <SocialIcons :icons="icons" :aria="title" />
         </div>
         <!-- end of social-links -->
