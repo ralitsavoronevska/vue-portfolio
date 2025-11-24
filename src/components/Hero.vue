@@ -9,8 +9,8 @@
       <HeroImage />
 
       <!-- start of name-and-info -->
-      <div class="name-and-info text-flex items-center justify-center mt-8">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Ralitsa <span class="bg-linear-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent">Voronevska</span></h1>
+      <div class="name-and-info text-flex items-center justify-center mt-7 md:mt-8">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-5">Ralitsa <span class="bg-linear-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent">Voronevska</span></h1>
 
         <!-- Typewriter effect -->
         <Typewriter text="Mid Front-End Developer" />
@@ -22,7 +22,7 @@
     <!-- end of hero-and-socials -->
 
     <!-- start of social-links -->
-    <div class="flex items-center justify-center gap-6 mb-6 md:mb-5 lg:mb-5">
+    <div class="flex items-center justify-center gap-8 mt-6 md:mb-5 lg:mb-5 lg:mt-8">
       <SocialIcons :icons="heroSocialIcons" />
     </div>
     <!-- end of social-links -->  
