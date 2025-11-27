@@ -2,10 +2,10 @@
   <main>
 
     <!-- Fixed background and overlay -->
-    <div class="bg-container fixed top-0 left-0 w-full h-screen -z-2 will-change-transform bg-cover bg-center flex items-center justify-center bg-no-repeat bg-fixed bg-[url('/assets/images/full-bg.webp')]"></div>
-    <div class="overlay bg-slate-950/85 fixed top-0 left-0 w-full h-screen -z-1"></div>
+    <div class="bg-container"></div>
+    <div class="overlay"></div>
 
-    <div class="content-wrapper relative z-1 min-h-screen">
+    <div class="content-wrapper">
 
       <!-- ScrollToTop Button -->
       <ScrollToTop />
@@ -41,11 +41,3 @@ import ProjectsList from './components/ProjectsList.vue'
 import ContactMe from './components/ContactMe.vue'
 import Footer from './components/Footer.vue'
 </script>
-
-<style scoped>
-@media (max-width: 768px) {
-  .background-container, .overlay {
-      background-attachment: scroll;
-  }
-}
-</style>

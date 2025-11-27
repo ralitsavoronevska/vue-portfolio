@@ -1,13 +1,11 @@
 <template>
-  <footer
-    class="h-15 py-3 flex justify-center items-center shadow-3xl backdrop-blur-2xl"
-  >
-    <p class="m-0 text-lg lg:text-2xl font-bold bg-linear-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent text-center">
+  <footer>
+    <p class="gradient-text">
       <a 
       href="https://ralitsavoronevska.github.io/modern-portfolio/"
         target="_blank"
         rel="noopener"
-        class="bg-linear-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent font-bold no-underline"
+        class="gradient-text"
       >
         &lt;Ralitsa Voronevska/&gt;
       </a>

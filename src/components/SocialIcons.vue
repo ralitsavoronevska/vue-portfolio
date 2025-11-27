@@ -7,7 +7,7 @@
     rel="noopener" 
     class="rounded-full"
     :aria-label="getAriaLabel(icon)">
-    <img :src="getSrc(icon)" class="w-13 h-13 rounded-full hover:shadow-[0_16px_50px_16px_rgba(255,255,255,0.35)]" :alt="getAriaLabel(icon)" loading="lazy" />
+    <img :src="getSrc(icon)" class="social-icon" :alt="getAriaLabel(icon)" loading="lazy" />
   </a>
 </template>
 

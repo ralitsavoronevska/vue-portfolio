@@ -1,10 +1,6 @@
 <template>
   <div
-    class="flex items-center justify-center fixed bottom-5 right-5 w-13 h-13 rounded-full cursor-pointer z-1000
-         bg-indigo-500 opacity-0 invisible transition-all duration-500 ease-out shadow-[0_16px_50px_16px_rgba(255,255,255,0.35)]
-           hover:bg-linear-90 hover:from-pink-500 hover:to-indigo-550 hover:to-75%
-           focus:bg-linear-90 focus:from-pink-500 focus:to-indigo-550 focus:to-75%
-           data-[active=true]:visible data-[active=true]:opacity-100 data-[active=true]:bottom-20"
+    class="scroll-to-top"
     :data-active="visible"
     @click="scrollToTop"
     v-if="visible"
@@ -24,7 +20,7 @@ const scrollToTop = () => {
 }
 
 const update = () => {
-  visible.value = window.scrollY > 400
+  visible.value = window.scrollY > 500
   ticking = false
 }
 

@@ -10,28 +10,26 @@
     ]"
   >
     <div
-      class="card bg-slate-950/75 rounded-3xl p-4 
-              shadow-3xl transition-all duration-300
-              hover:scale-[1.02] hover:-translate-y-1"
+      class="card"
     >
       <!-- Project Image -->
       <img
         :src="projectImage(image)"
         :alt="description"
-        class="w-full h-70 md:h-80 object-cover rounded-2xl mb-6"
+        class="card-img"
         loading="lazy"
       />
 
-      <div class="space-y-4">
+      <div class="card-body">
 
         <!-- Title -->
-        <h4 class="text-2xl font-bold bg-linear-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent">{{ title }}</h4>
+        <h4 class="card-title gradient-text">{{ title }}</h4>
 
         <!-- Description -->
-        <p class="font-semibold text-lg">{{ description }}</p>
+        <p class="card-desc">{{ description }}</p>
 
         <!-- start of glow-icons -->
-        <div ref="iconsRef" class="glow-icons flex items-center justify-center flex-wrap gap-4">
+        <div ref="sectionRef" class="glow-icons">
           <!-- Glow Icons -->
           <GlowIcon v-for="(tech, i) in techStack"
             :key="tech.name"
@@ -45,7 +43,7 @@
         <!-- end of glow-icons -->  
         
         <!-- start of social-links -->
-        <div class="flex items-center justify-center gap-10 p-3">
+        <div class="social-icons">
           <SocialIcons :icons="icons" :aria="title" />
         </div>
         <!-- end of social-links -->
@@ -59,7 +57,9 @@
 
 <script setup lang="ts">
 import SocialIcons from './SocialIcons.vue'
-import GlowIcon from './GlowIcon.vue';
+import GlowIcon from './GlowIcon.vue'
+import { useInView } from '@/composables/useInView';
+const { sectionRef, isVisible } = useInView()
 
 defineProps<{
   image: string
