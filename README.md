@@ -76,10 +76,9 @@ Mobile:
 
 # ✨ Features:
 ✅ Modern Matrix-like Themed Personal Portfolio Webpage                                                                                            
-✅ Fixed navigation with slick blur and smooth scroll                                                                                                        
-✅ Showcasing employment with typewritter effect                                                                            
+✅ Fixed navigation with slick blur and smooth scroll                                                                                                           
 ✅ Colourful Classic Developer icons                                                                                                                           
-✅ Elegant scroll-to-top button                                                                                                                                              
+✅ Elegant scroll-to-top button                                                                                                                              
 
 # 🧰 Online resources and tools:
                                                                      

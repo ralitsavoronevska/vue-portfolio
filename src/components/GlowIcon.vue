@@ -31,9 +31,6 @@
       group-focus/tech:opacity-100 group-focus/tech:visible group-focus/tech:translate-y-0"
     >
       {{ tech.name }}
-      <span
-        class="tooltip-arrow"
-      ></span>
     </span>
     <!-- end of tooltip -->
 

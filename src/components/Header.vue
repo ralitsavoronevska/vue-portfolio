@@ -3,7 +3,7 @@
   <header>
 
     <!-- start of Logo -->
-    <a href="#" aria-label="Home page">
+    <a class="logo-link" href="#" aria-label="Home page">
       <div class="logo"></div>
     </a>
     <!-- end of Logo -->

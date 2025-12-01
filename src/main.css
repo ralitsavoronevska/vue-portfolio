@@ -8,25 +8,17 @@
 /* === Base Styles === */
 @layer base {
   .bg-container {
-    @apply fixed top-0 left-0 w-full h-screen -z-2 will-change-transform bg-cover bg-center flex items-center justify-center bg-no-repeat bg-fixed bg-[url('/assets/images/full-bg.webp')];
+    @apply bg-scroll md:bg-fixed fixed top-0 left-0 w-full h-screen -z-2 will-change-transform bg-cover bg-center flex items-center justify-center bg-no-repeat bg-[url('/assets/images/full-bg.webp')];
   }
 
   .overlay {
-    @apply bg-slate-950/85 fixed top-0 left-0 w-full h-screen -z-1;
-  }
-
-  /* Responsive: disable fixed attachment on mobile */
-  @media (max-width: 768px) {
-    .bg-container,
-    .overlay {
-      @apply bg-scroll;
-    }
+    @apply bg-slate-950/85 bg-scroll md:bg-fixed fixed top-0 left-0 w-full h-screen -z-1;
   }
 
   .content-wrapper {
     @apply relative z-1 min-h-screen;
     .scroll-to-top {
-      @apply flex items-center justify-center fixed bottom-5 right-5 w-13 h-13 rounded-full cursor-pointer z-1000 bg-indigo-500 opacity-0 invisible transition-all duration-500 ease-out shadow-[0_16px_50px_16px_rgba(255,255,255,0.35)] hover:bg-linear-90 hover:from-pink-500 hover:to-indigo-500 hover:to-75% focus:bg-linear-90 focus:from-pink-500 focus:to-indigo-500 focus:to-75% data-[active=true]:visible data-[active=true]:opacity-100 data-[active=true]:bottom-20;
+      @apply flex items-center justify-center fixed bottom-5 right-5 w-13 h-13 rounded-full cursor-pointer z-1000 bg-indigo-500 opacity-0 invisible transition-colors duration-500 ease-out shadow-[0_16px_50px_16px_rgba(255,255,255,0.35)] hover:bg-linear-90 hover:from-pink-500 hover:to-indigo-500 hover:to-75% focus:bg-linear-90 focus:from-pink-500 focus:to-indigo-500 focus:to-75% data-[active=true]:visible data-[active=true]:opacity-100 data-[active=true]:bottom-20;
     }
   }
 
@@ -35,11 +27,15 @@
   }
 }
 
-/* === Components === */
+/* === Components Styles === */
 @layer components {
-  /* Header Styles */
+  /* Header */
   header {
     @apply fixed inset-x-0 top-0 flex justify-between items-center h-21 z-20 shadow-3xl backdrop-blur-2xl;
+    .logo-link:focus-visible, .logo-link:-webkit-any-link:focus-visible,
+    .logo:focus-visible, .logo:-webkit-any-link:focus-visible {
+       @apply outline-none ring-0;
+    }
     .logo {
       @apply w-20 h-21 bg-[url('/assets/logo.png')] bg-cover bg-center flex items-center justify-center bg-no-repeat
       scale-[0.7059] transition-transform duration-300 ease-in-out hover:scale-75;
@@ -95,28 +91,14 @@
       @apply flex flex-col lg:flex-row;
     }
     .hero-and-skills {
-      @apply bg-slate-950/75 shadow-3xl rounded-2xl p-3 flex flex-col;
-      @media (min-width: 992px) {
-        min-width: 16rem; /* 256px */
-      }
-      @media (min-width: 1200px) {
-        min-width: 21.875rem; /* 350px */
-      }
-      @media (min-width: 1400px) {
-        min-width: 26.5625rem; /* 425px */
-      }
-      @media (min-width: 1600px) {
-        min-width: 21.875rem; /* 350px */
-      }
-      @media (min-width: 1920px) {
-        min-width: 30.3125rem; /* 485px */
-      }
+      @apply bg-slate-950/75 shadow-3xl rounded-2xl p-3 flex flex-col w-full md:min-w-[16rem] lg:min-w-87.5 xl:min-w-106.25 2xl:min-w-87.5;
+      
     }
     .btns-container {
       @apply flex items-center justify-center gap-2 my-4 mx-auto;
     }
     .btn-styles {
-      @apply rounded-md text-white bg-indigo-500 hover:bg-linear-to-r hover:from-indigo-500 hover:to-pink-500 text-base px-4 py-2.5 text-center leading-5 transition-all duration-500;
+      @apply rounded-md text-white transition-colors bg-indigo-500 hover:bg-linear-to-r hover:from-indigo-500 hover:to-pink-500 text-base px-4 py-2.5 text-center leading-5 duration-500;
     }
     .glow-icons {
       @apply flex items-center justify-center flex-wrap mt-3 mx-auto gap-1 md:gap-2;
@@ -124,7 +106,7 @@
     .bio {
       @apply bg-slate-950/75 shadow-3xl rounded-2xl p-3 flex flex-col mt-4 lg:mt-0 lg:ms-4;
       .bio-text {
-        @apply text-2xl md:text-3xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] leading-normal items-center justify-center ps-0 md:p-3 2xl:px-3 mb-0 lg:my-auto;
+        @apply text-2xl md:text-3xl lg:text-[21px] xl:text-[25px] 2xl:text-[30px] leading-normal items-center justify-center ps-0 md:p-3 2xl:px-3 mb-0 lg:my-auto;
       }
     }
   }
@@ -132,26 +114,19 @@
   /* Glow Icons */
   .glow-box {
     @apply relative flex items-center justify-center cursor-pointer;
-    .glow-icon {
-      transform-style: preserve-3d;
-      transition: transform 0.3s ease;
-      @apply flex items-center justify-center bg-white/10 backdrop-blur-sm animate-pulse hover:animate-none transition-all duration-300 hover:scale-110 hover:shadow-[0_0_10px_rgba(255,255,255,1)];
+  }
+  .glow-box .glow-icon {
+    @apply flex items-center justify-center bg-white/10 backdrop-blur-sm animate-pulse hover:animate-none transition-all  transform-3d ease-in duration-300 hover:scale-110 hover:shadow-[0_0_10px_rgba(255,255,255,1)];
+  }
+  .glow-box .tooltip {
+    @apply pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 bg-indigo-500 text-white text-xs px-2 py-1 rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-10 whitespace-nowrap;
+    /* Arrow using ::after */
+    &::after {
+      @apply content-[''] absolute top-full left-[50%] -ml-[5px] border-[5px] border-solid border-transparent border-t-indigo-500;
     }
-    .tooltip {
-      @apply pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-10 whitespace-nowrap;
-      &::after {
-        content: '';
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -5px;
-        border: 5px solid transparent;
-        border-top-color: black;
-      }
-      .tooltip-arrow {
-        @apply absolute left-1/2 bottom-[-7px] -translate-x-1/2 w-0 h-0 border-4 border-transparent border-t-black;
-      }
-    }
+  }
+  .glow-box:hover .tooltip {
+    @apply opacity-100 visible translate-y-0;
   }
 
   /* Projects Section */
@@ -213,6 +188,7 @@
     }
   }
 
+  /* Footer */  
   footer {
     @apply h-15 py-3 flex justify-center items-center shadow-3xl backdrop-blur-2xl; 
     p {
