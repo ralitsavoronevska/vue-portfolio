@@ -1,13 +1,3 @@
-// import linkedInSvg from '/assets/icons/gradient-icons/linkedin.svg?raw'
-// import gitHubSvg from '/assets/icons/gradient-icons/github.svg?raw'
-// import codePenSvg from '/assets/icons/gradient-icons/codepen.svg?raw'
-// import liveLinkSvg from '/assets/icons/gradient-icons/live.svg?raw'
-// import grayCodePen from '/assets/icons/gradient-icons/grayCodePen.svg?raw'
-// import grayLive from '/assets/icons/gradient-icons/grayLive.svg?raw'
-// import discordSvg from '/assets/icons/gradient-icons/discord.svg?raw'
-// import telegramSvg from '/assets/icons/gradient-icons/telegram.svg?raw'
-// import emailSvg from '/assets/icons/gradient-icons/email.svg?raw'
-
 export interface SocialIcon {
   name: string
   url: string
@@ -69,7 +59,7 @@ export const TECH_STACK: Tech[] = [
 
 export const PROJECTS: Project[] = [
   {
-  image: '/assets/projects/rest-api-with-nodejs.webp',
+    image: '/assets/projects/rest-api-with-nodejs.webp',
     title: 'REST API',
     description: 'Simple Shop RESTful API',
     techStack: [
@@ -85,7 +75,6 @@ export const PROJECTS: Project[] = [
       { name: 'CodePen', url: '', file_name: 'grayCodePen' },
       { name: 'Live', url: '', file_name: 'grayLive' },
     ]
-    
   },
   {
     image: '',
