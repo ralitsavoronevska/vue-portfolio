@@ -29,14 +29,13 @@
         <p class="card-desc">{{ description }}</p>
 
         <!-- start of glow-icons -->
-        <div ref="sectionRef" class="glow-icons">
+        <div ref="sectionRef" class="glow-icons" :class="techStack.length > 5 ? 'gap-2' : 'gap-3'">
           <!-- Glow Icons -->
           <GlowIcon v-for="(tech, i) in techStack"
             :key="tech.name"
             :tech="tech"
             :index="i"
             :iconSizes="`w-11 h-11 rounded-3xl`"
-            :imgSizes="`w-6 h-6 md:w-7 md:h-7`"
             :isVisible="isVisible"
             />
         </div>

@@ -15,13 +15,7 @@
       class="glow-icon"      
       :class="`${iconSizes}`"          
     >
-      <img
-        :src="`/assets/icons/${tech.file_name}.svg`"
-        :alt="`${tech.name} Logo`"
-        class="glow-img" 
-        :class="`${imgSizes}`"
-        loading="lazy"
-      />
+      <iconify-icon :icon="iconifyIcon" inline class="glow-img p-2" width="1.875rem" height="1.875rem"></iconify-icon>
     </div>
 
     <!-- start of tooltip -->
@@ -38,12 +32,23 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
+import { computed } from 'vue'
+const props = defineProps<{
   tech: { name: string; file_name: string };
   index: number;
   boxSizes?: string;
   iconSizes: string;
-  imgSizes: string
   isVisible: boolean;
 }>()
+
+const iconifyIcon = computed(() => {
+  if (props.tech.file_name === 'pinia') {
+    return `logos:${props.tech.file_name}`
+  } else if (props.tech.file_name === 'gulp' || props.tech.file_name === 'express') {
+    return `simple-icons:${props.tech.file_name}`
+  } else {
+    return `devicon:${props.tech.file_name}`
+  }
+})
+
 </script>
