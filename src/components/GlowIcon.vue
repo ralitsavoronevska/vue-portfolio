@@ -15,7 +15,7 @@
       class="glow-icon"      
       :class="`${iconSizes}`"          
     >
-      <iconify-icon :icon="iconifyIcon" inline class="glow-img p-2" width="1.875rem" height="1.875rem"></iconify-icon>
+      <iconify-icon :icon="iconifyIcon" inline class="glow-img text-3xl p-2"></iconify-icon>
     </div>
 
     <!-- start of tooltip -->
