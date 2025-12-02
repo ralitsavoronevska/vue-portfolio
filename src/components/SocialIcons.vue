@@ -42,3 +42,9 @@ const getSrc = (icon: { file_name: string }) => {
   return `/assets/icons/social-icons/${icon.file_name}.svg`
 }
 </script>
+
+<script lang="ts">
+export default {
+  name: 'SocialIcons'  
+}
+</script>

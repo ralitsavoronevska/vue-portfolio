@@ -11,6 +11,17 @@ export default defineConfig({
       }
     }
   }), vueDevTools(), tailwindcss(),],
+  test: {
+    environment: 'js-dom',
+    globals: true,
+    coverage: {
+      enabled: true,
+      reporter: ['text', 'html', 'lcov'],
+      exclude: ['src/main.ts', 'src/App.vue', '**/*.d.ts'],
+      reportsDirectory: './coverage',
+      include: ['src/**/*.{ts,vue}'],
+    },
+  },
   resolve: { alias: { '@': '/src' } },
   assetsInclude: ['**/*.svg'],
 })

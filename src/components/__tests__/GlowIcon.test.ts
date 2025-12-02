@@ -57,4 +57,9 @@ describe('GlowIcon', () => {
     const wrapper = mount(GlowIcon, { props: defaultProps })
     expect(wrapper.find('iconify-icon').exists()).toBe(true)
   })
+
+  it('matches snapshot', () => {
+    const wrapper = mount(GlowIcon, { props: defaultProps })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
 })
