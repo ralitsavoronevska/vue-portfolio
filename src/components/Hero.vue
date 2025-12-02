@@ -41,5 +41,5 @@ import SocialIcons from './SocialIcons.vue'
 import { usePortfolioData } from '@/composables/usePortfolioData'
 const { heroSocialIcons } = usePortfolioData()
 
-const displayedText = ref('Mid Front-End Developer')
+const displayedText = ref('Mid Front-end Developer')
 </script>

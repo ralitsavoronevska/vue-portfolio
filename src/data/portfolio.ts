@@ -25,8 +25,8 @@ export const HERO_SOCIAL_LINKS: SocialIcon[] = [
 
 export const CONTACT_SOCIAL_LINKS: SocialIcon[] = [
   ...HERO_SOCIAL_LINKS,
-  { name: 'Discord', url: 'discordapp.com/users/1425751105060732959', file_name: 'discord' },
-  { name: 'Telegram', url: 'https//t.me/ralitsavoronevska/', file_name: 'telegram' },
+  { name: 'Discord', url: 'https://discordapp.com/users/1425751105060732959', file_name: 'discord' },
+  { name: 'Telegram', url: 'https://t.me/ralitsavoronevska', file_name: 'telegram' },
   { name: 'Email', url: 'mailto:r.voronevska@gmail.com', file_name: 'email' },
 ]
 
@@ -46,6 +46,7 @@ export const TECH_STACK: Tech[] = [
   { name: 'TypeScript', file_name: 'typescript' },
   { name: 'Pinia', file_name: 'pinia' },
   { name: 'Vite.js', file_name: 'vitejs' },
+  { name: 'Vitest', file_name: 'vitest' },
   { name: 'Node.js', file_name: 'nodejs' },
   { name: 'Express.js', file_name: 'express' },
   { name: 'MongoDB', file_name: 'mongodb' },
@@ -54,7 +55,6 @@ export const TECH_STACK: Tech[] = [
   { name: 'FireBase', file_name: 'firebase' },
   { name: 'Netlify', file_name: 'netlify' },
   { name: 'PhotoShop', file_name: 'photoshop' },
-  { name: 'JIRA', file_name: 'jira' },
  ]
 
 export const PROJECTS: Project[] = [

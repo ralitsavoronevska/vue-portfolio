@@ -11,6 +11,20 @@ describe('GlowIcon', () => {
     isVisible: true,
   } as const
 
+  it('applies correct visibility when isVisible is true', () => {
+    const wrapper = mount(GlowIcon, { props: defaultProps })
+    const glowBox = wrapper.find('.glow-box')
+    expect(glowBox.attributes('class')).toContain('opacity-100')
+  })
+
+  it('hides the icon when isVisible is false', () => {
+    const wrapper = mount(GlowIcon, {
+      props: { ...defaultProps, isVisible: false },
+    })
+    const glowBox = wrapper.find('.glow-box')
+    expect(glowBox.attributes('class')).toContain('opacity-0')
+  })
+
   it('renders the tech name in the tooltip', () => {
     const wrapper = mount(GlowIcon, { props: defaultProps })
     expect(wrapper.find('.tooltip').text()).toBe('Vue.js')
@@ -33,20 +47,6 @@ describe('GlowIcon', () => {
     // But we can trust that Tailwind applied the style if the class is present + group-hover exists
     expect(glowBox.element.classList.contains('group-hover')).toBe(true)
     expect(initialClasses).toContain('group-hover/tech:opacity-100')
-  })
-
-  it('applies correct visibility when isVisible is true', () => {
-    const wrapper = mount(GlowIcon, { props: defaultProps })
-    const glowBox = wrapper.find('.glow-box')
-    expect(glowBox.attributes('class')).toContain('opacity-100')
-  })
-
-  it('hides the icon when isVisible is false', () => {
-    const wrapper = mount(GlowIcon, {
-      props: { ...defaultProps, isVisible: false },
-    })
-    const glowBox = wrapper.find('.glow-box')
-    expect(glowBox.attributes('class')).toContain('opacity-0')
   })
 
   it('renders the iconify-icon component', () => {

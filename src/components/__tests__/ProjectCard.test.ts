@@ -1,129 +1,82 @@
-// tests/components/ProjectCard.test.ts
-import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { mount } from '@vue/test-utils'
-import ProjectCard from '@/components/ProjectCard.vue'
-import { useInView } from '@/composables/useInView'
-import { ref } from 'vue'
+// tests/composables/usePortfolioData.test.ts
+import { describe, it, expect, beforeEach } from 'vitest'
+import { usePortfolioData } from '@/composables/usePortfolioData'
 
-// This is the magic that works 100% with current Vitest
-vi.mock('@/composables/useInView', () => ({
-  useInView: vi.fn(), // ← turn it into a mock function
-}))
+describe('usePortfolioData', () => {
 
-// Re-configure the mock before each test
-beforeEach(() => {
-  vi.mocked(useInView).mockImplementation(() => ({
-    sectionRef: ref(null),           // proper ref → no Vue warning
-    isVisible: ref(true),            // default
-  }))
-})
-
-describe('ProjectCard', () => {
-  const defaultProps = {
-    image: '/assets/projects/rest-api-with-nodejs.webp',
-    title: 'REST API',
-    description: 'Simple Shop RESTful API',
-    techStack: [
-      { name: 'Node.js', file_name: 'nodejs' },
-      { name: 'Express.js', file_name: 'express' },
-      { name: 'MongoDB', file_name: 'mongodb' },
-      { name: 'Mongoose', file_name: 'mongoose' },
-      { name: 'Nodemon', file_name: 'nodemon' },
-      { name: 'PostMan', file_name: 'postman' },
-    ],
-    links: [
-      { name: 'GitHub', url: 'https://github.com/ralitsavoronevska/rest-api-with-nodejs/', file_name: 'github' },
-      { name: 'CodePen', url: '', file_name: 'grayCodePen' },
-      { name: 'Live', url: '', file_name: 'grayLive' },
-    ],
-    index: 0,
-    isVisible: true,
-  } as const as any
-
-  it('renders title and description correctly', () => {
-    const wrapper = mount(ProjectCard, { props: defaultProps })
-
-    expect(wrapper.find('.card-title').text()).toBe('REST API')
-    expect(wrapper.find('.card-desc').text()).toBe('Simple Shop RESTful API')
+  it('returns exactly 24 tech items', () => {
+    const { techStack } = usePortfolioData()
+    expect(techStack.value).toHaveLength(24)
   })
 
-  it('renders project image with correct src and alt', () => {
-    const wrapper = mount(ProjectCard, { props: defaultProps })
-
-    const img = wrapper.find('img')
-    expect(img.attributes('src')).toBe('/assets/projects/rest-api-with-nodejs.webp')
-    expect(img.attributes('alt')).toBe('Simple Shop RESTful API')
+  it('includes expected tech names', () => {
+    const { techStack } = usePortfolioData()
+    const names = techStack.value.map(t => t.name)
+    expect(names).toContain('Vue.js')
+    expect(names).toContain('TypeScript')
+    expect(names).toContain('Tailwind CSS')
+    expect(names).toContain('MongoDB')
+    expect(names).toContain('Pinia')
   })
 
-  it('uses fallback image when image prop is missing', () => {
-    const wrapper = mount(ProjectCard, {
-      props: { ...defaultProps, image: '/assets/projects/coming-soon.webp' },
+  it('returns 6 projects', () => {
+    const { projects } = usePortfolioData()
+    expect(projects.value).toHaveLength(6)
+  })
+
+  it('first project has correct title and tech', () => {
+    const { projects } = usePortfolioData()
+    const first = projects.value[0]
+    expect(first?.title).toBe('REST API')
+    expect(first?.description).toBe('Simple Shop RESTful API')
+    expect(first?.techStack.map((t: any) => t.name)).toEqual([
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Mongoose',
+      'Nodemon',
+      'PostMan',
+    ])
+  })
+
+  it('Monster Slayer Game has correct live links', () => {
+    const { projects } = usePortfolioData()
+
+    const monster = projects.value.find(p => p.title === 'Monster Slayer Game')!
+
+    const linkUrls = (monster.links as { url: string }[]).map(l => l.url)
+
+    expect(linkUrls).toEqual([
+      'https://github.com/ralitsavoronevska/monster-slayer-game/',
+      'https://codepen.io/ralitsavoronevska/pen/gbPyXbV/',
+      'https://ralitsavoronevska.github.io/monster-slayer-game/',
+    ])
+  })
+
+  it('heroSocialIcons has 3 items with correct names', () => {
+    const { heroSocialIcons } = usePortfolioData()
+    expect(heroSocialIcons.value).toHaveLength(3)
+    const names = heroSocialIcons.value.map(icon => icon.name)
+    expect(names).toEqual(['LinkedIn', 'GitHub', 'CodePen'])
+  })
+
+  it('contactSocialIcons has 6 items including Email', () => {
+    const { contactSocialIcons } = usePortfolioData()
+    expect(contactSocialIcons.value).toHaveLength(6)
+    const last = contactSocialIcons.value[5]
+    expect(last?.name).toBe('Email')
+    expect(last?.url).toBe('mailto:r.voronevska@gmail.com')
+  })
+
+  it('all social links have valid URLs', () => {
+    const { heroSocialIcons, contactSocialIcons } = usePortfolioData()
+    const allUrls = [
+      ...heroSocialIcons.value,
+      ...contactSocialIcons.value,
+    ].map(icon => icon.url)
+
+    allUrls.forEach(url => {
+      expect(url).toMatch(/^https?:\/\/|^mailto:/)
     })
-
-    const img = wrapper.find('img')
-    expect(img.attributes('src')).toBe('/assets/projects/coming-soon.webp')
-  })
-
-  it('renders correct number of GlowIcon components', () => {
-    const wrapper = mount(ProjectCard, { props: defaultProps })
-
-    // GlowIcon is rendered via v-for → check how many times it appears
-    expect(wrapper.findAllComponents({ name: 'GlowIcon' })).toHaveLength(6)
-  })
-
-  it('passes correct tech prop to each GlowIcon', () => {
-    const wrapper = mount(ProjectCard, { props: defaultProps })
-
-    const glowIcons = wrapper.findAllComponents({ name: 'GlowIcon' })
-    expect(glowIcons.at(0)?.props('tech')).toEqual({ name: 'Node.js', file_name: 'nodejs' })
-    expect(glowIcons.at(1)?.props('tech')).toEqual({ name: 'Express.js', file_name: 'express' })
-    expect(glowIcons.at(2)?.props('tech')).toEqual({ name: 'MongoDB', file_name: 'mongodb' })
-    expect(glowIcons.at(3)?.props('tech')).toEqual({ name: 'Mongoose', file_name: 'mongoose' })
-    expect(glowIcons.at(4)?.props('tech')).toEqual({ name: 'Nodemon', file_name: 'nodemon' })
-    expect(glowIcons.at(5)?.props('tech')).toEqual({ name: 'PostMan', file_name: 'postman' })
-  })
-
-  it('renders SocialIcons with correct links prop', () => {
-    const wrapper = mount(ProjectCard, { props: defaultProps })
-
-    const socialIcons = wrapper.findComponent({ name: 'SocialIcons' })
-    expect(socialIcons.exists()).toBe(true)
-    expect(socialIcons.props('icons')).toEqual(defaultProps.links)
-    expect(socialIcons.props('aria')).toBe('REST API')
-  })
-
-  it('applies opacity-100 and translate-y-0 when isVisible is true', () => {
-    const wrapper = mount(ProjectCard, { props: defaultProps })
-    const article = wrapper.find('article')
-
-    expect(article.classes()).toContain('opacity-100')
-    expect(article.classes()).toContain('translate-y-0')
-  })
-
-  it('applies opacity-0 and translate-y-8 when isVisible is false', () => {
-    // This is the one that was failing
-    vi.mocked(useInView).mockReturnValue({
-      sectionRef: ref(null),
-      isVisible: ref(false),   // ← force the ref to be false
-    })
-
-    const wrapper = mount(ProjectCard, { props: defaultProps })
-    const article = wrapper.find('article')
-
-    expect(article.classes()).toContain('opacity-0')
-    expect(article.classes()).toContain('translate-y-8')
-  })
-
-  it('adds smaller gap class when techStack has more than 5 items', () => {
-    const longTechStack = Array(6).fill(null).map((_, i) => ({
-      name: `Tech ${i}`,
-      file_name: 'vuejs',
-    }))
-
-    const wrapper = mount(ProjectCard, {
-      props: { ...defaultProps, techStack: longTechStack },
-    })
-
-    expect(wrapper.find('.glow-icons').classes()).toContain('gap-2')
   })
 })

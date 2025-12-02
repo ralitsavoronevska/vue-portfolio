@@ -7,7 +7,7 @@
     rel="noopener" 
     class="rounded-full"
     :aria-label="getAriaLabel(icon)">
-    <img :src="getSrc(icon)" class="social-icon" :alt="getAriaLabel(icon)" loading="lazy" />
+    <img :src="getSrc(icon)" class="social-icon" data-testid="social-icon" :alt="getAriaLabel(icon)" loading="lazy" />
   </a>
 </template>
 
