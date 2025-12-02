@@ -4,8 +4,8 @@
     :key="icon.file_name"
     :href="icon.url || '#'" 
     :target="getTarget(icon)" 
-    rel="noopener" 
-    class="rounded-full"
+    rel="noopener noreferrer" 
+    class="social-link rounded-full"
     :aria-label="getAriaLabel(icon)">
     <img :src="getSrc(icon)" class="social-icon" data-testid="social-icon" :alt="getAriaLabel(icon)" loading="lazy" />
   </a>

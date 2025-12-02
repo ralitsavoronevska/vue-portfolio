@@ -15,6 +15,7 @@ describe('GlowIcon', () => {
     const wrapper = mount(GlowIcon, { props: defaultProps })
     const glowBox = wrapper.find('.glow-box')
     expect(glowBox.attributes('class')).toContain('opacity-100')
+    expect(glowBox.attributes('class')).toContain('translate-y-0')
   })
 
   it('hides the icon when isVisible is false', () => {
@@ -23,6 +24,7 @@ describe('GlowIcon', () => {
     })
     const glowBox = wrapper.find('.glow-box')
     expect(glowBox.attributes('class')).toContain('opacity-0')
+    expect(glowBox.attributes('class')).toContain('translate-y-4')
   })
 
   it('renders the tech name in the tooltip', () => {
@@ -38,6 +40,7 @@ describe('GlowIcon', () => {
     // Before hover — these classes are present in the source, but not active
     const initialClasses = tooltip.attributes('class') || ''
     expect(initialClasses).toContain('group-hover/tech:opacity-100')
+    expect(initialClasses).toContain('group-hover/tech:translate-y-0')
 
     // Simulate hover by adding the group-hover state
     glowBox.element.classList.add('group-hover')
@@ -47,6 +50,7 @@ describe('GlowIcon', () => {
     // But we can trust that Tailwind applied the style if the class is present + group-hover exists
     expect(glowBox.element.classList.contains('group-hover')).toBe(true)
     expect(initialClasses).toContain('group-hover/tech:opacity-100')
+    expect(initialClasses).toContain('group-hover/tech:translate-y-0')
   })
 
   it('renders the iconify-icon component', () => {

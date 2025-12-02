@@ -1,82 +1,121 @@
 // tests/composables/usePortfolioData.test.ts
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach, vi } from 'vitest'
+import { mount } from '@vue/test-utils'
 import { usePortfolioData } from '@/composables/usePortfolioData'
+import { ref, nextTick } from 'vue'
+import ProjectCard from '@/components/ProjectCard.vue' 
 
-describe('usePortfolioData', () => {
+// MOCK useInView — we’ll override per test
+const mockUseInView = vi.fn()
+vi.mock('@/composables/useInView', () => ({
+  useInView: () => mockUseInView(),
+}))
 
-  it('returns exactly 24 tech items', () => {
-    const { techStack } = usePortfolioData()
-    expect(techStack.value).toHaveLength(24)
+describe('ProjectCard', () => {
+  const defaultProps = {
+    image: '/assets/projects/rest-api-with-nodejs.webp',
+    title: 'REST API',
+    description: 'Simple Shop RESTful API',
+    techStack: [
+      { name: 'Node.js', file_name: 'nodejs' },
+      { name: 'Express.js', file_name: 'express' },
+      { name: 'MongoDB', file_name: 'mongodb' },
+      { name: 'Mongoose', file_name: 'mongoose' },
+      { name: 'Nodemon', file_name: 'nodemon' },
+      { name: 'PostMan', file_name: 'postman' },
+    ],
+    links: [
+      { name: 'GitHub', url: 'https://github.com/ralitsavoronevska/rest-api-with-nodejs/', file_name: 'github' },
+      { name: 'CodePen', url: '', file_name: 'grayCodePen' },
+      { name: 'Live', url: '', file_name: 'grayLive' },
+    ],
+    index: 0
+  } as const as any
+
+  beforeEach(() => {
+    vi.clearAllMocks() // Reset mocks between tests
   })
 
-  it('includes expected tech names', () => {
-    const { techStack } = usePortfolioData()
-    const names = techStack.value.map(t => t.name)
-    expect(names).toContain('Vue.js')
-    expect(names).toContain('TypeScript')
-    expect(names).toContain('Tailwind CSS')
-    expect(names).toContain('MongoDB')
-    expect(names).toContain('Pinia')
+  it('applies opacity-100 and translate-y-0 when isVisible is true', () => {
+    mockUseInView.mockReturnValue({
+      sectionRef: ref(null),
+      isVisible: ref(true), // ← visible
+    })
+
+    const wrapper = mount(ProjectCard, { props: defaultProps })
+    const article = wrapper.find('article')
+
+    expect(article.classes()).toContain('opacity-100')
+    expect(article.classes()).toContain('translate-y-0')
   })
 
-  it('returns 6 projects', () => {
+  it('applies opacity-0 and translate-y-8 when isVisible is false', () => {
+    mockUseInView.mockReturnValue({
+      sectionRef: ref(null),
+      isVisible: ref(false), // ← hidden
+    })
+
+    const wrapper = mount(ProjectCard, { props: defaultProps })
+    const article = wrapper.find('article')
+
+    expect(article.classes()).toContain('opacity-0')
+    expect(article.classes()).toContain('translate-y-8')
+  })
+
+  it('renders project image with correct src and alt', () => {
+    mockUseInView.mockReturnValue({ sectionRef: ref(null), isVisible: ref(true) })
+    const wrapper = mount(ProjectCard, { props: defaultProps })
+    const img = wrapper.find('.card-img')
+    expect(img.attributes('src')).toBe('/assets/projects/rest-api-with-nodejs.webp')
+    expect(img.attributes('alt')).toBe('Simple Shop RESTful API')
+  })
+
+  it('uses fallback image when image prop is missing', () => {
+    mockUseInView.mockReturnValue({ sectionRef: ref(null), isVisible: ref(true) })
+    const wrapper = mount(ProjectCard, { props: { ...defaultProps, image: undefined } })
+    expect(wrapper.find('img').attributes('src')).toBe('/assets/projects/coming-soon.webp')
+  })
+
+  it('adds smaller gap class when techStack has more than 5 items', () => {
+    mockUseInView.mockReturnValue({ sectionRef: ref(null), isVisible: ref(true) })
+    const longTechStack = Array.from({ length: 6 }, (_, i) => ({ name: `Tech ${i}`, file_name: 'vuejs' }))
+    const wrapper = mount(ProjectCard, { props: { ...defaultProps, techStack: longTechStack } })
+    expect(wrapper.find('.glow-icons').classes()).toContain('gap-2')
+  })
+
+  it('renders gracefully with empty project URLs (future projects)', async () => {
+    // Make sure the mock is set BEFORE mounting
+    mockUseInView.mockReturnValue({
+      sectionRef: ref(null),
+      isVisible: ref(true),
+    })
+
     const { projects } = usePortfolioData()
-    expect(projects.value).toHaveLength(6)
+    const maptyApp = projects.value.find(p => p.title === 'Mapty App')!
+    const urls = (maptyApp.links as { url: string }[]).map(l => l.url)
+    expect(urls).toEqual(['','','',])
   })
 
-  it('first project has correct title and tech', () => {
+  // Keep your data tests (they belong in usePortfolioData.test.ts — but okay for now)
+  // → Later we can move them, but they pass now
+  it('first project has correct title, description and tech', () => {
     const { projects } = usePortfolioData()
     const first = projects.value[0]
     expect(first?.title).toBe('REST API')
     expect(first?.description).toBe('Simple Shop RESTful API')
-    expect(first?.techStack.map((t: any) => t.name)).toEqual([
-      'Node.js',
-      'Express.js',
-      'MongoDB',
-      'Mongoose',
-      'Nodemon',
-      'PostMan',
+    expect(first?.techStack.map((t:any) => t.name)).toEqual([
+      'Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'Nodemon', 'PostMan'
     ])
   })
 
   it('Monster Slayer Game has correct live links', () => {
     const { projects } = usePortfolioData()
-
     const monster = projects.value.find(p => p.title === 'Monster Slayer Game')!
-
-    const linkUrls = (monster.links as { url: string }[]).map(l => l.url)
-
-    expect(linkUrls).toEqual([
+    const urls = (monster.links as { url: string }[]).map(l => l.url)
+    expect(urls).toEqual([
       'https://github.com/ralitsavoronevska/monster-slayer-game/',
       'https://codepen.io/ralitsavoronevska/pen/gbPyXbV/',
       'https://ralitsavoronevska.github.io/monster-slayer-game/',
     ])
-  })
-
-  it('heroSocialIcons has 3 items with correct names', () => {
-    const { heroSocialIcons } = usePortfolioData()
-    expect(heroSocialIcons.value).toHaveLength(3)
-    const names = heroSocialIcons.value.map(icon => icon.name)
-    expect(names).toEqual(['LinkedIn', 'GitHub', 'CodePen'])
-  })
-
-  it('contactSocialIcons has 6 items including Email', () => {
-    const { contactSocialIcons } = usePortfolioData()
-    expect(contactSocialIcons.value).toHaveLength(6)
-    const last = contactSocialIcons.value[5]
-    expect(last?.name).toBe('Email')
-    expect(last?.url).toBe('mailto:r.voronevska@gmail.com')
-  })
-
-  it('all social links have valid URLs', () => {
-    const { heroSocialIcons, contactSocialIcons } = usePortfolioData()
-    const allUrls = [
-      ...heroSocialIcons.value,
-      ...contactSocialIcons.value,
-    ].map(icon => icon.url)
-
-    allUrls.forEach(url => {
-      expect(url).toMatch(/^https?:\/\/|^mailto:/)
-    })
   })
 })

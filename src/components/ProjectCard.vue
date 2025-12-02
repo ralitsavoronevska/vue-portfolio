@@ -43,7 +43,7 @@
         
         <!-- start of social-links -->
         <div class="social-icons">
-          <SocialIcons :icons="links" :aria="title" />
+          <SocialIcons :icons="icons" :aria="title" />
         </div>
         <!-- end of social-links -->
 
@@ -64,7 +64,7 @@ defineProps<{
   image: string
   title: string
   description: string
-  links: Array<{ name: string; url: string; file_name: string }>
+  icons: Array<{ name: string; url: string; file_name: string }>
   techStack: Array<{ name: string; file_name: string }>
   index: number
   isVisible: boolean
