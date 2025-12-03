@@ -7,12 +7,12 @@ export default defineConfig({
   plugins: [vue({
     template: {
       compilerOptions: {
-        isCustomElement: element => element.startsWith('iconify-icon')
+        isCustomElement: (tag) => tag.startsWith('iconify-icon')
       }
     }
   }), vueDevTools(), tailwindcss(),],
   test: {
-    environment: 'js-dom',
+    environment: 'jsdom',
     globals: true,
     coverage: {
       enabled: true,

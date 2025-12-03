@@ -15,7 +15,11 @@
       class="glow-icon"      
       :class="`${iconSizes}`"          
     >
-      <iconify-icon :icon="iconifyIcon" inline class="glow-img text-3xl p-2"></iconify-icon>
+      <iconify-icon
+        :icon="iconName"
+        inline
+        class="glow-img text-3xl p-2"
+      />
     </div>
 
     <!-- start of tooltip -->
@@ -33,6 +37,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+
 const props = defineProps<{
   tech: { name: string; file_name: string };
   index: number;
@@ -41,14 +46,10 @@ const props = defineProps<{
   isVisible: boolean;
 }>()
 
-const iconifyIcon = computed(() => {
-  if (props.tech.file_name === 'pinia') {
-    return `logos:${props.tech.file_name}`
-  } else if (props.tech.file_name === 'gulp' || props.tech.file_name === 'express') {
-    return `simple-icons:${props.tech.file_name}`
-  } else {
-    return `devicon:${props.tech.file_name}`
-  }
+const iconName = computed(() => {
+  const name = props.tech.file_name.toLowerCase()
+  if (name === 'pinia') return 'logos:pinia'
+  if (name === 'gulp' || name === 'express') return `simple-icons:${name}`
+  return `devicon:${name}`
 })
-
 </script>
