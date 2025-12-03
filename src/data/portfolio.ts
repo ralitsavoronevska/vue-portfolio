@@ -146,7 +146,7 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    image: '',
+    image: '/assets/projects/pig-game.webp',
     title: 'Pig Game',
     description: 'A Single Dice Game',
     techStack: [
@@ -154,12 +154,11 @@ export const PROJECTS: Project[] = [
       { name: 'Vite.js', file_name: 'vitejs' },
       { name: 'TypeScript', file_name: 'typescript' },
       { name: 'Tailwind CSS', file_name: 'tailwindcss' },
-      { name: 'Pinia', file_name: 'pinia' },
     ],
     links: [
-      { name: 'GitHub', url: '', file_name: 'github' },
-      { name: 'CodePen', url: '', file_name: 'codepen' },
-      { name: 'Live', url: '', file_name: 'live' },
+      { name: 'GitHub', url: 'https://ralitsavoronevska.github.io/pig-game/', file_name: 'github' },
+      { name: 'CodePen', url: 'https://codepen.io/ralitsavoronevska/pen/MYyqdXe/', file_name: 'codepen' },
+      { name: 'Live', url: 'https://ralitsavoronevska.github.io/pig-game/', file_name: 'live' },
     ]
   },
 ]
