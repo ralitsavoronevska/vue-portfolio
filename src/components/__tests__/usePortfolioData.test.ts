@@ -57,19 +57,19 @@ describe('usePortfolioData', () => {
     expect(names).toContain('PhotoShop')
   })
 
-  it('returns 6 projects', () => {
+  it('returns 7 projects', () => {
     const { projects } = usePortfolioData()
-    expect(projects.value).toHaveLength(6)
+    expect(projects.value).toHaveLength(7)
   })
 
-  it('first project has correct title and tech stack', () => {
+  it('second project has correct title and tech stack', () => {
     const { projects } = usePortfolioData()
-    const first = projects.value[0]
+    const second = projects.value[1]
 
-    expect(first?.title).toBe('REST API')
-    expect(first?.description).toBe('Simple Shop RESTful API')
+    expect(second?.title).toBe('REST API')
+    expect(second?.description).toBe('Simple Shop RESTful API')
 
-    const techNames = (first?.techStack as { name: string }[]).map(t => t.name)
+    const techNames = (second?.techStack as { name: string }[]).map(t => t.name)
     expect(techNames).toEqual([
       'Node.js',
       'Express.js',

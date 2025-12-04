@@ -98,12 +98,12 @@ describe('ProjectCard', () => {
 
   // Keep your data tests (they belong in usePortfolioData.test.ts — but okay for now)
   // → Later we can move them, but they pass now
-  it('first project has correct title, description and tech', () => {
+  it('second project has correct title, description and tech', () => {
     const { projects } = usePortfolioData()
-    const first = projects.value[0]
-    expect(first?.title).toBe('REST API')
-    expect(first?.description).toBe('Simple Shop RESTful API')
-    expect(first?.techStack.map((t:any) => t.name)).toEqual([
+    const second = projects.value[1]
+    expect(second?.title).toBe('REST API')
+    expect(second?.description).toBe('Simple Shop RESTful API')
+    expect(second?.techStack.map((t:any) => t.name)).toEqual([
       'Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'Nodemon', 'PostMan'
     ])
   })

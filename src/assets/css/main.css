@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Play Fair", sans-serif;
+  --font-display: "Playfair Display", sans-serif;
   --shadow-3xl: 3px 3px 12px oklch(71.8% 0.202 349.761 / 0.25);
 }
 

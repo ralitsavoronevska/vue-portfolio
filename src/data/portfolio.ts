@@ -59,6 +59,23 @@ export const TECH_STACK: Tech[] = [
 
 export const PROJECTS: Project[] = [
   {
+    image: '/assets/projects/vue-portfolio.webp',
+    title: 'Vue Portfolio',
+    description: 'My Modern Vue Portfolio',
+    techStack: [
+      { name: 'Vue.js', file_name: 'vuejs' },
+      { name: 'Vite.js', file_name: 'vitejs' },
+      { name: 'Vitest', file_name: 'vitest' },
+      { name: 'TypeScript', file_name: 'typescript' },
+      { name: 'Tailwind CSS', file_name: 'tailwindcss' },
+    ],
+    links: [
+      { name: 'GitHub', url: 'https://github.com/ralitsavoronevska/vue-portfolio/', file_name: 'github' },
+      { name: 'CodePen', url: 'https://codepen.io/ralitsavoronevska/pen/KOdQJZ/', file_name: 'codepen' },
+      { name: 'Live', url: 'https://ralitsavoronevska.com/', file_name: 'live' },
+    ]
+  },
+  {
     image: '/assets/projects/rest-api-with-nodejs.webp',
     title: 'REST API',
     description: 'Simple Shop RESTful API',
@@ -129,12 +146,13 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-  image: '/assets/projects/monster-slayer-game.webp',
+    image: '/assets/projects/monster-slayer-game.webp',
     title: 'Monster Slayer Game',
     description: 'Give the Monster A Lesson',
     techStack: [
       { name: 'Vue.js', file_name: 'vuejs' },
       { name: 'Vite.js', file_name: 'vitejs' },
+      { name: 'Vitest', file_name: 'vitest' },
       { name: 'TypeScript', file_name: 'typescript' },
       { name: 'Tailwind CSS', file_name: 'tailwindcss' },
       { name: 'Pinia', file_name: 'pinia' },
