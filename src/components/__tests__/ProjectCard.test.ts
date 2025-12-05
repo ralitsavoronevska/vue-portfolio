@@ -101,7 +101,7 @@ describe('ProjectCard', () => {
   it('second project has correct title, description and tech', () => {
     const { projects } = usePortfolioData()
     const second = projects.value[1]
-    expect(second?.title).toBe('REST API')
+    expect(second?.title).toBe('Node.js REST API')
     expect(second?.description).toBe('Simple Shop RESTful API')
     expect(second?.techStack.map((t:any) => t.name)).toEqual([
       'Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'Nodemon', 'PostMan'

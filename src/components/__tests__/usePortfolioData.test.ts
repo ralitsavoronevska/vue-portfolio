@@ -26,16 +26,14 @@ describe('usePortfolioData', () => {
     })
   })
 
-  it('returns exactly 24 tech items', () => {
+  it('returns exactly 18 tech items', () => {
     const { techStack } = usePortfolioData()
-    expect(techStack.value).toHaveLength(24)
+    expect(techStack.value).toHaveLength(18)
   })
 
   it('includes key technologies', () => {
     const { techStack } = usePortfolioData()
     const names = techStack.value.map(t => t.name)
-    expect(names).toContain('VSCode')
-    expect(names).toContain('WebStorm')
     expect(names).toContain('HTML5')
     expect(names).toContain('CSS3')
     expect(names).toContain('Bootstrap')
@@ -47,26 +45,22 @@ describe('usePortfolioData', () => {
     expect(names).toContain('Gulp')
     expect(names).toContain('Vue.js')
     expect(names).toContain('Vitest')
-    expect(names).toContain('Node.js')
-    expect(names).toContain('Express.js')
-    expect(names).toContain('MongoDB')
-    expect(names).toContain('Mongoose')
     expect(names).toContain('PostMan')
     expect(names).toContain('FireBase')
     expect(names).toContain('Netlify')
     expect(names).toContain('PhotoShop')
   })
 
-  it('returns 7 projects', () => {
+  it('returns 8 projects', () => {
     const { projects } = usePortfolioData()
-    expect(projects.value).toHaveLength(7)
+    expect(projects.value).toHaveLength(8)
   })
 
   it('second project has correct title and tech stack', () => {
     const { projects } = usePortfolioData()
     const second = projects.value[1]
 
-    expect(second?.title).toBe('REST API')
+    expect(second?.title).toBe('Node.js REST API')
     expect(second?.description).toBe('Simple Shop RESTful API')
 
     const techNames = (second?.techStack as { name: string }[]).map(t => t.name)

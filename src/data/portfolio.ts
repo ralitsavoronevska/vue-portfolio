@@ -31,8 +31,6 @@ export const CONTACT_SOCIAL_LINKS: SocialIcon[] = [
 ]
 
 export const TECH_STACK: Tech[] = [
-  { name: 'VSCode', file_name: 'vscode' },
-  { name: 'WebStorm', file_name: 'webstorm' },
   { name: 'HTML5', file_name: 'html5' },
   { name: 'CSS3', file_name: 'css3' },
   { name: 'Bootstrap', file_name: 'bootstrap' },
@@ -47,10 +45,6 @@ export const TECH_STACK: Tech[] = [
   { name: 'Pinia', file_name: 'pinia' },
   { name: 'Vite.js', file_name: 'vitejs' },
   { name: 'Vitest', file_name: 'vitest' },
-  { name: 'Node.js', file_name: 'nodejs' },
-  { name: 'Express.js', file_name: 'express' },
-  { name: 'MongoDB', file_name: 'mongodb' },
-  { name: 'Mongoose', file_name: 'mongoose' },
   { name: 'PostMan', file_name: 'postman' },
   { name: 'FireBase', file_name: 'firebase' },
   { name: 'Netlify', file_name: 'netlify' },
@@ -60,8 +54,8 @@ export const TECH_STACK: Tech[] = [
 export const PROJECTS: Project[] = [
   {
     image: '/assets/projects/vue-portfolio.webp',
-    title: 'Vue Portfolio',
-    description: 'My Modern Vue Portfolio',
+    title: 'Vue.js Portfolio',
+    description: 'My Modern Vue.js Portfolio',
     techStack: [
       { name: 'Vue.js', file_name: 'vuejs' },
       { name: 'Vite.js', file_name: 'vitejs' },
@@ -77,7 +71,7 @@ export const PROJECTS: Project[] = [
   },
   {
     image: '/assets/projects/rest-api-with-nodejs.webp',
-    title: 'REST API',
+    title: 'Node.js REST API',
     description: 'Simple Shop RESTful API',
     techStack: [
       { name: 'Node.js', file_name: 'nodejs' },
@@ -95,6 +89,25 @@ export const PROJECTS: Project[] = [
   },
   {
     image: '',
+    title: 'WooNuxt Store',
+    description: 'Headless E-Commerce',
+    techStack: [
+      { name: 'Nuxt.js', file_name: 'nuxt' },
+      { name: 'Vue.js', file_name: 'vuejs' },
+      { name: 'TypeScript', file_name: 'typescript' },
+      { name: 'Tailwind CSS', file_name: 'tailwindcss' },
+      { name: 'Pinia', file_name: 'pinia' },
+      { name: 'PostMan', file_name: 'postman' },
+      { name: 'MongoDB', file_name: 'mongodb' },
+    ],
+    links: [
+      { name: 'GitHub', url: '', file_name: 'github' },
+      { name: 'CodePen', url: '', file_name: 'codepen' },
+      { name: 'Live', url: '', file_name: 'live' },
+    ]
+  },
+  {
+    image: '',
     title: 'Find a Coach App',
     description: 'Find and Register as a Coach',
     techStack: [
@@ -104,6 +117,7 @@ export const PROJECTS: Project[] = [
       { name: 'Tailwind CSS', file_name: 'tailwindcss' },
       { name: 'Pinia', file_name: 'pinia' },
       { name: 'PostMan', file_name: 'postman' },
+      { name: 'FireBase', file_name: 'firebase' },
     ],
     links: [
       { name: 'GitHub', url: '', file_name: 'github' },
@@ -166,7 +180,7 @@ export const PROJECTS: Project[] = [
   {
     image: '/assets/projects/pig-game.webp',
     title: 'Pig Game',
-    description: 'A Single Dice Game',
+    description: 'A Single Dice Game for two players',
     techStack: [
       { name: 'Vue.js', file_name: 'vuejs' },
       { name: 'Vite.js', file_name: 'vitejs' },

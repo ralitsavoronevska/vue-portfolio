@@ -11,8 +11,8 @@ describe('AboutMe', () => {
     expect(buttons.at(1)?.attributes('href')).toBe('https://ralitsavoronevska.com/dist/assets/Ralitsa-Voronevska-CV.pdf')
   })
 
-  it('displays all 24 tech stack icons', () => {
+  it('displays all 18 tech stack icons', () => {
     const wrapper = mount(AboutMe)
-    expect(wrapper.findAll('iconify-icon')).toHaveLength(24)
+    expect(wrapper.findAll('iconify-icon')).toHaveLength(18)
   })
 })

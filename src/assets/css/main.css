@@ -91,8 +91,7 @@
       @apply flex flex-col lg:flex-row;
     }
     .hero-and-skills {
-      @apply bg-slate-950/75 shadow-3xl rounded-2xl p-3 flex flex-col w-full md:min-w-[16rem] lg:min-w-87.5 xl:min-w-106.25 2xl:min-w-87.5;
-      
+      @apply bg-slate-950/75 shadow-3xl rounded-2xl p-3 flex flex-col w-full lg:min-w-70 xl:min-w-90;
     }
     .btns-container {
       @apply flex items-center justify-center gap-2 my-4 mx-auto;
@@ -101,12 +100,12 @@
       @apply rounded-md text-white transition-colors bg-indigo-500 hover:bg-linear-to-r hover:from-indigo-500 hover:to-pink-500 text-base px-4 py-2.5 text-center leading-5 duration-500;
     }
     .glow-icons {
-      @apply flex items-center justify-center flex-wrap mt-3 mx-auto gap-1 md:gap-2;
+      @apply flex items-center justify-center flex-wrap mt-3 mx-auto gap-3 md:max-w-150 lg:gap-2;
     }
     .bio {
       @apply bg-slate-950/75 shadow-3xl rounded-2xl p-3 flex flex-col mt-4 lg:mt-0 lg:ms-4;
       .bio-text {
-        @apply text-2xl md:text-3xl lg:text-[21px] xl:text-[25px] 2xl:text-[30px] leading-normal items-center justify-center ps-0 md:p-3 2xl:px-3 mb-0 lg:my-auto;
+        @apply text-center text-2xl md:text-3xl lg:text-xl xl:text-[24px] 2xl:text-[28px] leading-normal items-center justify-center ps-0 md:p-3 2xl:px-4 2xl:py-3 mb-0 lg:my-auto;
       }
     }
   }
