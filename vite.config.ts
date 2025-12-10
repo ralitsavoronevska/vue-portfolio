@@ -4,13 +4,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  plugins: [vue({
-    template: {
-      compilerOptions: {
-        isCustomElement: (tag) => tag.startsWith('iconify-icon')
-      }
-    }
-  }), vueDevTools(), tailwindcss(),],
+  plugins: [vue(), vueDevTools(), tailwindcss(),],
   test: {
     environment: 'jsdom',
     globals: true,

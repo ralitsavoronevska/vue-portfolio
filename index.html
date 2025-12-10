@@ -56,22 +56,5 @@
   <body class="text-white text-base min-h-screen leading-relaxed m-0 p-0 antialiased">
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
-    <script defer src="/iconify-icon.min.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        if (window.Iconify) {
-          // Use local collections folder
-          window.Iconify.setConfig('collectionsPath', '/iconify-collections/');
-          
-          // Force offline mode (no api.iconify.design fallback)
-          window.Iconify.setConfig('offline', true);
-          
-          // Optional: Pre-warm the collections you use
-          window.Iconify.preloadCollection('devicon');
-          window.Iconify.preloadCollection('logos');
-          window.Iconify.preloadCollection('simple-icons');
-        }
-      });
-    </script>
   </body>
 </html>

@@ -13,6 +13,6 @@ describe('AboutMe', () => {
 
   it('displays all 18 tech stack icons', () => {
     const wrapper = mount(AboutMe)
-    expect(wrapper.findAll('iconify-icon')).toHaveLength(18)
+    expect(wrapper.findAll('.glow-img')).toHaveLength(18)
   })
 })

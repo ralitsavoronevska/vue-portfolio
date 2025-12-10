@@ -15,10 +15,12 @@
       class="glow-icon"      
       :class="`${iconSizes}`"          
     >
-      <iconify-icon
-        :icon="iconName"
-        inline
-        class="glow-img text-3xl p-2"
+      <img
+        :src="`/assets/icons/${tech.file_name}.svg`"
+        :alt="`${tech.name} Logo`"
+        class="glow-img text-3xl p-2" 
+        :class="`${imgSizes}`"
+        loading="lazy"
       />
     </div>
 
@@ -43,6 +45,7 @@ const props = defineProps<{
   index: number;
   boxSizes?: string;
   iconSizes: string;
+  imgSizes: string
   isVisible: boolean;
 }>()
 

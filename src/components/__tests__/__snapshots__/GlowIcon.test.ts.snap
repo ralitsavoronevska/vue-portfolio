@@ -2,8 +2,6 @@
 
 exports[`GlowIcon > matches snapshot 1`] = `
 "<div class="glow-box group opacity-100 scale-100 translate-y-0 delay-100 transition-all duration-500 ease-out w-11 h-11 md:w-12 md:h-12 lg:w-11 lg:h-11" tabindex="0" role="img" aria-label="Vue.js Logo">
-  <div class="glow-icon w-11 h-11 md:w-12 md:h-12 lg:w-11 lg:h-11 rounded-lg">
-    <iconify-icon icon="devicon:vuejs" inline="" class="glow-img text-3xl p-2"></iconify-icon>
-  </div><!-- start of tooltip --><span class="tooltip group-hover/tech:opacity-100 group-hover/tech:visible group-hover/tech:translate-y-0 group-focus/tech:opacity-100 group-focus/tech:visible group-focus/tech:translate-y-0">Vue.js</span><!-- end of tooltip -->
+  <div class="glow-icon w-11 h-11 md:w-12 md:h-12 lg:w-11 lg:h-11 rounded-lg"><img src="/assets/icons/vuejs.svg" alt="Vue.js Logo" class="glow-img text-3xl p-2 w-11 h-11 md:w-12 md:h-12 lg:w-11 lg:h-11" loading="lazy"></div><!-- start of tooltip --><span class="tooltip group-hover/tech:opacity-100 group-hover/tech:visible group-hover/tech:translate-y-0 group-focus/tech:opacity-100 group-focus/tech:visible group-focus/tech:translate-y-0">Vue.js</span><!-- end of tooltip -->
 </div>"
 `;

@@ -17,12 +17,10 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
-    "iconify-icon": "^3.0.2",
     "tailwindcss": "^4.1.17",
     "vue": "^3.5.22"
   },
   "devDependencies": {
-    "@iconify/tools": "^5.0.0",
     "@tsconfig/node22": "^22.0.2",
     "@types/node": "^22.18.11",
     "@vitejs/plugin-vue": "^6.0.1",

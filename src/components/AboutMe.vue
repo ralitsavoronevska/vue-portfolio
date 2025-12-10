@@ -36,6 +36,7 @@
             :index="i"
             :iconSizes="`w-9.5 h-9.5 md:w-12 md:h-12 lg:w-9 lg:h-10 xl:w-11 xl:h-11 rounded-lg`"
             :boxSizes="`w-9.5 h-9.5 md:w-12 md:h-12 lg:w-9 lg:h-10 xl:w-11 xl:h-11`"
+            :imgSizes="`w-9.5 h-9.5 md:w-12 md:h-12 lg:w-9 lg:h-10 xl:w-11 xl:h-11`"
             :isVisible="isVisible" />
         </div>
         <!-- end of glow-icons -->  
