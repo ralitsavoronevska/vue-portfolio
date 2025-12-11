@@ -12,7 +12,7 @@
           View Projects
         </button>
       </a>
-      <a href="https://ralitsavoronevska.com/dist/assets/Ralitsa-Voronevska-CV.pdf" download="Ralitsa-Voronevska-CV.pdf" role="button" aria-label="Download my Resume">
+      <a href="https://ralitsavoronevska.com/assets/Ralitsa-Voronevska-CV.pdf" download="Ralitsa-Voronevska-CV.pdf" role="button" aria-label="Download my Resume">
         <button class="btn-styles" type="button">
           Download Resume
         </button>
