@@ -36,6 +36,7 @@
             :tech="tech"
             :index="i"
             :iconSizes="`w-11 h-11 rounded-3xl`"
+            :imgSizes="`w-11 h-11 rounded-3xl`"
             :isVisible="isVisible"
             />
         </div>
