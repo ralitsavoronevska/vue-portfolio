@@ -89,11 +89,11 @@ Mobile:
 <br>
 
 # 🌐 Browser Support:
-(Last updated and tested: 17/11/2025)                                                                                                            
-🌟 Chrome 142.0.7444.163 (64-bit)                                                                                                           
-🦊 Firefox 145.0 (64-bit)                                                                                                                 
-🏴‍☠️ Opera 124.0.5705.15 (64-bit)                                                                                                        
-🪟 Edge 142.0.3595.80 (64-bit)                                                                                                                   
+(Last updated and tested: 12/12/2025)                                                                                                            
+🌟 Chrome 143.0.7499.110 (64-bit)                                                                                                           
+🦊 Firefox 146.0 (64-bit)                                                                                                                 
+🏴‍☠️ Opera 125.0.5729.21 (64-bit)                                                                                                        
+🪟 Edge 143.0.3650.80 (64-bit)                                                                                                                   
 
 # 🧪 Online Validators:
 ✔️ [W3C HTML Validator](https://validator.w3.org/)                                                                                          
