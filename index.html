@@ -34,8 +34,8 @@
 
     <!-- Preload Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
+    <link rel="preload" href="https://fonts.gstatic.com" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" as="style" media="print" onload="this.media='all'">
 
     <!-- Preload Critical Above-Fold Images -->
     <link rel="preload" href="assets/logo.png" as="image" type="image/png" fetchpriority="high">
