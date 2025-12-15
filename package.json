@@ -15,6 +15,18 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage"
   },
+  "keywords": [
+    "Vue.js 3 Composition API",
+    "Tailwind CSS v4",
+    "TypeScript",
+    "Vite",
+    "Vitest",
+    "Responsiveness",
+    "Transitions",
+    "Animations",
+    "Flex Layout",
+    "Grid Layout"
+  ],
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
     "tailwindcss": "^4.1.17",
