@@ -13,12 +13,22 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage",
+    "type-check": "vue-tsc --build",
+    "lint": "eslint . --fix --cache",
+    "format": "prettier --write src/"
+  },
+  "author": "Ralitsa Voronevska",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ralitsavoronevska/vue-portfolio.git"
   },
   "keywords": [
     "Vue.js 3 Composition API",
     "Tailwind CSS v4",
     "TypeScript",
+    "Pinia",
     "Vite",
     "Vitest",
     "Responsiveness",
@@ -37,8 +47,14 @@
     "@types/node": "^22.18.11",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vitest/coverage-v8": "^4.0.14",
+    "@vitest/eslint-plugin": "^1.5.0",
+    "@vitest/ui": "^4.0.15",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.6.0",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.8.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-vue": "~10.5.1",
     "happy-dom": "^20.0.11",
     "sass": "^1.94.0",
     "typescript": "~5.9.0",

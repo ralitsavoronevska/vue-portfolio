@@ -1,98 +1,111 @@
-import { describe, it, expect } from 'vitest'
-import { usePortfolioData } from '@/composables/usePortfolioData'
+import { describe, it, expect } from "vitest";
+import { usePortfolioData } from "@/composables/usePortfolioData";
 
-describe('usePortfolioData', () => {
+describe("usePortfolioData", () => {
+  it("heroSocialIcons has exactly 3 items with correct names and URLs", () => {
+    const { heroSocialIcons } = usePortfolioData();
 
-  it('heroSocialIcons has exactly 3 items with correct names and URLs', () => {
-    const { heroSocialIcons } = usePortfolioData()
-
-    expect(heroSocialIcons.value).toHaveLength(3)
+    expect(heroSocialIcons.value).toHaveLength(3);
 
     expect(heroSocialIcons.value).toEqual([
-      { name: 'LinkedIn', url: 'https://linkedin.com/in/ralitsavoronevska', file_name: expect.any(String) },
-      { name: 'GitHub', url: 'https://github.com/ralitsavoronevska', file_name: expect.any(String) },
-      { name: 'CodePen', url: 'https://codepen.io/ralitsavoronevska', file_name: expect.any(String) },
-    ])
-  })
+      {
+        name: "LinkedIn",
+        url: "https://linkedin.com/in/ralitsavoronevska",
+        file_name: expect.any(String),
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/ralitsavoronevska",
+        file_name: expect.any(String),
+      },
+      {
+        name: "CodePen",
+        url: "https://codepen.io/ralitsavoronevska",
+        file_name: expect.any(String),
+      },
+    ]);
+  });
 
-  it('all social links have valid URLs', () => {
-    const { heroSocialIcons } = usePortfolioData()
-    const allUrls = [
-      ...heroSocialIcons.value,
-    ].map(icon => icon.url)
+  it("all social links have valid URLs", () => {
+    const { heroSocialIcons } = usePortfolioData();
+    const allUrls = [...heroSocialIcons.value].map((icon) => icon.url);
 
-    allUrls.forEach(url => {
-      expect(url).toMatch(/^https?:\/\/|^mailto:/)
-    })
-  })
+    allUrls.forEach((url) => {
+      expect(url).toMatch(/^https?:\/\/|^mailto:/);
+    });
+  });
 
-  it('returns exactly 18 tech items', () => {
-    const { techStack } = usePortfolioData()
-    expect(techStack.value).toHaveLength(18)
-  })
+  it("returns exactly 18 tech items", () => {
+    const { techStack } = usePortfolioData();
+    expect(techStack.value).toHaveLength(18);
+  });
 
-  it('includes key technologies', () => {
-    const { techStack } = usePortfolioData()
-    const names = techStack.value.map(t => t.name)
-    expect(names).toContain('HTML5')
-    expect(names).toContain('CSS3')
-    expect(names).toContain('Bootstrap')
-    expect(names).toContain('SASS')
-    expect(names).toContain('Tailwind CSS')
-    expect(names).toContain('JavaScript')
-    expect(names).toContain('jQuery')
-    expect(names).toContain('Git')
-    expect(names).toContain('Gulp')
-    expect(names).toContain('Vue.js')
-    expect(names).toContain('Vitest')
-    expect(names).toContain('PostMan')
-    expect(names).toContain('FireBase')
-    expect(names).toContain('Netlify')
-    expect(names).toContain('PhotoShop')
-  })
+  it("includes key technologies", () => {
+    const { techStack } = usePortfolioData();
+    const names = techStack.value.map((t) => t.name);
+    expect(names).toContain("HTML5");
+    expect(names).toContain("CSS3");
+    expect(names).toContain("Bootstrap");
+    expect(names).toContain("SASS");
+    expect(names).toContain("Tailwind CSS");
+    expect(names).toContain("JavaScript");
+    expect(names).toContain("jQuery");
+    expect(names).toContain("Git");
+    expect(names).toContain("Gulp");
+    expect(names).toContain("Vue.js");
+    expect(names).toContain("Vitest");
+    expect(names).toContain("PostMan");
+    expect(names).toContain("FireBase");
+    expect(names).toContain("Netlify");
+    expect(names).toContain("PhotoShop");
+  });
 
-  it('returns 8 projects', () => {
-    const { projects } = usePortfolioData()
-    expect(projects.value).toHaveLength(8)
-  })
+  it("returns 8 projects", () => {
+    const { projects } = usePortfolioData();
+    expect(projects.value).toHaveLength(8);
+  });
 
-  it('second project has correct title and tech stack', () => {
-    const { projects } = usePortfolioData()
-    const second = projects.value[1]
+  it("second project has correct title and tech stack", () => {
+    const { projects } = usePortfolioData();
+    const second = projects.value[1];
 
-    expect(second?.title).toBe('Node.js REST API')
-    expect(second?.description).toBe('Simple Shop RESTful API')
+    expect(second?.title).toBe("Node.js REST API");
+    expect(second?.description).toBe("Simple Shop RESTful API");
 
-    const techNames = (second?.techStack as { name: string }[]).map(t => t.name)
+    const techNames = (second?.techStack as { name: string }[]).map(
+      (t) => t.name,
+    );
     expect(techNames).toEqual([
-      'Node.js',
-      'Express.js',
-      'MongoDB',
-      'Mongoose',
-      'Nodemon',
-      'PostMan',
-    ])
-  })
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "Nodemon",
+      "PostMan",
+    ]);
+  });
 
-  it('Monster Slayer Game has correct live links', () => {
-    const { projects } = usePortfolioData()
-    const monster = projects.value.find(p => p.title === 'Monster Slayer Game')!
+  it("Monster Slayer Game has correct live links", () => {
+    const { projects } = usePortfolioData();
+    const monster = projects.value.find(
+      (p) => p.title === "Monster Slayer Game",
+    )!;
 
-    const urls = (monster.links as { url: string }[]).map(l => l.url)
+    const urls = (monster.links as { url: string }[]).map((l) => l.url);
     expect(urls).toEqual([
-      'https://github.com/ralitsavoronevska/monster-slayer-game/',
-      'https://codepen.io/ralitsavoronevska/pen/gbPyXbV/',
-      'https://ralitsavoronevska.github.io/monster-slayer-game/',
-    ])
-  })
+      "https://github.com/ralitsavoronevska/monster-slayer-game/",
+      "https://codepen.io/ralitsavoronevska/pen/gbPyXbV/",
+      "https://ralitsavoronevska.github.io/monster-slayer-game/",
+    ]);
+  });
 
-  it('allows future projects to have empty URLs', () => {
-    const { projects } = usePortfolioData()
+  it("allows future projects to have empty URLs", () => {
+    const { projects } = usePortfolioData();
 
-    const hasEmptyUrl = projects.value.some(p =>
-      (p.links as { url: string }[]).some(link => link.url === '')
-    )
+    const hasEmptyUrl = projects.value.some((p) =>
+      (p.links as { url: string }[]).some((link) => link.url === ""),
+    );
 
-    expect(hasEmptyUrl).toBe(true)
-  })
-})
+    expect(hasEmptyUrl).toBe(true);
+  });
+});

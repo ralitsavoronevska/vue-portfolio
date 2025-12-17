@@ -5,38 +5,43 @@
     @click="scrollToTop"
     v-if="visible"
   >
-    <img src="/assets/icons/home-btn.svg" class="w-8 h-8" alt="Scroll to Top" loading="lazy" />
+    <img
+      src="/assets/icons/home-btn.svg"
+      class="w-8 h-8"
+      alt="Scroll to Top"
+      loading="lazy"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from "vue";
 
-const visible = ref(false)
-let ticking = false
+const visible = ref(false);
+let ticking = false;
 
 const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
-}
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 const update = () => {
-  visible.value = window.scrollY > 500
-  ticking = false
-}
+  visible.value = window.scrollY > 500;
+  ticking = false;
+};
 
-let onScroll: () => void
+let onScroll: () => void;
 
 onMounted(() => {
   onScroll = () => {
     if (!ticking) {
-      window.requestAnimationFrame(update)
-      ticking = true
+      window.requestAnimationFrame(update);
+      ticking = true;
     }
-  }
-  window.addEventListener('scroll', onScroll)
-})
+  };
+  window.addEventListener("scroll", onScroll);
+});
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', onScroll)
-})
+  window.removeEventListener("scroll", onScroll);
+});
 </script>

@@ -1,8 +1,8 @@
 <template>
   <footer>
     <p class="gradient-text">
-      <a 
-      href="https://ralitsavoronevska.github.io/modern-portfolio/"
+      <a
+        href="https://ralitsavoronevska.github.io/modern-portfolio/"
         target="_blank"
         rel="noopener"
         class="gradient-text"
@@ -15,5 +15,6 @@
 </template>
 
 <script setup lang="ts">
-const year = new Date().getFullYear()
+defineOptions({ name: "AppFooter" });
+const year = new Date().getFullYear();
 </script>

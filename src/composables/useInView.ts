@@ -1,32 +1,50 @@
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from "vue";
+import type { Ref } from "vue";
+
+// minimal local shapes for IntersectionObserver-like behavior (avoid lib.dom dependency)
+type IOEntry = { isIntersecting?: boolean; target?: unknown };
+type IntersectionObserverLike = {
+  observe: (target: unknown) => void;
+  unobserve?: (target: unknown) => void;
+  disconnect?: () => void;
+};
 
 export function useInView(threshold = 0.1) {
-  const sectionRef = ref<HTMLElement | null>(null)
-  const isVisible = ref(false)
+  const sectionRef: Ref<unknown | null> = ref(null);
+  const isVisible = ref(false);
 
-  let observer: IntersectionObserver | null = null
+  let observer: IntersectionObserverLike | null = null;
 
   onMounted(() => {
-    if (!sectionRef.value) return
+    if (!sectionRef.value) return;
 
-    observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          isVisible.value = true
-          observer?.unobserve(entry.target)
-        }
-      },
-      { threshold }
-    )
+    const IO = (
+      globalThis as unknown as {
+        IntersectionObserver?: new (
+          cb: (entries: IOEntry[]) => void,
+          opts?: { threshold?: number },
+        ) => IntersectionObserverLike;
+      }
+    ).IntersectionObserver;
+    if (IO) {
+      observer = new IO(
+        (entries: IOEntry[]) => {
+          const entry = entries[0];
+          if (entry?.isIntersecting) {
+            isVisible.value = true;
+            observer?.unobserve?.(entry.target);
+          }
+        },
+        { threshold },
+      );
 
-    observer.observe(sectionRef.value)
-  })
+      observer?.observe(sectionRef.value);
+    }
+  });
 
   onUnmounted(() => {
-    if (observer && sectionRef.value) {
-      observer.unobserve(sectionRef.value)
-    }
-  })
+    observer?.disconnect?.();
+  });
 
-  return { sectionRef, isVisible }
+  return { sectionRef, isVisible };
 }

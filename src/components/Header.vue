@@ -1,7 +1,6 @@
 <template>
   <!-- start of Header -->
   <header>
-
     <!-- start of Logo -->
     <a class="logo-link" href="#" aria-label="Home page">
       <div class="logo"></div>
@@ -12,25 +11,22 @@
     <nav>
       <ul>
         <li v-for="item in navItems" :key="item.href">
-          <a
-            :href="item.href"
-            class=""
-          >
+          <a :href="item.href" class="">
             {{ item.label }}
           </a>
         </li>
       </ul>
     </nav>
     <!-- end of Navigation -->
-
   </header>
   <!-- end of Header -->
 </template>
 
 <script setup lang="ts">
+defineOptions({ name: "AppHeader" });
 const navItems = [
-  { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
-]
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
 </script>

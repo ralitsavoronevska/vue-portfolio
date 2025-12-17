@@ -32,9 +32,11 @@
   /* Header */
   header {
     @apply fixed inset-x-0 top-0 flex justify-between items-center h-21 z-20 shadow-3xl backdrop-blur-2xl;
-    .logo-link:focus-visible, .logo-link:-webkit-any-link:focus-visible,
-    .logo:focus-visible, .logo:-webkit-any-link:focus-visible {
-       @apply outline-none ring-0;
+    .logo-link:focus-visible,
+    .logo-link:-webkit-any-link:focus-visible,
+    .logo:focus-visible,
+    .logo:-webkit-any-link:focus-visible {
+      @apply outline-none ring-0;
     }
     .logo {
       @apply w-20 h-21 bg-[url('/assets/logo.png')] bg-cover bg-center flex items-center justify-center bg-no-repeat
@@ -175,21 +177,24 @@
   }
 
   /* Common Section Styles */
-  .about-me, .contact-me, .projects {
+  .about-me,
+  .contact-me,
+  .projects {
     h2 {
       @apply text-4xl md:text-5xl mb-4;
     }
   }
 
-  .about-me, .projects {
+  .about-me,
+  .projects {
     h3 {
       @apply text-2xl md:text-3xl lg:text-4xl mt-4 mb-6;
     }
   }
 
-  /* Footer */  
+  /* Footer */
   footer {
-    @apply h-15 py-3 flex justify-center items-center shadow-3xl backdrop-blur-2xl; 
+    @apply h-15 py-3 flex justify-center items-center shadow-3xl backdrop-blur-2xl;
     p {
       @apply m-0 text-lg lg:text-2xl font-bold text-center;
       a {

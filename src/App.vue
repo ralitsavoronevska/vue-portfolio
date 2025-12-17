@@ -1,12 +1,10 @@
 <template>
   <main>
-
     <!-- Fixed background and overlay -->
     <div class="bg-container"></div>
     <div class="overlay"></div>
 
     <div class="content-wrapper">
-
       <!-- ScrollToTop Button -->
       <ScrollToTop />
 
@@ -27,17 +25,16 @@
 
       <!-- Footer -->
       <Footer />
-    </div>  
-
+    </div>
   </main>
 </template>
 
 <script setup lang="ts">
-import ScrollToTop from './components/ScrollToTop.vue'
-import Header from './components/Header.vue'
-import Hero from './components/Hero.vue'
-import AboutMe from './components/AboutMe.vue'
-import ProjectsList from './components/ProjectsList.vue'
-import ContactMe from './components/ContactMe.vue'
-import Footer from './components/Footer.vue'
+import ScrollToTop from "./components/ScrollToTop.vue";
+import Header from "./components/Header.vue";
+import Hero from "./components/Hero.vue";
+import AboutMe from "./components/AboutMe.vue";
+import ProjectsList from "./components/ProjectsList.vue";
+import ContactMe from "./components/ContactMe.vue";
+import Footer from "./components/Footer.vue";
 </script>
