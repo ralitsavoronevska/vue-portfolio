@@ -240,6 +240,7 @@ export const PROJECTS: Project[] = [
     techStack: [
       { name: "Vue.js", file_name: "vue-js" },
       { name: "Vite.js", file_name: "vite-js" },
+      { name: "Vitest", file_name: "vitest" },
       { name: "TypeScript", file_name: "typescript" },
       { name: "Tailwind CSS", file_name: "tailwind-css" },
     ],
