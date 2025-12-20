@@ -30,7 +30,7 @@
 
         <!-- start of glow-icons -->
         <div ref="sectionRef" class="glow-icons">
-          <GlowIcon
+          <GlowIcons
             v-for="(tech, i) in techStack"
             :key="tech.name"
             :tech="tech"
@@ -86,7 +86,7 @@
 
 <script setup lang="ts">
 import HeroImage from "./HeroImage.vue";
-import GlowIcon from "./GlowIcon.vue";
+import GlowIcons from "./GlowIcons.vue";
 import { usePortfolioData } from "@/composables/usePortfolioData";
 const { techStack } = usePortfolioData();
 import { useInView } from "@/composables/useInView";

@@ -35,15 +35,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-// Pre-load all icons at build time
-const icons = import.meta.glob('@/assets/icons/*.svg', { eager: true, as: 'url' })
-
-// Compute src
-const iconSrc = computed(() => {
-  const path = `/src/assets/icons/${tech.file_name}.svg`
-  return icons[path] 
-})
-
 const { tech, index, boxSizes, iconSizes, imgSizes, isVisible } = defineProps<{
   tech: { name: string; file_name: string };
   index: number;
@@ -52,4 +43,13 @@ const { tech, index, boxSizes, iconSizes, imgSizes, isVisible } = defineProps<{
   imgSizes: string;
   isVisible: boolean;
 }>();
+
+// Pre-load all icons at build time, typed as a mapping to string URLs
+const icons = import.meta.glob('@/assets/icons/*.svg', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
+
+// Compute src (ensure the computed returns a string)
+const iconSrc = computed<string>(() => {
+  const path = `/src/assets/icons/${tech.file_name}.svg`
+  return icons[path] ?? ''
+})
 </script>

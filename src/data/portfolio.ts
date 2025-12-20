@@ -1,3 +1,9 @@
+import monsterSlayerImage from "@/assets/projects/monster-slayer-game.webp";
+import maptyAppImage from "@/assets/projects/mapty-app.webp";
+import pigGameImage from "@/assets/projects/pig-game.webp";
+import restApiImage from "@/assets/projects/rest-api-with-nodejs.webp";
+import vuePortfolioImage from "@/assets/projects/vue-portfolio.webp";
+
 export interface SocialIcon {
   name: string;
   url: string;
@@ -73,7 +79,7 @@ export const TECH_STACK: Tech[] = [
 
 export const PROJECTS: Project[] = [
   {
-    image: "src/assets/projects/vue-portfolio.webp",
+    image: vuePortfolioImage,
     title: "Vue.js Portfolio",
     description: "My Modern Vue.js Portfolio",
     techStack: [
@@ -102,7 +108,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    image: "src/assets/projects/rest-api-with-nodejs.webp",
+    image: restApiImage,
     title: "Node.js REST API",
     description: "Simple Shop RESTful API",
     techStack: [
@@ -179,7 +185,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    image: "src/assets/projects/mapty-app.webp",
+    image: maptyAppImage,
     title: "Mapty App",
     description: "Map your Workout Activities",
     techStack: [
@@ -204,7 +210,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    image: "src/assets/projects/monster-slayer-game.webp",
+    image: monsterSlayerImage,
     title: "Monster Slayer Game",
     description: "Give the Monster A Lesson",
     techStack: [
@@ -234,7 +240,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    image: "src/assets/projects/pig-game.webp",
+    image: pigGameImage,
     title: "Pig Game",
     description: "A Single Dice Game for two players",
     techStack: [

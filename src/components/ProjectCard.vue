@@ -32,7 +32,7 @@
           :class="techStack.length > 5 ? 'gap-2' : 'gap-3'"
         >
           <!-- Glow Icons -->
-          <GlowIcon
+          <GlowIcons
             v-for="(tech, i) in techStack"
             :key="tech.name"
             :tech="tech"
@@ -57,7 +57,7 @@
 
 <script setup lang="ts">
 import SocialIcons from "./SocialIcons.vue";
-import GlowIcon from "./GlowIcon.vue";
+import GlowIcons from "./GlowIcons.vue";
 import { useInView } from "@/composables/useInView";
 
 const props = defineProps<{

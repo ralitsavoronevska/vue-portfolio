@@ -1,8 +1,8 @@
 import { describe, it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
-import GlowIcon from "@/components/GlowIcon.vue";
+import GlowIcons from "@/components/GlowIcons.vue";
 
-describe("GlowIcon", () => {
+describe("GlowIcons", () => {
   const defaultProps = {
     tech: { name: "Vue.js", file_name: "vuejs" },
     index: 0,
@@ -13,14 +13,14 @@ describe("GlowIcon", () => {
   } as const;
 
   it("applies correct visibility when isVisible is true", () => {
-    const wrapper = mount(GlowIcon, { props: defaultProps });
+    const wrapper = mount(GlowIcons, { props: defaultProps });
     const glowBox = wrapper.find(".glow-box");
     expect(glowBox.attributes("class")).toContain("opacity-100");
     expect(glowBox.attributes("class")).toContain("translate-y-0");
   });
 
   it("hides the icon when isVisible is false", () => {
-    const wrapper = mount(GlowIcon, {
+    const wrapper = mount(GlowIcons, {
       props: { ...defaultProps, isVisible: false },
     });
     const glowBox = wrapper.find(".glow-box");
@@ -29,12 +29,12 @@ describe("GlowIcon", () => {
   });
 
   it("renders the tech name in the tooltip", () => {
-    const wrapper = mount(GlowIcon, { props: defaultProps });
+    const wrapper = mount(GlowIcons, { props: defaultProps });
     expect(wrapper.find(".tooltip").text()).toBe("Vue.js");
   });
 
   it("shows tooltip on hover (adds group-hover/tech classes)", async () => {
-    const wrapper = mount(GlowIcon, { props: defaultProps });
+    const wrapper = mount(GlowIcons, { props: defaultProps });
     const glowBox = wrapper.find(".glow-box");
     const tooltip = wrapper.find(".tooltip");
 
@@ -55,7 +55,7 @@ describe("GlowIcon", () => {
   });
 
   it("matches snapshot", () => {
-    const wrapper = mount(GlowIcon, { props: defaultProps });
+    const wrapper = mount(GlowIcons, { props: defaultProps });
     expect(wrapper.html()).toMatchSnapshot();
   });
 });
