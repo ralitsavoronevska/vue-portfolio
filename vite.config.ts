@@ -9,9 +9,12 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 export default defineConfig({
   plugins: [vue(), vueDevTools(), tailwindcss(),
   ViteImageOptimizer({
+    test: /\.(jpe?g|pngwebp|svg)$/i,  // Match your image types
+    include: 'src',  // Use string path to src folder (or use an array of strings)
     png: { quality: 80 },
     webp: { lossless: true },  
-    svg: { multipass: true },           
+    svg: { multipass: true },         
+    includePublic: true  
   })],
   resolve: {
     alias: {
