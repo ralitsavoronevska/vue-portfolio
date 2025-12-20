@@ -56,6 +56,7 @@
 </template>
 
 <script setup lang="ts">
+import commingSoonImg from "@/assets/projects/coming-soon.webp";
 import SocialIcons from "./SocialIcons.vue";
 import GlowIcons from "./GlowIcons.vue";
 import { useInView } from "@/composables/useInView";
@@ -80,5 +81,5 @@ const title = props.title ?? "";
 const description = props.description ?? "";
 
 const projectImage = (image: string) =>
-  image ? image : "src/assets/projects/coming-soon.webp";
+  image ? image : commingSoonImg;
 </script>

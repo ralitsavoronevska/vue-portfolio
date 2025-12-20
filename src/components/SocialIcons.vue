@@ -46,7 +46,7 @@ const getAriaLabel = (icon: { name: string; file_name: string }) => {
 };
 
 // Pre-load all icons at build time, typed as a mapping to string URLs
-const socialIcons = import.meta.glob('@/assets/icons/social/*.svg', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
+const socialIcons = import.meta.glob('@/assets/icons/social-icons/*.svg', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
 
 const getSrc = (icon: { file_name: string }) => {
   const path = `/src/assets/icons/social-icons/${icon.file_name}.svg`;
