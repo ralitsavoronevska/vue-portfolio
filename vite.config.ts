@@ -10,7 +10,7 @@ export default defineConfig({
   plugins: [vue(), vueDevTools(), tailwindcss(),
   ViteImageOptimizer({
     test: /\.(jpe?g|pngwebp|svg)$/i,  // Match your image types
-    include: 'src',  // Use string path to src folder (or use an array of strings)
+    include: ['src/assets', 'src/assets/images', 'src/assets/projects', 'src/assets/icons'],  // Use string path to src folder (or use an array of strings)
     png: { quality: 80 },
     webp: { lossless: true },  
     svg: { multipass: true },         
