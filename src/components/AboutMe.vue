@@ -11,6 +11,8 @@
       </a>
       <a
         href="https://ralitsavoronevska.com/assets/Ralitsa-Voronevska-CV.pdf"
+        target="_blank" 
+        rel="noopener"
         download="Ralitsa-Voronevska-CV.pdf"
         role="button"
         aria-label="Download my Resume"

@@ -46,7 +46,7 @@ const getAriaLabel = (icon: { name: string; file_name: string }) => {
 };
 
 const getSrc = (icon: { file_name: string }) => {
-  return `/assets/icons/social-icons/${icon.file_name}.svg`;
+  return `src/assets/icons/social-icons/${icon.file_name}.svg`;
 };
 </script>
 

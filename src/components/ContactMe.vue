@@ -13,7 +13,7 @@
 
     <p class="location">
       <img
-        :src="`assets/icons/map-marker.svg`"
+        :src="mapMarker"
         class="w-8 h-8"
         alt="Map Marker icon"
         loading="lazy"
@@ -35,4 +35,5 @@
 import SocialIcons from "./SocialIcons.vue";
 import { usePortfolioData } from "@/composables/usePortfolioData";
 const { contactSocialIcons } = usePortfolioData();
+import mapMarker from "@/assets/icons/map-marker.svg";
 </script>

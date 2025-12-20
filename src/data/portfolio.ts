@@ -73,7 +73,7 @@ export const TECH_STACK: Tech[] = [
 
 export const PROJECTS: Project[] = [
   {
-    image: "/assets/projects/vue-portfolio.webp",
+    image: "src/assets/projects/vue-portfolio.webp",
     title: "Vue.js Portfolio",
     description: "My Modern Vue.js Portfolio",
     techStack: [
@@ -102,7 +102,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    image: "/assets/projects/rest-api-with-nodejs.webp",
+    image: "src/assets/projects/rest-api-with-nodejs.webp",
     title: "Node.js REST API",
     description: "Simple Shop RESTful API",
     techStack: [
@@ -179,7 +179,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    image: "/assets/projects/mapty-app.webp",
+    image: "src/assets/projects/mapty-app.webp",
     title: "Mapty App",
     description: "Map your Workout Activities",
     techStack: [
@@ -204,7 +204,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    image: "/assets/projects/monster-slayer-game.webp",
+    image: "src/assets/projects/monster-slayer-game.webp",
     title: "Monster Slayer Game",
     description: "Give the Monster A Lesson",
     techStack: [
@@ -234,7 +234,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    image: "/assets/projects/pig-game.webp",
+    image: "src/assets/projects/pig-game.webp",
     title: "Pig Game",
     description: "A Single Dice Game for two players",
     techStack: [

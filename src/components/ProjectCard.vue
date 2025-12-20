@@ -80,5 +80,5 @@ const title = props.title ?? "";
 const description = props.description ?? "";
 
 const projectImage = (image: string) =>
-  image ? image : "/assets/projects/coming-soon.webp";
+  image ? image : "src/assets/projects/coming-soon.webp";
 </script>

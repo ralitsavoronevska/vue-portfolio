@@ -14,7 +14,7 @@
   >
     <div class="glow-icon" :class="`${iconSizes}`">
       <img
-        :src="`/assets/icons/${tech.file_name}.svg`"
+        :src="`src/assets/icons/${tech.file_name}.svg`"
         :alt="`${tech.name} Logo`"
         class="glow-img text-3xl p-2"
         :class="`${imgSizes}`"

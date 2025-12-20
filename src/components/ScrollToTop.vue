@@ -6,7 +6,7 @@
     v-if="visible"
   >
     <img
-      src="/assets/icons/home-btn.svg"
+      :src="homeBtn"
       class="w-8 h-8"
       alt="Scroll to Top"
       loading="lazy"
@@ -16,6 +16,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
+import homeBtn from "@/assets/icons/home-btn.svg";
 
 const visible = ref(false);
 let ticking = false;
