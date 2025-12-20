@@ -9,6 +9,7 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 export default defineConfig({
   plugins: [vue(), vueDevTools(), tailwindcss(),
   ViteImageOptimizer({
+    png: { quality: 80 },
     webp: { lossless: true },  
     svg: { multipass: true },           
   })],
