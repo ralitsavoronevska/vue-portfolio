@@ -14,7 +14,7 @@
   >
     <div class="glow-icon" :class="`${iconSizes}`">
       <img
-        :src="`src/assets/icons/${tech.file_name}.svg`"
+        :src="iconSrc"
         :alt="`${tech.name} Logo`"
         class="glow-img text-3xl p-2"
         :class="`${imgSizes}`"
@@ -33,6 +33,17 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue";
+
+// Pre-load all icons at build time
+const icons = import.meta.glob('@/assets/icons/*.svg', { eager: true, as: 'url' })
+
+// Compute src
+const iconSrc = computed(() => {
+  const path = `@/assets/icons/${tech.file_name}.svg`
+  return icons[path] 
+})
+
 const { tech, index, boxSizes, iconSizes, imgSizes, isVisible } = defineProps<{
   tech: { name: string; file_name: string };
   index: number;
