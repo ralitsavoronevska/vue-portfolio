@@ -8,7 +8,7 @@
 /* === Base Styles === */
 @layer base {
   .bg-container {
-    @apply bg-scroll md:bg-fixed fixed top-0 left-0 w-full h-screen -z-2 will-change-transform bg-cover bg-center flex items-center justify-center bg-no-repeat bg-[url('src/assets/images/full-bg.webp')];
+    @apply bg-scroll md:bg-fixed fixed top-0 left-0 w-full h-screen -z-2 will-change-transform bg-cover bg-center flex items-center justify-center bg-no-repeat;
   }
 
   .overlay {
@@ -39,7 +39,7 @@
       @apply outline-none ring-0;
     }
     .logo {
-      @apply w-20 h-21 bg-[url('src/assets/logo.png')] bg-cover bg-center flex items-center justify-center bg-no-repeat
+      @apply w-20 h-21 bg-cover bg-center flex items-center justify-center bg-no-repeat
       scale-[0.7059] transition-transform duration-300 ease-in-out hover:scale-75;
     }
     nav {

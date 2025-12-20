@@ -3,7 +3,7 @@
   <header>
     <!-- start of Logo -->
     <a class="logo-link" href="#" aria-label="Home page">
-      <div class="logo"></div>
+      <div class="logo" :style="{ backgroundImage: `url(${logo})` }"></div>
     </a>
     <!-- end of Logo -->
 
@@ -23,6 +23,10 @@
 </template>
 
 <script setup lang="ts">
+import logo from "@/assets/logo.png";
+
+const bgStyle = { backgroundImage: `url(${logo})` }
+
 defineOptions({ name: "AppHeader" });
 const navItems = [
   { label: "About", href: "#about" },
