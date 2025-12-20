@@ -90,7 +90,7 @@ describe("ProjectCard", () => {
       props: { ...defaultProps, image: undefined },
     });
     expect(wrapper.find("img").attributes("src")).toBe(
-      "src/assets/projects/coming-soon.webp",
+      "/src/assets/projects/coming-soon.webp",
     );
   });
 
