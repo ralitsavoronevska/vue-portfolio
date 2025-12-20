@@ -40,7 +40,7 @@ const icons = import.meta.glob('@/assets/icons/*.svg', { eager: true, as: 'url' 
 
 // Compute src
 const iconSrc = computed(() => {
-  const path = `@/assets/icons/${tech.file_name}.svg`
+  const path = `/src/assets/icons/${tech.file_name}.svg`
   return icons[path] 
 })
 
