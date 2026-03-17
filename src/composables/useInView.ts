@@ -1,5 +1,4 @@
-import { ref, onMounted, onUnmounted } from "vue";
-import type { Ref } from "vue";
+import { ref, onMounted, onUnmounted, type Ref } from "vue";
 
 // minimal local shapes for IntersectionObserver-like behavior (avoid lib.dom dependency)
 type IOEntry = { isIntersecting?: boolean; target?: unknown };
@@ -9,8 +8,11 @@ type IntersectionObserverLike = {
   disconnect?: () => void;
 };
 
-export function useInView(threshold = 0.1) {
-  const sectionRef: Ref<unknown | null> = ref(null);
+export function useInView<T extends Element = Element>(
+  targetRef?: Ref<T | null>,
+  threshold = 0.1,
+) {
+  const sectionRef = targetRef ?? ref<T | null>(null);
   const isVisible = ref(false);
 
   let observer: IntersectionObserverLike | null = null;

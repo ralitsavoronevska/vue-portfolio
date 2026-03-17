@@ -60,6 +60,7 @@ import commingSoonImg from "@/assets/projects/coming-soon.webp";
 import SocialIcons from "./SocialIcons.vue";
 import GlowIcons from "./GlowIcons.vue";
 import { useInView } from "@/composables/useInView";
+import { useTemplateRef } from "vue";
 
 const props = defineProps<{
   image?: string;
@@ -70,7 +71,8 @@ const props = defineProps<{
   index?: number;
 }>();
 
-const { sectionRef, isVisible } = useInView();
+const sectionRef = useTemplateRef<HTMLDivElement>("sectionRef");
+const { isVisible } = useInView(sectionRef);
 
 // safe locals for template usage
 const index = props.index ?? 0;

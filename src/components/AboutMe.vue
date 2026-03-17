@@ -88,8 +88,10 @@
 import HeroImage from "./HeroImage.vue";
 import GlowIcons from "./GlowIcons.vue";
 import { usePortfolioData } from "@/composables/usePortfolioData";
-const { techStack } = usePortfolioData();
 import { useInView } from "@/composables/useInView";
+import { useTemplateRef } from "vue";
 
-const { sectionRef, isVisible } = useInView();
+const { techStack } = usePortfolioData();
+const sectionRef = useTemplateRef<HTMLDivElement>("sectionRef");
+const { isVisible } = useInView(sectionRef);
 </script>

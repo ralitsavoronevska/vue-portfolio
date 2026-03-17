@@ -29,11 +29,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, useTemplateRef } from "vue";
 import ProjectCard from "./ProjectCard.vue";
 import { usePortfolioData } from "@/composables/usePortfolioData";
 import { useInView } from "@/composables/useInView";
-const { sectionRef, isVisible } = useInView();
+
+const sectionRef = useTemplateRef<HTMLDivElement>("sectionRef");
+const { isVisible } = useInView(sectionRef);
 
 type Tech = { name: string; file_name: string };
 type ProjectLink = {
