@@ -16,9 +16,9 @@ describe("Footer", () => {
   it("contactSocialIcons has exactly 6 items with correct names and URLs", () => {
     const { contactSocialIcons } = usePortfolioData();
 
-    expect(contactSocialIcons.value).toHaveLength(6);
+    expect(contactSocialIcons).toHaveLength(6);
 
-    const icons = contactSocialIcons.value;
+    const icons = contactSocialIcons;
 
     expect(icons[0]?.name).toBe("LinkedIn");
     expect(icons[0]?.url).toBe("https://linkedin.com/in/ralitsavoronevska");
@@ -43,7 +43,7 @@ describe("Footer", () => {
 
   it("all social links have valid URLs", () => {
     const { contactSocialIcons } = usePortfolioData();
-    const allUrls = [...contactSocialIcons.value].map((icon) => icon.url);
+    const allUrls = [...contactSocialIcons].map((icon) => icon.url);
 
     allUrls.forEach((url) => {
       expect(url).toMatch(/^https?:\/\/|^mailto:/);

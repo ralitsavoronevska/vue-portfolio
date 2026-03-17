@@ -5,12 +5,7 @@
     @click="scrollToTop"
     v-if="visible"
   >
-    <img
-      :src="homeBtn"
-      class="w-8 h-8"
-      alt="Scroll to Top"
-      loading="lazy"
-    />
+    <img :src="homeBtn" class="w-8 h-8" alt="Scroll to Top" loading="lazy" />
   </div>
 </template>
 

@@ -117,7 +117,7 @@ describe("ProjectCard", () => {
     });
 
     const { projects } = usePortfolioData();
-    const maptyApp = projects.value.find((p) => p.title === "Mapty App")!;
+    const maptyApp = projects.find((p) => p.title === "Mapty App")!;
     const urls = (maptyApp.links as { url: string }[]).map((l) => l.url);
     expect(urls).toEqual([
       "https://github.com/ralitsavoronevska/mapty-app/",
@@ -130,7 +130,7 @@ describe("ProjectCard", () => {
   // → Later we can move them, but they pass now
   it("second project has correct title, description and tech", () => {
     const { projects } = usePortfolioData();
-    const second = projects.value[1];
+    const second = projects[1];
     expect(second?.title).toBe("Node.js REST API");
     expect(second?.description).toBe("Simple Shop RESTful API");
     expect(second?.techStack.map((t: any) => t.name)).toEqual([
@@ -145,9 +145,7 @@ describe("ProjectCard", () => {
 
   it("Monster Slayer Game has correct live links", () => {
     const { projects } = usePortfolioData();
-    const monster = projects.value.find(
-      (p) => p.title === "Monster Slayer Game",
-    )!;
+    const monster = projects.find((p) => p.title === "Monster Slayer Game")!;
     const urls = (monster.links as { url: string }[]).map((l) => l.url);
     expect(urls).toEqual([
       "https://github.com/ralitsavoronevska/monster-slayer-game/",

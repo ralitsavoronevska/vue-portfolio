@@ -19,8 +19,8 @@ export interface Project {
   image: string;
   title: string;
   description: string;
-  techStack: object[];
-  links: object[];
+  techStack: Tech[];
+  links: SocialIcon[];
 }
 
 export const HERO_SOCIAL_LINKS: SocialIcon[] = [

@@ -1,5 +1,4 @@
 // src/composables/usePortfolioData.ts
-import { ref } from "vue";
 import {
   HERO_SOCIAL_LINKS,
   CONTACT_SOCIAL_LINKS,
@@ -11,15 +10,10 @@ import {
 } from "@/data/portfolio";
 
 export function usePortfolioData() {
-  const heroSocialIcons = ref<SocialIcon[]>(HERO_SOCIAL_LINKS);
-  const contactSocialIcons = ref<SocialIcon[]>(CONTACT_SOCIAL_LINKS);
-  const techStack = ref<Tech[]>(TECH_STACK);
-  const projects = ref<Project[]>(PROJECTS);
-
   return {
-    heroSocialIcons: heroSocialIcons,
-    contactSocialIcons: contactSocialIcons,
-    techStack: techStack,
-    projects: projects,
+    heroSocialIcons: HERO_SOCIAL_LINKS as SocialIcon[],
+    contactSocialIcons: CONTACT_SOCIAL_LINKS as SocialIcon[],
+    techStack: TECH_STACK as Tech[],
+    projects: PROJECTS as Project[],
   };
 }

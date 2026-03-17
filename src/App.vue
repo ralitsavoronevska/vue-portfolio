@@ -1,7 +1,10 @@
 <template>
   <main>
     <!-- Fixed background and overlay -->
-    <div class="bg-container" :style="{ backgroundImage: `url(${fullBg})` }"></div>
+    <div
+      class="bg-container"
+      :style="{ backgroundImage: `url(${fullBg})` }"
+    ></div>
     <div class="overlay"></div>
 
     <div class="content-wrapper">
@@ -30,9 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import fullBg from '@/assets/images/full-bg.webp'
-
-const bgStyle = { backgroundImage: `url(${fullBg})` }
+import fullBg from "@/assets/images/full-bg.webp";
 
 import ScrollToTop from "./components/ScrollToTop.vue";
 import Header from "./components/Header.vue";

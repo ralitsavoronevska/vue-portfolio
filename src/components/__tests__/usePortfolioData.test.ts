@@ -5,9 +5,9 @@ describe("usePortfolioData", () => {
   it("heroSocialIcons has exactly 3 items with correct names and URLs", () => {
     const { heroSocialIcons } = usePortfolioData();
 
-    expect(heroSocialIcons.value).toHaveLength(3);
+    expect(heroSocialIcons).toHaveLength(3);
 
-    expect(heroSocialIcons.value).toEqual([
+    expect(heroSocialIcons).toEqual([
       {
         name: "LinkedIn",
         url: "https://linkedin.com/in/ralitsavoronevska",
@@ -28,7 +28,7 @@ describe("usePortfolioData", () => {
 
   it("all social links have valid URLs", () => {
     const { heroSocialIcons } = usePortfolioData();
-    const allUrls = [...heroSocialIcons.value].map((icon) => icon.url);
+    const allUrls = [...heroSocialIcons].map((icon) => icon.url);
 
     allUrls.forEach((url) => {
       expect(url).toMatch(/^https?:\/\/|^mailto:/);
@@ -37,12 +37,12 @@ describe("usePortfolioData", () => {
 
   it("returns exactly 18 tech items", () => {
     const { techStack } = usePortfolioData();
-    expect(techStack.value).toHaveLength(18);
+    expect(techStack).toHaveLength(18);
   });
 
   it("includes key technologies", () => {
     const { techStack } = usePortfolioData();
-    const names = techStack.value.map((t) => t.name);
+    const names = techStack.map((t) => t.name);
     expect(names).toContain("HTML5");
     expect(names).toContain("CSS3");
     expect(names).toContain("Bootstrap");
@@ -62,12 +62,12 @@ describe("usePortfolioData", () => {
 
   it("returns 8 projects", () => {
     const { projects } = usePortfolioData();
-    expect(projects.value).toHaveLength(8);
+    expect(projects).toHaveLength(8);
   });
 
   it("second project has correct title and tech stack", () => {
     const { projects } = usePortfolioData();
-    const second = projects.value[1];
+    const second = projects[1];
 
     expect(second?.title).toBe("Node.js REST API");
     expect(second?.description).toBe("Simple Shop RESTful API");
@@ -87,9 +87,7 @@ describe("usePortfolioData", () => {
 
   it("Monster Slayer Game has correct live links", () => {
     const { projects } = usePortfolioData();
-    const monster = projects.value.find(
-      (p) => p.title === "Monster Slayer Game",
-    )!;
+    const monster = projects.find((p) => p.title === "Monster Slayer Game")!;
 
     const urls = (monster.links as { url: string }[]).map((l) => l.url);
     expect(urls).toEqual([
@@ -102,7 +100,7 @@ describe("usePortfolioData", () => {
   it("allows future projects to have empty URLs", () => {
     const { projects } = usePortfolioData();
 
-    const hasEmptyUrl = projects.value.some((p) =>
+    const hasEmptyUrl = projects.some((p) =>
       (p.links as { url: string }[]).some((link) => link.url === ""),
     );
 

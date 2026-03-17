@@ -25,8 +25,6 @@
 <script setup lang="ts">
 import logo from "@/assets/logo.png";
 
-const bgStyle = { backgroundImage: `url(${logo})` }
-
 defineOptions({ name: "AppHeader" });
 const navItems = [
   { label: "About", href: "#about" },

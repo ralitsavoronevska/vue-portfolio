@@ -82,6 +82,5 @@ const icons = props.icons ?? [];
 const title = props.title ?? "";
 const description = props.description ?? "";
 
-const projectImage = (image: string) =>
-  image ? image : commingSoonImg;
+const projectImage = (image: string) => (image ? image : commingSoonImg);
 </script>
