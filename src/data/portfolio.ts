@@ -44,11 +44,6 @@ export const HERO_SOCIAL_LINKS: SocialIcon[] = [
 export const CONTACT_SOCIAL_LINKS: SocialIcon[] = [
   ...HERO_SOCIAL_LINKS,
   {
-    name: "Discord",
-    url: "https://discordapp.com/users/1425751105060732959",
-    file_name: "discord",
-  },
-  {
     name: "Telegram",
     url: "https://t.me/ralitsavoronevska",
     file_name: "telegram",
