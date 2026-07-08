@@ -82,7 +82,7 @@
   .hero-img-container {
     @apply flex items-center justify-center mx-auto rounded-full;
     .hero-img {
-      @apply bg-linear-to-r from-pink-500 to-indigo-500 border-transparent rounded-full object-cover w-50 h-50 p-1;
+      @apply bg-slate-950/75 shadow-3xl border-transparent rounded-full object-cover w-50 h-50;
     }
   }
 
