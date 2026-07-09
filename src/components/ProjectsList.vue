@@ -1,10 +1,7 @@
 <template>
   <section id="projects" class="projects">
     <h2>My <span class="gradient-text">Projects</span></h2>
-    <h3>
-      My <span class="gradient-text">latest</span> projects built with
-      <span class="gradient-text">cutting-edge technologies!</span>
-    </h3>
+    <h3>My latest projects built with cutting-edge technologies!</h3>
     <div ref="sectionRef" class="cards-grid">
       <ProjectCard
         v-for="(project, index) in projects"

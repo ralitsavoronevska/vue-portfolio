@@ -1,11 +1,10 @@
 <template>
   <footer>
-    <p class="gradient-text">
+    <p>
       <a
         href="https://ralitsavoronevska.github.io/modern-portfolio/"
         target="_blank"
         rel="noopener"
-        class="gradient-text"
       >
         &lt;Ralitsa Voronevska/&gt;
       </a>

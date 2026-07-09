@@ -3,7 +3,7 @@
   <section id="about" class="about-me">
     <!-- headings -->
     <h2>About <span class="gradient-text">Me</span></h2>
-    <h3>Hi, I'm <span class="gradient-text">Ralitsa Voronevska</span>!</h3>
+    <h3>Hi, I'm Ralitsa Voronevska!</h3>
 
     <div class="btns-container">
       <a href="#projects" role="button" aria-label="View my Projects">
@@ -48,33 +48,16 @@
       <!-- start of bio -->
       <div class="bio">
         <p class="bio-text">
-          A
-          <span class="gradient-text"
-            >creative, passionate and proactive "can-do"</span
-          >
-          Front-end Developer with
-          <span class="gradient-text">5 ½ years</span> of experience in building
-          <span class="gradient-text"
-            >high-performance, scalable and responsive web solutions</span
-          >, following all the best practices in terms of
-          <span class="gradient-text">UI/UX</span>,
-          <span class="gradient-text">accessibility</span>,
-          <span class="gradient-text">SEO</span> and
-          <span class="gradient-text">SOLID principles</span>. I am focused on
-          crafting solutions tailored to both
-          <span class="gradient-text">user needs and business objectives</span>.
-          I stand out with
-          <span class="gradient-text">strong attention to detail</span>,
-          <span class="gradient-text">excellent communication</span> and
-          <span class="gradient-text">negotiation skills</span>, as well as my
-          <span class="gradient-text"
-            >ability to work well individually and/or as a part of a team</span
-          >. I have experience in
-          <span class="gradient-text">dynamic environments</span> and I am
-          <span class="gradient-text"
-            >enthusiastic regarding overcoming challenges and reaching
-            targets</span
-          >.
+          A creative, passionate and proactive "can-do" Front-end Developer with
+          6 years of experience in building high-performance, scalable and
+          responsive web solutions, following all the best practices in terms of
+          UI/UX, accessibility, SEO and SOLID principles. I am focused on
+          crafting solutions tailored to both user needs and business
+          objectives. I stand out with strong attention to detail, excellent
+          communication and negotiation skills, as well as my ability to work
+          well individually and/or as a part of a team. I have experience in
+          dynamic environments and I am enthusiastic regarding overcoming
+          challenges and reaching targets.
         </p>
       </div>
       <!-- end of bio -->

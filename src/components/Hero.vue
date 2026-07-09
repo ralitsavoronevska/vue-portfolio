@@ -9,12 +9,7 @@
       <!-- start of name-and-info -->
       <div class="name-and-info">
         <h1>Ralitsa <span class="gradient-text">Voronevska</span></h1>
-        <h2>
-          The
-          <span class="gradient-text">
-            {{ displayedText }}
-          </span>
-        </h2>
+        <h2>{{ displayedText }}</h2>
       </div>
       <!-- end of name-and-info -->
     </div>
@@ -37,5 +32,5 @@ import SocialIcons from "./SocialIcons.vue";
 import { usePortfolioData } from "@/composables/usePortfolioData";
 const { heroSocialIcons } = usePortfolioData();
 
-const displayedText = ref("Mid Front-end Developer");
+const displayedText = ref("The Mid Front-end Developer");
 </script>

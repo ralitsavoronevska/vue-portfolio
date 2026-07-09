@@ -18,7 +18,7 @@
         alt="Map Marker icon"
         loading="lazy"
       />
-      <span class="gradient-text">Varna, Bulgaria</span>
+      <span>Varna, Bulgaria</span>
     </p>
     <!-- end of headings -->
 
@@ -34,6 +34,6 @@
 <script setup lang="ts">
 import SocialIcons from "./SocialIcons.vue";
 import { usePortfolioData } from "@/composables/usePortfolioData";
-const { contactSocialIcons } = usePortfolioData();
 import mapMarker from "@/assets/icons/map-marker.svg";
+const { contactSocialIcons } = usePortfolioData();
 </script>
