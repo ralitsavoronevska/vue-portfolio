@@ -3,6 +3,8 @@ import maptyAppImage from "@/assets/projects/mapty-app.webp";
 import pigGameImage from "@/assets/projects/pig-game.webp";
 import restApiImage from "@/assets/projects/rest-api-with-nodejs.webp";
 import vuePortfolioImage from "@/assets/projects/vue-portfolio.webp";
+import elevationMarketingImage from "@/assets/projects/elevation-marketing.webp";
+import maximaCxImage from "@/assets/projects/maxima-cx.webp";
 
 export interface SocialIcon {
   name: string;
@@ -259,6 +261,81 @@ export const PROJECTS: Project[] = [
       {
         name: "Live",
         url: "https://ralitsavoronevska.github.io/pig-game/",
+        file_name: "live",
+      },
+    ],
+  },
+  {
+    image: "",
+    title: "Zendesk Extractor",
+    description: "My Modern representation of Zendesk Extractor",
+    techStack: [
+      { name: "Vue.js", file_name: "vue-js" },
+      { name: "Vite.js", file_name: "vite-js" },
+      { name: "Vitest", file_name: "vitest" },
+      { name: "TypeScript", file_name: "typescript" },
+      { name: "Tailwind CSS", file_name: "tailwind-css" },
+    ],
+    links: [
+      {
+        name: "GitHub",
+        url: "https://github.com/ralitsavoronevska/zd-extr-fe/",
+        file_name: "github",
+      },
+      { name: "CodePen", url: "", file_name: "grayCodePen" },
+      {
+        name: "Live",
+        url: "https://ralitsavoronevska.com/zd-extr-fe/",
+        file_name: "live",
+      },
+    ],
+  },
+  {
+    image: elevationMarketingImage,
+    title: "Elevation Marketing",
+    description: "A modern Marketing Agency website",
+    techStack: [
+      { name: "Nuxt.js", file_name: "nuxt-js" },
+      { name: "Vue.js", file_name: "vue-js" },
+      { name: "Vite.js", file_name: "vite-js" },
+      { name: "TypeScript", file_name: "typescript" },
+      { name: "Tailwind CSS", file_name: "tailwind-css" },
+    ],
+    links: [
+      {
+        name: "GitHub",
+        url: "https://github.com/ralitsavoronevska/elevation-marketing/",
+        file_name: "github",
+      },
+      { name: "CodePen", url: "", file_name: "grayCodePen" },
+      {
+        name: "Live",
+        url: "https://ralitsavoronevska.com/elevation-marketing/",
+        file_name: "live",
+      },
+    ],
+  },
+  {
+    image: maximaCxImage,
+    title: "Maxima CX",
+    description: "Customer Support Services Agency website",
+    techStack: [
+      { name: "Nuxt.js", file_name: "nuxt-js" },
+      { name: "Vue.js", file_name: "vue-js" },
+      { name: "Vite.js", file_name: "vite-js" },
+      { name: "TypeScript", file_name: "typescript" },
+      { name: "Tailwind CSS", file_name: "tailwind-css" },
+    ],
+    links: [
+      {
+        name: "GitHub",
+        url: "https://github.com/ralitsavoronevska/maxima-cx/",
+        file_name: "github",
+      },
+      { name: "CodePen", url: "", file_name: "grayCodePen" },
+      {
+        name: "Live",
+        url: "https://ralitsavoronevska.com/maxima-cx/",
         file_name: "live",
       },
     ],

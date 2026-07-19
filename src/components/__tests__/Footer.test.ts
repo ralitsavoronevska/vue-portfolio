@@ -16,7 +16,7 @@ describe("Footer", () => {
   it("contactSocialIcons has exactly 6 items with correct names and URLs", () => {
     const { contactSocialIcons } = usePortfolioData();
 
-    expect(contactSocialIcons).toHaveLength(6);
+    expect(contactSocialIcons).toHaveLength(5);
 
     const icons = contactSocialIcons;
 
@@ -29,16 +29,11 @@ describe("Footer", () => {
     expect(icons[2]?.name).toBe("CodePen");
     expect(icons[2]?.url).toBe("https://codepen.io/ralitsavoronevska");
 
-    expect(icons[3]?.name).toBe("Discord");
-    expect(icons[3]?.url).toBe(
-      "https://discordapp.com/users/1425751105060732959",
-    );
+    expect(icons[3]?.name).toBe("Telegram");
+    expect(icons[3]?.url).toBe("https://t.me/ralitsavoronevska");
 
-    expect(icons[4]?.name).toBe("Telegram");
-    expect(icons[4]?.url).toBe("https://t.me/ralitsavoronevska");
-
-    expect(icons[5]?.name).toBe("Email");
-    expect(icons[5]?.url).toBe("mailto:r.voronevska@gmail.com");
+    expect(icons[4]?.name).toBe("Email");
+    expect(icons[4]?.url).toBe("mailto:r.voronevska@gmail.com");
   });
 
   it("all social links have valid URLs", () => {

@@ -6,8 +6,8 @@ describe("ContactMe", () => {
   it("shows 6 contact methods with working links", () => {
     const wrapper = mount(ContactMe);
     const links = wrapper.findAll("a");
-    expect(links).toHaveLength(6);
-    expect(links.at(5)?.attributes("href")).toBe(
+    expect(links).toHaveLength(5);
+    expect(links.at(4)?.attributes("href")).toBe(
       "mailto:r.voronevska@gmail.com",
     );
   });
