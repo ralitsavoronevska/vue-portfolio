@@ -60,9 +60,9 @@ describe("usePortfolioData", () => {
     expect(names).toContain("PhotoShop");
   });
 
-  it("returns 11 projects", () => {
+  it("returns 8 projects", () => {
     const { projects } = usePortfolioData();
-    expect(projects).toHaveLength(11);
+    expect(projects).toHaveLength(8);
   });
 
   it("second project has correct title and tech stack", () => {

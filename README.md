@@ -13,8 +13,8 @@
 <table width="100%">
   <thead>
     <tr>
-      <th width="65%" style="border: none;">📱 Tablet Preview</th>
-      <th width="35%" style="border: none;">📱 Mobile Preview</th>
+      <th width="65%">📱 Tablet Preview</th>
+      <th width="35%">📱 Mobile Preview</th>
     </tr>
   </thead>
   <tbody>
@@ -81,25 +81,32 @@ Mobile:
 ⛏️ [Google Font: Playfair Display](https://fonts.google.com/specimen/Playfair+Display/)  
 🪚 [Developer Icons](https://devicon.dev/)
 
+<br>
+
 # ✨ Features:
 
 ✅ Modern Matrix-like Themed Personal Portfolio Webpage  
 ✅ Fixed navigation with slick blur and smooth scroll  
-✅ Colourful Classic Developer icons  
+✅ Colorful Classic Developer icons  
 ✅ Elegant scroll-to-top button
+
+<br>
 
 # 🧰 Online resources and tools:
 
-🖼️ [Photopea [Online Photo Editor]](https://www.photopea.com/)  
+🖼️ [Photopea [Online Photo Editor]](https://www.photopea.com/)
+
 <br>
 
 # 🌐 Browser Support:
 
-(Last updated and tested: 17/03/2026)  
-🌟 Chrome 146.0.7680.80 (64-bit)  
-🦊 Firefox 148.0.2 (64-bit)  
-🏴‍☠️ Opera 128.0.5807.77 (64-bit)  
-🪟 Edge 146.0.3856.59 (64-bit)
+(Last updated and tested: 23/07/2026)  
+🌟 Chrome 150.0.7871.182 (64-bit)  
+🦊 Firefox 153.0 (64-bit)  
+🏴‍☠️ Opera 133.0.5932.85 (64-bit)  
+🪟 Edge 150.0.4078.83 (64-bit)
+
+<br>
 
 # 🧪 Online Validators:
 
@@ -109,32 +116,39 @@ Mobile:
 ⚡ [PageSpeed Insights Audit](https://pagespeed.web.dev/)  
 ⭐ [WebPageTest](https://www.webpagetest.org/)
 
-## Install
+<br>
 
-`cd` to project's dir and run `npm install`
+<br>
 
-## Vite builds
+## Setup
 
-Vite is next Generation Frontend Tooling featuring unbundled web-development
-
-## Hot-reloads for development
-
-Start the development server on http://localhost:5137:
+Make sure to install the dependencies:
 
 ```bash
-$ npm run dev
+# npm
+npm install
 ```
 
-## Builds and minifies for production
+<br>
+
+## Development Server
+
+Start the development server on `http://localhost:5173`:
 
 ```bash
-$ npm run build
+# npm
+npm run dev
 ```
 
-## Serves recently built app
+<br>
+
+## Production
+
+Locally preview the production build:
 
 ```bash
-$ npm run preview
+# npm
+npm run preview
 ```
 
 <br>
@@ -145,7 +159,6 @@ $ npm run preview
 :octocat: [GitHub Coplit](https://github.com/features/copilot)  
 🌃 [Adobe Firefly](https://firefly.adobe.com/)  
 📑 https://mdbootstrap.com/docs/standard/components/cards  
-📝 [Typewriter effect using pure javascript](https://codepen.io/aniketkr/pen/xxEYYjW)  
 :globe_with_meridians: [Abdullah Iqbal's Vercel Portfolio](https://abdullah-portfolio-dev.vercel.app/)
 
 ---

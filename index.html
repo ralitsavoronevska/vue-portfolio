@@ -1,61 +1,157 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="font-['Playfair_Display'] scroll-smooth">
-
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Vue.js Portfolio</title>
-    <meta name="description" content="Ralitsa Voronevska's Vue.js Portfolio">
-    <link rel="canonical" href="https://ralitsavoronevska.com/">
-    <meta name="theme-color" content="#615fff">
+    <meta name="description" content="Ralitsa Voronevska's Vue.js Portfolio" />
+    <link rel="canonical" href="https://ralitsavoronevska.com/" />
+    <meta name="theme-color" content="#615fff" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ralitsavoronevska.com/">
-    <meta property="og:title" content="Vue.js Portfolio">
-    <meta property="og:description" content="Ralitsa Voronevska's Vue.js Portfolio">
-    <meta property="og:image" content="https://ralitsavoronevska.com/dist/assets/vue-portfolio-desktop-preview.png">
-    <meta property="og:image:alt" content="Ralitsa Voronevska's Vue.js Portfolio">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ralitsavoronevska.com/" />
+    <meta property="og:title" content="Vue.js Portfolio" />
+    <meta
+      property="og:description"
+      content="Ralitsa Voronevska's Vue.js Portfolio"
+    />
+    <meta
+      property="og:image"
+      content="https://ralitsavoronevska.com/dist/assets/vue-portfolio-desktop-preview.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Ralitsa Voronevska's Vue.js Portfolio"
+    />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://ralitsavoronevska.com/">
-    <meta name="twitter:title" content="Vue.js Portfolio">
-    <meta name="twitter:description" content="Ralitsa Voronevska's Vue.js Portfolio">
-    <meta name="twitter:image" content="https://ralitsavoronevska.com/dist/assets/vue-portfolio-desktop-preview.png">
-    <meta name="twitter:image:alt" content="Ralitsa Voronevska's Vue.js Portfolio">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://ralitsavoronevska.com/" />
+    <meta name="twitter:title" content="Vue.js Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Ralitsa Voronevska's Vue.js Portfolio"
+    />
+    <meta
+      name="twitter:image"
+      content="https://ralitsavoronevska.com/dist/assets/vue-portfolio-desktop-preview.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Ralitsa Voronevska's Vue.js Portfolio"
+    />
 
     <!-- Icons -->
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicons/android-chrome.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/x-icon" sizes="48x48" href="assets/favicons/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/favicons/android-chrome.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      sizes="48x48"
+      href="assets/favicons/favicon.ico"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicons/favicon-16x16.png"
+    />
 
     <!-- Preload Google Font -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
 
     <!-- Preload Critical Above-Fold Images -->
-    <link rel="preload" href="src/assets/logo.png" as="image" type="image/png" fetchpriority="high">
-    <link rel="preload" href="src/assets/images/hero.webp" as="image" type="image/webp" fetchpriority="high">
-    <link rel="preload" href="src/assets/images/full-bg.webp" as="image" type="image/webp" fetchpriority="high">
+    <link
+      rel="preload"
+      href="src/assets/logo.png"
+      as="image"
+      type="image/png"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="src/assets/images/hero.webp"
+      as="image"
+      type="image/webp"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="src/assets/images/full-bg.webp"
+      as="image"
+      type="image/webp"
+      fetchpriority="high"
+    />
 
     <!-- Preload Critical SVGs (above-fold social icons) -->
-    <link rel="preload" href="src/assets/icons/social-icons/linkedin.svg" as="image" type="image/svg+xml">
-    <link rel="preload" href="src/assets/icons/social-icons/github.svg" as="image" type="image/svg+xml">
-    <link rel="preload" href="src/assets/icons/social-icons/codepen.svg" as="image" type="image/svg+xml">
+    <link
+      rel="preload"
+      href="src/assets/icons/social-icons/linkedin.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+    <link
+      rel="preload"
+      href="src/assets/icons/social-icons/github.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+    <link
+      rel="preload"
+      href="src/assets/icons/social-icons/codepen.svg"
+      as="image"
+      type="image/svg+xml"
+    />
 
     <!-- Noscript Fallback for Font -->
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      />
     </noscript>
   </head>
 
-  <body class="text-white text-base min-h-screen leading-relaxed m-0 p-0 antialiased">
+  <body
+    class="text-white text-base min-h-screen leading-relaxed m-0 p-0 antialiased"
+  >
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mailgo@0.11.2/dist/mailgo.min.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/mailgo@0.11.2/dist/mailgo.min.js"
+      defer
+    ></script>
   </body>
 </html>

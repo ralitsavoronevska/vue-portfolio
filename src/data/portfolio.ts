@@ -3,6 +3,7 @@ import maptyAppImage from "@/assets/projects/mapty-app.webp";
 import pigGameImage from "@/assets/projects/pig-game.webp";
 import restApiImage from "@/assets/projects/rest-api-with-nodejs.webp";
 import vuePortfolioImage from "@/assets/projects/vue-portfolio.webp";
+import zendeskPulseImage from "@/assets/projects/zd-pulse.webp";
 import elevationMarketingImage from "@/assets/projects/elevation-marketing.webp";
 import maximaCxImage from "@/assets/projects/maxima-cx.webp";
 
@@ -127,61 +128,6 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    image: "",
-    title: "WooNuxt Store",
-    description: "Headless E-Commerce",
-    techStack: [
-      { name: "Nuxt.js", file_name: "nuxt" },
-      { name: "Vue.js", file_name: "vue-js" },
-      { name: "TypeScript", file_name: "typescript" },
-      { name: "Tailwind CSS", file_name: "tailwind-css" },
-      { name: "Pinia", file_name: "pinia" },
-      { name: "PostMan", file_name: "postman" },
-      { name: "MongoDB", file_name: "mongo-db" },
-    ],
-    links: [
-      { name: "GitHub", url: "", file_name: "github" },
-      { name: "CodePen", url: "", file_name: "codepen" },
-      { name: "Live", url: "", file_name: "live" },
-    ],
-  },
-  {
-    image: "",
-    title: "Find a Coach App",
-    description: "Find or Register as a Coach",
-    techStack: [
-      { name: "Vue.js", file_name: "vue-js" },
-      { name: "Vite.js", file_name: "vite-js" },
-      { name: "TypeScript", file_name: "typescript" },
-      { name: "Tailwind CSS", file_name: "tailwind-css" },
-      { name: "Pinia", file_name: "pinia" },
-      { name: "PostMan", file_name: "postman" },
-      { name: "FireBase", file_name: "firebase" },
-    ],
-    links: [
-      { name: "GitHub", url: "", file_name: "github" },
-      { name: "CodePen", url: "", file_name: "codepen" },
-      { name: "Live", url: "", file_name: "live" },
-    ],
-  },
-  {
-    image: "",
-    title: "Forkify App",
-    description: "Cooking Recipes App",
-    techStack: [
-      { name: "Vue.js", file_name: "vue-js" },
-      { name: "Vite.js", file_name: "vite-js" },
-      { name: "TypeScript", file_name: "typescript" },
-      { name: "Tailwind CSS", file_name: "tailwind-css" },
-      { name: "Pinia", file_name: "pinia" },
-    ],
-    links: [
-      { name: "GitHub", url: "", file_name: "github" },
-      { name: "CodePen", url: "", file_name: "codepen" },
-      { name: "Live", url: "", file_name: "live" },
-    ],
-  },
-  {
     image: maptyAppImage,
     title: "Mapty App",
     description: "Map your Workout Activities",
@@ -250,7 +196,7 @@ export const PROJECTS: Project[] = [
     links: [
       {
         name: "GitHub",
-        url: "https://ralitsavoronevska.github.io/pig-game/",
+        url: "https://github.com/ralitsavoronevska/pig-game/",
         file_name: "github",
       },
       {
@@ -266,26 +212,26 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    image: "",
-    title: "Zendesk Extractor",
-    description: "My Modern representation of Zendesk Extractor",
+    image: zendeskPulseImage,
+    title: "Zendesk Pulse",
+    description: "My Modern UI for Zendesk Data",
     techStack: [
       { name: "Vue.js", file_name: "vue-js" },
       { name: "Vite.js", file_name: "vite-js" },
       { name: "Vitest", file_name: "vitest" },
-      { name: "TypeScript", file_name: "typescript" },
+      { name: "JavaScript", file_name: "javascript" },
       { name: "Tailwind CSS", file_name: "tailwind-css" },
     ],
     links: [
       {
         name: "GitHub",
-        url: "https://github.com/ralitsavoronevska/zd-extr-fe/",
+        url: "https://github.com/ralitsavoronevska/zd-pulse/",
         file_name: "github",
       },
       { name: "CodePen", url: "", file_name: "grayCodePen" },
       {
         name: "Live",
-        url: "https://ralitsavoronevska.com/zd-extr-fe/",
+        url: "https://ralitsavoronevska.github.io/zd-pulse/",
         file_name: "live",
       },
     ],
@@ -310,7 +256,7 @@ export const PROJECTS: Project[] = [
       { name: "CodePen", url: "", file_name: "grayCodePen" },
       {
         name: "Live",
-        url: "https://ralitsavoronevska.com/elevation-marketing/",
+        url: "https://ralitsavoronevska.github.io/elevation-marketing/",
         file_name: "live",
       },
     ],
@@ -335,9 +281,64 @@ export const PROJECTS: Project[] = [
       { name: "CodePen", url: "", file_name: "grayCodePen" },
       {
         name: "Live",
-        url: "https://ralitsavoronevska.com/maxima-cx/",
+        url: "https://ralitsavoronevska.github.io/maxima-cx/",
         file_name: "live",
       },
     ],
   },
+  // {
+  //   image: "",
+  //   title: "Forkify App",
+  //   description: "Cooking Recipes App",
+  //   techStack: [
+  //     { name: "Vue.js", file_name: "vue-js" },
+  //     { name: "Vite.js", file_name: "vite-js" },
+  //     { name: "TypeScript", file_name: "typescript" },
+  //     { name: "Tailwind CSS", file_name: "tailwind-css" },
+  //     { name: "Pinia", file_name: "pinia" },
+  //   ],
+  //   links: [
+  //     { name: "GitHub", url: "", file_name: "github" },
+  //     { name: "CodePen", url: "", file_name: "codepen" },
+  //     { name: "Live", url: "", file_name: "live" },
+  //   ],
+  // },
+  // {
+  //   image: "",
+  //   title: "Find a Coach App",
+  //   description: "Find or Register as a Coach",
+  //   techStack: [
+  //     { name: "Vue.js", file_name: "vue-js" },
+  //     { name: "Vite.js", file_name: "vite-js" },
+  //     { name: "TypeScript", file_name: "typescript" },
+  //     { name: "Tailwind CSS", file_name: "tailwind-css" },
+  //     { name: "Pinia", file_name: "pinia" },
+  //     { name: "PostMan", file_name: "postman" },
+  //     { name: "FireBase", file_name: "firebase" },
+  //   ],
+  //   links: [
+  //     { name: "GitHub", url: "", file_name: "github" },
+  //     { name: "CodePen", url: "", file_name: "codepen" },
+  //     { name: "Live", url: "", file_name: "live" },
+  //   ],
+  // },
+  // {
+  //   image: "",
+  //   title: "WooNuxt Store",
+  //   description: "Headless E-Commerce",
+  //   techStack: [
+  //     { name: "Nuxt.js", file_name: "nuxt" },
+  //     { name: "Vue.js", file_name: "vue-js" },
+  //     { name: "TypeScript", file_name: "typescript" },
+  //     { name: "Tailwind CSS", file_name: "tailwind-css" },
+  //     { name: "Pinia", file_name: "pinia" },
+  //     { name: "PostMan", file_name: "postman" },
+  //     { name: "MongoDB", file_name: "mongo-db" },
+  //   ],
+  //   links: [
+  //     { name: "GitHub", url: "", file_name: "github" },
+  //     { name: "CodePen", url: "", file_name: "codepen" },
+  //     { name: "Live", url: "", file_name: "live" },
+  //   ],
+  // },
 ];
