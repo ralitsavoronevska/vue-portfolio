@@ -55,24 +55,21 @@ export const CONTACT_SOCIAL_LINKS: SocialIcon[] = [
 ];
 
 export const TECH_STACK: Tech[] = [
-  { name: "HTML5", file_name: "html5" },
-  { name: "CSS3", file_name: "css3" },
-  { name: "Bootstrap", file_name: "bootstrap" },
-  { name: "SASS", file_name: "sass" },
   { name: "Tailwind CSS", file_name: "tailwind-css" },
   { name: "JavaScript", file_name: "javascript" },
-  { name: "jQuery", file_name: "jquery" },
-  { name: "Git", file_name: "git" },
-  { name: "Gulp", file_name: "gulp" },
   { name: "Vue.js", file_name: "vue-js" },
+  { name: "Nuxt.js", file_name: "nuxt-js" },
   { name: "TypeScript", file_name: "typescript" },
   { name: "Pinia", file_name: "pinia" },
   { name: "Vite.js", file_name: "vite-js" },
   { name: "Vitest", file_name: "vitest" },
   { name: "PostMan", file_name: "postman" },
   { name: "FireBase", file_name: "firebase" },
-  { name: "Netlify", file_name: "netlify" },
-  { name: "PhotoShop", file_name: "photoshop" },
+  { name: "MongoDB", file_name: "mongo-db" },
+  { name: "Mongoose", file_name: "mongoose" },
+  { name: "Express.js", file_name: "express-js" },
+  { name: "Node.js", file_name: "node-js" },
+  { name: "Nodemon", file_name: "nodemon" },
 ];
 
 export const PROJECTS: Project[] = [
@@ -264,7 +261,7 @@ export const PROJECTS: Project[] = [
   {
     image: maximaCxImage,
     title: "Maxima CX",
-    description: "Customer Support Services Agency website",
+    description: "Customer Support Agency website",
     techStack: [
       { name: "Nuxt.js", file_name: "nuxt-js" },
       { name: "Vue.js", file_name: "vue-js" },

@@ -35,29 +35,29 @@ describe("usePortfolioData", () => {
     });
   });
 
-  it("returns exactly 18 tech items", () => {
+  it("returns exactly 15 tech items", () => {
     const { techStack } = usePortfolioData();
-    expect(techStack).toHaveLength(18);
+    expect(techStack).toHaveLength(15);
   });
 
   it("includes key technologies", () => {
     const { techStack } = usePortfolioData();
     const names = techStack.map((t) => t.name);
-    expect(names).toContain("HTML5");
-    expect(names).toContain("CSS3");
-    expect(names).toContain("Bootstrap");
-    expect(names).toContain("SASS");
     expect(names).toContain("Tailwind CSS");
     expect(names).toContain("JavaScript");
-    expect(names).toContain("jQuery");
-    expect(names).toContain("Git");
-    expect(names).toContain("Gulp");
     expect(names).toContain("Vue.js");
+    expect(names).toContain("Nuxt.js");
+    expect(names).toContain("TypeScript");
+    expect(names).toContain("Pinia");
+    expect(names).toContain("Vite.js");
     expect(names).toContain("Vitest");
     expect(names).toContain("PostMan");
     expect(names).toContain("FireBase");
-    expect(names).toContain("Netlify");
-    expect(names).toContain("PhotoShop");
+    expect(names).toContain("MongoDB");
+    expect(names).toContain("Mongoose");
+    expect(names).toContain("Express.js");
+    expect(names).toContain("Node.js");
+    expect(names).toContain("Nodemon");
   });
 
   it("returns 8 projects", () => {

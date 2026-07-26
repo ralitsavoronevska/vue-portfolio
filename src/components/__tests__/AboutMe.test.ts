@@ -12,9 +12,4 @@ describe("AboutMe", () => {
       "https://ralitsavoronevska.com/assets/Ralitsa-Voronevska-CV.pdf",
     );
   });
-
-  it("displays all 18 tech stack icons", () => {
-    const wrapper = mount(AboutMe);
-    expect(wrapper.findAll(".glow-img")).toHaveLength(18);
-  });
 });
