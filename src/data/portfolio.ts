@@ -211,7 +211,7 @@ export const PROJECTS: Project[] = [
   {
     image: zendeskPulseImage,
     title: "Zendesk Pulse",
-    description: "My Modern UI for Zendesk Data",
+    description: "Modern PrimeVue UI for Zendesk Data",
     techStack: [
       { name: "Vue.js", file_name: "vue-js" },
       { name: "Vite.js", file_name: "vite-js" },
