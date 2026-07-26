@@ -37,8 +37,8 @@
             :key="tech.name"
             :tech="tech"
             :index="i"
-            :iconSizes="`w-11 h-11 rounded-xl`"
-            :imgSizes="`w-11 h-11 rounded-xl`"
+            :iconSizes="`w-9.5 h-9.5 rounded-xl`"
+            :imgSizes="`w-9.5 h-9.5 rounded-xl`"
             :isVisible="isVisible"
           />
         </div>

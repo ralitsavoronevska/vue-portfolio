@@ -218,6 +218,9 @@ export const PROJECTS: Project[] = [
       { name: "Vitest", file_name: "vitest" },
       { name: "JavaScript", file_name: "javascript" },
       { name: "Tailwind CSS", file_name: "tailwind-css" },
+      { name: "Pinia", file_name: "pinia" },
+      { name: "PostMan", file_name: "postman" },
+      { name: "FireBase", file_name: "firebase" },
     ],
     links: [
       {

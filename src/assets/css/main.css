@@ -75,7 +75,7 @@
 
   /* Social Icon */
   .social-icon {
-    @apply w-13 h-13 rounded-full hover:shadow-[0_16px_50px_16px_rgba(255,255,255,0.35)];
+    @apply w-12 h-12 rounded-full hover:shadow-[0_16px_50px_16px_rgba(255,255,255,0.35)];
   }
 
   /* Hero Image */
