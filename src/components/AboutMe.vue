@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import HeroImage from "./HeroImage.vue";
 
-// Skill pills — swap/reorder as your stack evolves
+// Skill pills
 const skills = ["Vue 3", "Nuxt v4", "TypeScript", "Pinia", "Tailwind v4"];
 
-// Feature cards — label + one-line description, no more
+// Feature cards — label + one-line description
 const highlights = [
   {
     icon: "⚡",
@@ -44,10 +44,10 @@ const highlights = [
         <p class="mb-6 leading-relaxed text-lg sm:leading-relaxed">
           Front-end developer with 6 years of experience building performant,
           scalable, and fully responsive web solutions with a mobile-first
-          approach. I focus on writing clean, maintainable code that serves both
-          user needs and business goals — and I adapt quickly across different
-          codebases and team structures. Since early 2026, I’ve been working on
-          refreshing my basic Python skills.
+          approach in mind. I am focused on solutions that serve both user needs
+          and business objectives. I adapt quickly across differing codebase
+          conventions and team structures. Since early 2026, I’ve been working
+          on refreshing my basic Python skills.
         </p>
 
         <div class="flex flex-wrap justify-center gap-1.5 sm:justify-start">
