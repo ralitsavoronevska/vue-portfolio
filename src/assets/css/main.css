@@ -136,7 +136,7 @@
     .cards-grid {
       @apply w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
       .card {
-        @apply bg-slate-950/75 rounded-3xl p-4 shadow-3xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1;
+        @apply bg-slate-950/75 rounded-3xl p-3 md:p-4 shadow-3xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1;
         .card-img {
           @apply w-full h-70 md:h-80 object-cover rounded-2xl mb-6;
         }
@@ -147,6 +147,9 @@
           }
           .card-desc {
             @apply font-semibold text-lg;
+          }
+          .card-tech-desc {
+            @apply font-semibold text-lg text-slate-400;
           }
           .glow-icons {
             @apply flex items-center justify-center flex-wrap;

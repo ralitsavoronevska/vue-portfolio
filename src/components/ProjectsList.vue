@@ -1,7 +1,7 @@
 <template>
   <section id="projects" class="projects">
     <h2>My <span class="gradient-text">Projects</span></h2>
-    <h3>My latest projects built with cutting-edge technologies!</h3>
+    <h3>{{ projectsSubtitle }}</h3>
     <div ref="sectionRef" class="cards-grid">
       <ProjectCard
         v-for="(project, index) in projects"
@@ -10,6 +10,7 @@
         :title="project.title || ''"
         :description="project.description || ''"
         :icons="project.links || []"
+        :techDescription="project.techDescription || ''"
         :techStack="project.techStack"
         :index="index"
         :isVisible="isVisible"
@@ -34,5 +35,5 @@ import { useInView } from "@/composables/useInView";
 const sectionRef = useTemplateRef<HTMLDivElement>("sectionRef");
 const { isVisible } = useInView(sectionRef);
 
-const { projects } = usePortfolioData();
+const { projectsSubtitle, projects } = usePortfolioData();
 </script>

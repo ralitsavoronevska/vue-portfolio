@@ -25,11 +25,20 @@
         <!-- Description -->
         <p class="card-desc">{{ description }}</p>
 
+        <!-- Tech Description -->
+        <p class="card-tech-desc">{{ techDescription }}</p>
+
         <!-- start of glow-icons -->
         <div
           ref="sectionRef"
           class="glow-icons"
-          :class="techStack.length > 5 ? 'gap-2' : 'gap-3'"
+          :class="
+            techStack.length === 7
+              ? 'gap-1.75 md:gap-2.5 lg:gap-4'
+              : techStack.length > 5
+                ? 'gap-4 md:gap-5 lg:gap-6.5'
+                : 'gap-7 md:gap-8 lg:gap-10'
+          "
         >
           <!-- Glow Icons -->
           <GlowIcons
@@ -66,6 +75,7 @@ const props = defineProps<{
   image?: string;
   title?: string;
   description?: string;
+  techDescription?: string;
   icons?: Array<{ name: string; url: string; file_name: string }>;
   techStack?: Array<{ name: string; file_name: string }>;
   index?: number;
@@ -81,6 +91,7 @@ const techStack = props.techStack ?? [];
 const icons = props.icons ?? [];
 const title = props.title ?? "";
 const description = props.description ?? "";
+const techDescription = props.techDescription ?? "";
 
 const projectImage = (image: string) => (image ? image : commingSoonImg);
 </script>

@@ -13,6 +13,12 @@ export interface SocialIcon {
   file_name: string;
 }
 
+export interface Highlight {
+  icon: string;
+  label: string;
+  text: string;
+}
+
 export interface Tech {
   name: string;
   file_name: string;
@@ -22,9 +28,19 @@ export interface Project {
   image: string;
   title: string;
   description: string;
+  techDescription: string;
   techStack: Tech[];
   links: SocialIcon[];
 }
+
+export const PAGES_CONTENT = {
+  hero_subtitle: "Vue.js Front-end Developer",
+  about_me_subtitle: "Hi, I'm Ralitsa Voronevska!",
+  about_me_description: `Front-end developer with 6 years of experience building performant, scalable, and fully responsive web solutions 
+  with a mobile-first approach in mind. I am focused on solutions that serve both user needs and business objectives. I adapt quickly
+  across differing codebase conventions and team structures. Since early 2026, I’ve been working on refreshing my basic Python skills.`,
+  projects_subtitle: "My latest projects built with cutting-edge technologies!",
+};
 
 export const HERO_SOCIAL_LINKS: SocialIcon[] = [
   {
@@ -54,6 +70,34 @@ export const CONTACT_SOCIAL_LINKS: SocialIcon[] = [
   { name: "Email", url: "mailto:r.voronevska@gmail.com", file_name: "email" },
 ];
 
+export const SKILLS: string[] = [
+  "Vue 3",
+  "Vite",
+  "Vitest",
+  "TypeScript",
+  "Nuxt v4",
+  "Pinia",
+  "Tailwind v4",
+];
+
+export const HIGHLIGHTS: Highlight[] = [
+  {
+    icon: "⚡",
+    label: "Performance",
+    text: "Faster load times through code-splitting, lazy loading, and smart caching",
+  },
+  {
+    icon: "✨",
+    label: "AI-assisted workflow",
+    text: "Integrating AI platforms to speed up delivery without compromising code quality",
+  },
+  {
+    icon: "{ }",
+    label: "Code quality",
+    text: "SOLID principles, design patterns, best practices, clean, and well-documented code",
+  },
+];
+
 export const TECH_STACK: Tech[] = [
   { name: "Tailwind CSS", file_name: "tailwind-css" },
   { name: "JavaScript", file_name: "javascript" },
@@ -75,13 +119,15 @@ export const TECH_STACK: Tech[] = [
 export const PROJECTS: Project[] = [
   {
     image: vuePortfolioImage,
-    title: "Vue.js Portfolio",
-    description: "My Modern Vue.js 3 Portfolio",
+    title: "Vue.js 3 Portfolio",
+    description: "Original, built from scratch",
+    techDescription: "Modern Matrix-like Themed Portfolio",
     techStack: [
       { name: "Vue.js", file_name: "vue-js" },
       { name: "Vite.js", file_name: "vite-js" },
       { name: "Vitest", file_name: "vitest" },
       { name: "TypeScript", file_name: "typescript" },
+      { name: "Pinia", file_name: "pinia" },
       { name: "Tailwind CSS", file_name: "tailwind-css" },
     ],
     links: [
@@ -104,8 +150,9 @@ export const PROJECTS: Project[] = [
   },
   {
     image: restApiImage,
-    title: "Node.js REST API",
-    description: "Simple Shop RESTful API",
+    title: "Secure Node.js REST API",
+    description: "RESTful API with Authentication",
+    techDescription: "Multer + Morgan + JWT + Bcrypt",
     techStack: [
       { name: "Node.js", file_name: "node-js" },
       { name: "Express.js", file_name: "express-js" },
@@ -128,12 +175,14 @@ export const PROJECTS: Project[] = [
     image: maptyAppImage,
     title: "Mapty App",
     description: "Map your Workout Activities",
+    techDescription: "OpenStreetMap + Leaflet.js",
     techStack: [
       { name: "Vue.js", file_name: "vue-js" },
       { name: "Vite.js", file_name: "vite-js" },
+      { name: "Vitest", file_name: "vitest" },
       { name: "TypeScript", file_name: "typescript" },
-      { name: "Tailwind CSS", file_name: "tailwind-css" },
       { name: "Pinia", file_name: "pinia" },
+      { name: "Tailwind CSS", file_name: "tailwind-css" },
     ],
     links: [
       {
@@ -152,14 +201,15 @@ export const PROJECTS: Project[] = [
   {
     image: monsterSlayerImage,
     title: "Monster Slayer Game",
-    description: "Give the Monster A Lesson",
+    description: "Give the Monster A Memorable Lesson",
+    techDescription: "Battle sounds powered by Howler.js",
     techStack: [
       { name: "Vue.js", file_name: "vue-js" },
       { name: "Vite.js", file_name: "vite-js" },
       { name: "Vitest", file_name: "vitest" },
       { name: "TypeScript", file_name: "typescript" },
-      { name: "Tailwind CSS", file_name: "tailwind-css" },
       { name: "Pinia", file_name: "pinia" },
+      { name: "Tailwind CSS", file_name: "tailwind-css" },
     ],
     links: [
       {
@@ -183,6 +233,7 @@ export const PROJECTS: Project[] = [
     image: pigGameImage,
     title: "Pig Game",
     description: "A Single Dice Game for two players",
+    techDescription: "Game sounds are powered by Howler.js",
     techStack: [
       { name: "Vue.js", file_name: "vue-js" },
       { name: "Vite.js", file_name: "vite-js" },
@@ -212,14 +263,14 @@ export const PROJECTS: Project[] = [
     image: zendeskPulseImage,
     title: "Zendesk Pulse",
     description: "Modern PrimeVue UI for Zendesk",
+    techDescription: "JWT + Postman + Swagger + Prism",
     techStack: [
       { name: "Vue.js", file_name: "vue-js" },
       { name: "Vite.js", file_name: "vite-js" },
       { name: "Vitest", file_name: "vitest" },
       { name: "JavaScript", file_name: "javascript" },
-      { name: "Tailwind CSS", file_name: "tailwind-css" },
       { name: "Pinia", file_name: "pinia" },
-      { name: "PostMan", file_name: "postman" },
+      { name: "Tailwind CSS", file_name: "tailwind-css" },
       { name: "FireBase", file_name: "firebase" },
     ],
     links: [
@@ -239,7 +290,8 @@ export const PROJECTS: Project[] = [
   {
     image: elevationMarketingImage,
     title: "Elevation Marketing",
-    description: "A modern Marketing Agency website",
+    description: "Modern Marketing Agency Website",
+    techDescription: "Custom branding, theme and visuals",
     techStack: [
       { name: "Nuxt.js", file_name: "nuxt-js" },
       { name: "Vue.js", file_name: "vue-js" },
@@ -264,7 +316,8 @@ export const PROJECTS: Project[] = [
   {
     image: maximaCxImage,
     title: "Maxima CX",
-    description: "Customer Support Agency website",
+    description: "Customer Support Agency Website",
+    techDescription: "Brand identity, theme and content",
     techStack: [
       { name: "Nuxt.js", file_name: "nuxt-js" },
       { name: "Vue.js", file_name: "vue-js" },

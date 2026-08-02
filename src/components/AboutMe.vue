@@ -1,27 +1,9 @@
 <script setup lang="ts">
 import HeroImage from "./HeroImage.vue";
+import { usePortfolioData } from "@/composables/usePortfolioData";
 
-// Skill pills
-const skills = ["Vue 3", "Nuxt v4", "TypeScript", "Pinia", "Tailwind v4"];
-
-// Feature cards — label + one-line description
-const highlights = [
-  {
-    icon: "⚡",
-    label: "Performance",
-    text: "Faster load times through code-splitting, lazy loading, and smart caching",
-  },
-  {
-    icon: "✨",
-    label: "AI-assisted workflow",
-    text: "Integrating AI platforms to speed up delivery without compromising code quality",
-  },
-  {
-    icon: "{ }",
-    label: "Code quality",
-    text: "SOLID principles, design patterns, best practices, clean, and well-documented code",
-  },
-];
+const { aboutMeSubtitle, aboutMeDescription, skills, highlights } =
+  usePortfolioData();
 </script>
 
 <template>
@@ -32,7 +14,7 @@ const highlights = [
   >
     <!-- headings -->
     <h2>About <span class="gradient-text">Me</span></h2>
-    <h3>Hi, I'm Ralitsa Voronevska!</h3>
+    <h3>{{ aboutMeSubtitle }}</h3>
 
     <!-- Header: stacked + centered on mobile, side-by-side from sm: up -->
     <div
@@ -42,12 +24,7 @@ const highlights = [
 
       <div class="rounded-lg w-full flex-1 shadow-3xl bg-slate-950/75 p-4">
         <p class="mb-6 leading-relaxed text-lg sm:leading-relaxed">
-          Front-end developer with 6 years of experience building performant,
-          scalable, and fully responsive web solutions with a mobile-first
-          approach in mind. I am focused on solutions that serve both user needs
-          and business objectives. I adapt quickly across differing codebase
-          conventions and team structures. Since early 2026, I’ve been working
-          on refreshing my basic Python skills.
+          {{ aboutMeDescription }}
         </p>
 
         <div class="flex flex-wrap justify-center gap-1.5 sm:justify-start">
@@ -70,7 +47,7 @@ const highlights = [
         class="rounded-lg shadow-3xl bg-slate-950/75 p-4"
       >
         <p
-          class="mb-1.5 flex items-center gap-1.5 text-xs text-slate-500 sm:text-[13px] dark:text-slate-400"
+          class="mb-1.5 flex items-center gap-1.5 text-xs text-slate-400 sm:text-[13px]"
         >
           <span aria-hidden="true">{{ item.icon }}</span>
           {{ item.label }}
