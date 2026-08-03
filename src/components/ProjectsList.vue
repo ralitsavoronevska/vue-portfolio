@@ -2,7 +2,7 @@
   <section id="projects" class="projects">
     <h2>My <span class="gradient-text">Projects</span></h2>
     <h3>{{ projectsSubtitle }}</h3>
-    <div ref="sectionRef" class="cards-grid">
+    <div class="cards-grid">
       <ProjectCard
         v-for="(project, index) in projects"
         :key="project.title"
@@ -13,27 +13,14 @@
         :techDescription="project.techDescription || ''"
         :techStack="project.techStack"
         :index="index"
-        :isVisible="isVisible"
-        class="group"
-        :class="[
-          isVisible
-            ? `opacity-100 translate-y-0 delay-${(index + 1) * 100}`
-            : 'opacity-0 translate-y-8',
-          'transition-all duration-700 ease-out',
-        ]"
       />
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { useTemplateRef } from "vue";
 import ProjectCard from "./ProjectCard.vue";
 import { usePortfolioData } from "@/composables/usePortfolioData";
-import { useInView } from "@/composables/useInView";
-
-const sectionRef = useTemplateRef<HTMLDivElement>("sectionRef");
-const { isVisible } = useInView(sectionRef);
 
 const { projectsSubtitle, projects } = usePortfolioData();
 </script>

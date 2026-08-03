@@ -69,8 +69,9 @@ describe("usePortfolioData", () => {
     const { projects } = usePortfolioData();
     const second = projects[1];
 
-    expect(second?.title).toBe("Node.js REST API");
-    expect(second?.description).toBe("Simple Shop RESTful API");
+    expect(second?.title).toBe("Secure Node.js REST API");
+    expect(second?.description).toBe("RESTful API with Authentication");
+    expect(second?.techDescription).toBe("Multer + Morgan + JWT + Bcrypt");
 
     const techNames = (second?.techStack as { name: string }[]).map(
       (t) => t.name,

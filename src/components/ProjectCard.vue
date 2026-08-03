@@ -1,14 +1,11 @@
 <template>
   <!-- start of Project Card -->
-  <article
-    class="group"
-    :class="[
+  <article ref="cardRef" class="group" :class="[
       isVisible
         ? `opacity-100 translate-y-0 delay-${(index + 1) * 100}`
         : 'opacity-0 translate-y-8',
       'transition-all duration-700 ease-out',
-    ]"
-  >
+    ]">
     <div class="card">
       <!-- Project Image -->
       <img
@@ -30,7 +27,6 @@
 
         <!-- start of glow-icons -->
         <div
-          ref="sectionRef"
           class="glow-icons"
           :class="
             techStack.length === 7
@@ -81,8 +77,8 @@ const props = defineProps<{
   index?: number;
 }>();
 
-const sectionRef = useTemplateRef<HTMLDivElement>("sectionRef");
-const { isVisible } = useInView(sectionRef);
+const cardRef = useTemplateRef<HTMLDivElement>("cardRef");
+const { isVisible } = useInView(cardRef);
 
 // safe locals for template usage
 const index = props.index ?? 0;

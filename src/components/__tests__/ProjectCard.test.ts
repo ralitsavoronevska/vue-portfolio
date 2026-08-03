@@ -15,8 +15,9 @@ vi.mock("@/composables/useInView", () => ({
 describe("ProjectCard", () => {
   const defaultProps = {
     image: "/assets/projects/rest-api-with-nodejs.webp",
-    title: "REST API",
-    description: "Simple Shop RESTful API",
+    title: "Secure Node.js REST API",
+    description: "RESTful API with Authentication",
+    techDescription: "Multer + Morgan + JWT + Bcrypt",
     techStack: [
       { name: "Node.js", file_name: "nodejs" },
       { name: "Express.js", file_name: "express" },
@@ -68,6 +69,20 @@ describe("ProjectCard", () => {
     expect(article.classes()).toContain("translate-y-8");
   });
 
+  it("uses a staggered delay based on the card index when visible", () => {
+    mockUseInView.mockReturnValue({
+      sectionRef: ref(null),
+      isVisible: ref(true),
+    });
+
+    const wrapper = mount(ProjectCard, {
+      props: { ...defaultProps, index: 1 },
+    });
+    const article = wrapper.find("article");
+
+    expect(article.classes()).toContain("delay-200");
+  });
+
   it("renders project image with correct src and alt", () => {
     mockUseInView.mockReturnValue({
       sectionRef: ref(null),
@@ -78,7 +93,7 @@ describe("ProjectCard", () => {
     expect(img.attributes("src")).toBe(
       "/assets/projects/rest-api-with-nodejs.webp",
     );
-    expect(img.attributes("alt")).toBe("Simple Shop RESTful API");
+    expect(img.attributes("alt")).toBe("RESTful API with Authentication");
   });
 
   it("uses fallback image when image prop is missing", () => {
@@ -106,7 +121,7 @@ describe("ProjectCard", () => {
     const wrapper = mount(ProjectCard, {
       props: { ...defaultProps, techStack: longTechStack },
     });
-    expect(wrapper.find(".glow-icons").classes()).toContain("gap-2");
+    expect(wrapper.find(".glow-icons").classes()).toContain("gap-4");
   });
 
   it("renders gracefully with empty project URLs (future projects)", async () => {
@@ -131,8 +146,9 @@ describe("ProjectCard", () => {
   it("second project has correct title, description and tech", () => {
     const { projects } = usePortfolioData();
     const second = projects[1];
-    expect(second?.title).toBe("Node.js REST API");
-    expect(second?.description).toBe("Simple Shop RESTful API");
+    expect(second?.title).toBe("Secure Node.js REST API");
+    expect(second?.description).toBe("RESTful API with Authentication");
+    expect(second?.techDescription).toBe("Multer + Morgan + JWT + Bcrypt");
     expect(second?.techStack.map((t: any) => t.name)).toEqual([
       "Node.js",
       "Express.js",
