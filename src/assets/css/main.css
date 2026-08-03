@@ -64,7 +64,7 @@
           @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-5;
         }
         h2 {
-          @apply text-xl md:text-2xl lg:text-3xl font-bold text-left mb-6 pl-4 md:pl-10 lg:pl-14;
+          @apply text-xl md:text-2xl lg:text-3xl font-bold mb-6;
         }
       }
     }
@@ -88,12 +88,23 @@
 
   /* About Me Section */
   .about-me {
-    @apply flex flex-col items-center justify-center text-center relative mx-3 pt-20 pb-20 scroll-mt-40;
-    .hero-skills-and-bio {
-      @apply flex flex-col lg:flex-row;
-    }
+    @apply flex flex-col items-center justify-center text-center relative pt-20 pb-20 scroll-mt-40
+    mx-auto max-w-6xl px-4 py-8 text-slate-900 sm:px-6 md:py-12 lg:px-8 dark:text-slate-100;
     .hero-and-skills {
-      @apply bg-slate-950/75 shadow-3xl rounded-2xl p-3 flex flex-col w-full lg:min-w-70 xl:min-w-90;
+      @apply mb-6 flex flex-col items-center gap-4 text-center sm:mb-8 sm:flex-row sm:items-start sm:gap-8 sm:text-left;
+    }
+
+    .highlights-container {
+      @apply mb-6 grid grid-cols-1 gap-3 md:grid-cols-3;
+      .highlight-card {
+        @apply rounded-lg shadow-3xl bg-slate-950/75 p-4;
+        .highlight-card-header {
+          @apply mb-1.5 flex items-center gap-1.5 text-xs text-slate-400 sm:text-[13px];
+        }
+        .highlight-card-text {
+          @apply text-sm leading-relaxed;
+        }
+      }
     }
     .btns-container {
       @apply flex items-center justify-center gap-2 my-4 mx-auto;

@@ -121,7 +121,7 @@ export const PROJECTS: Project[] = [
     image: vuePortfolioImage,
     title: "Vue.js 3 Portfolio",
     description: "Original, built from scratch",
-    techDescription: "Modern Matrix-like Themed Portfolio",
+    techDescription: "Modern Matrix Themed Portfolio",
     techStack: [
       { name: "Vue.js", file_name: "vue-js" },
       { name: "Vite.js", file_name: "vite-js" },
@@ -201,7 +201,7 @@ export const PROJECTS: Project[] = [
   {
     image: monsterSlayerImage,
     title: "Monster Slayer Game",
-    description: "Give the Monster A Memorable Lesson",
+    description: "Give the Monster A Good Lesson",
     techDescription: "Battle sounds powered by Howler.js",
     techStack: [
       { name: "Vue.js", file_name: "vue-js" },
@@ -233,7 +233,7 @@ export const PROJECTS: Project[] = [
     image: pigGameImage,
     title: "Pig Game",
     description: "A Single Dice Game for two players",
-    techDescription: "Game sounds are powered by Howler.js",
+    techDescription: "Game sounds powered by Howler.js",
     techStack: [
       { name: "Vue.js", file_name: "vue-js" },
       { name: "Vite.js", file_name: "vite-js" },
