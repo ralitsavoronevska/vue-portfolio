@@ -100,11 +100,11 @@ Mobile:
 
 # 🌐 Browser Support:
 
-(Last updated and tested: 23/07/2026)  
-🌟 Chrome 150.0.7871.182 (64-bit)  
-🦊 Firefox 153.0 (64-bit)  
+(Last updated and tested: 03/08/2026)  
+🌟 Chrome 150.0.7871.187 (64-bit)  
+🦊 Firefox 153.0.1 (64-bit)  
 🏴‍☠️ Opera 133.0.5932.85 (64-bit)  
-🪟 Edge 150.0.4078.83 (64-bit)
+🪟 Edge 151.0.4129.59 (64-bit)
 
 <br>
 
