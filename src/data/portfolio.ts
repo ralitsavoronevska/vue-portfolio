@@ -92,7 +92,7 @@ export const HIGHLIGHTS: Highlight[] = [
     text: "Integrating AI platforms to speed up delivery without compromising code quality",
   },
   {
-    icon: "{ }",
+    icon: "</>",
     label: "Code quality",
     text: "SOLID principles, design patterns, best practices, clean, and well-documented code",
   },

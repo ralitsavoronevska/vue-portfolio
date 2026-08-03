@@ -17,17 +17,13 @@ const { aboutMeSubtitle, aboutMeDescription, skills, highlights } =
     <div class="hero-and-skills">
       <HeroImage />
 
-      <div class="rounded-lg w-full flex-1 shadow-3xl bg-slate-950/75 p-4">
-        <p class="mb-6 leading-relaxed text-lg sm:leading-relaxed">
+      <div class="skills-container">
+        <p class="skills-container-text">
           {{ aboutMeDescription }}
         </p>
 
-        <div class="flex flex-wrap justify-center gap-1.5 sm:justify-start">
-          <span
-            v-for="skill in skills"
-            :key="skill"
-            class="rounded-md px-2.5 py-1 text-xs dark:bg-indigo-500 whitespace-nowrap"
-          >
+        <div class="skills-container-skills">
+          <span v-for="skill in skills" :key="skill" class="skill-pill">
             {{ skill }}
           </span>
         </div>
@@ -38,8 +34,10 @@ const { aboutMeSubtitle, aboutMeDescription, skills, highlights } =
     <div class="highlights-container">
       <div v-for="item in highlights" :key="item.label" class="highlight-card">
         <p class="highlight-card-header">
-          <span aria-hidden="true">{{ item.icon }}</span>
-          {{ item.label }}
+          <span aria-hidden="true" class="highlight-icon gradient-text">{{
+            item.icon
+          }}</span>
+          <span class="gradient-text">{{ item.label }}</span>
         </p>
         <p class="highlight-card-text">{{ item.text }}</p>
       </div>

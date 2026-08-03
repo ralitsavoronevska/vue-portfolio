@@ -92,6 +92,18 @@
     mx-auto max-w-6xl px-4 py-8 text-slate-900 sm:px-6 md:py-12 lg:px-8 dark:text-slate-100;
     .hero-and-skills {
       @apply mb-6 flex flex-col items-center gap-4 text-center sm:mb-8 sm:flex-row sm:items-start sm:gap-8 sm:text-left;
+      .skills-container {
+        @apply w-full flex-1;
+        .skills-container-text {
+          @apply mb-6 leading-relaxed text-lg sm:leading-relaxed rounded-lg shadow-3xl bg-slate-950/75 p-4;
+        }
+        .skills-container-skills {
+          @apply flex flex-wrap justify-center gap-1.5 sm:justify-start;
+          .skill-pill {
+            @apply rounded-md px-2.5 py-1 text-xs dark:bg-indigo-500 whitespace-nowrap;
+          }
+        }
+      }
     }
 
     .highlights-container {
@@ -100,6 +112,9 @@
         @apply rounded-lg shadow-3xl bg-slate-950/75 p-4;
         .highlight-card-header {
           @apply mb-1.5 flex items-center gap-1.5 text-xs text-slate-400 sm:text-[13px];
+          .highlight-icon {
+            @apply font-extrabold;
+          }
         }
         .highlight-card-text {
           @apply text-sm leading-relaxed;
