@@ -121,7 +121,7 @@ export const PROJECTS: Project[] = [
     image: vuePortfolioImage,
     title: "Vue.js 3 Portfolio",
     description: "Original, built from scratch",
-    techDescription: "Modern Matrix Themed Portfolio",
+    techDescription: "Modern Matrix-themed Portfolio",
     techStack: [
       { name: "Vue.js", file_name: "vue-js" },
       { name: "Vite.js", file_name: "vite-js" },
