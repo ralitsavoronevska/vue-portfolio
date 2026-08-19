@@ -55,7 +55,7 @@
 
   /* Hero Section */
   .hero {
-    @apply flex items-center justify-center w-full min-h-screen flex-col pt-20 pb-20 scroll-mt-40;
+    @apply flex items-center justify-center w-full min-h-screen flex-col pt-20 pb-20 scroll-mt-40 text-white;
     .hero-and-socials {
       @apply flex flex-col mt-13 md:mt-34 xl:mt-13;
       .name-and-info {
@@ -89,7 +89,7 @@
   /* About Me Section */
   .about-me {
     @apply flex flex-col items-center justify-center text-center relative pt-20 pb-20 scroll-mt-40
-    mx-auto max-w-6xl px-4 py-8 text-slate-900 sm:px-6 md:py-12 lg:px-8 dark:text-slate-100;
+    mx-auto max-w-6xl px-4 py-8 text-white sm:px-6 md:py-12 lg:px-8;
     .hero-and-skills {
       @apply mb-6 flex flex-col items-center gap-4 text-center sm:mb-8 sm:flex-row sm:items-start sm:gap-8 sm:text-left;
       .skills-container {
@@ -111,7 +111,7 @@
       .highlight-card {
         @apply rounded-lg shadow-3xl bg-slate-950/75 p-4;
         .highlight-card-header {
-          @apply mb-1.5 flex items-center gap-1.5 text-xs text-slate-400 sm:text-[13px];
+          @apply mb-1.5 flex items-center gap-1.5 text-xs text-white sm:text-[13px];
           .highlight-icon {
             @apply font-extrabold;
           }
