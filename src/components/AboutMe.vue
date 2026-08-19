@@ -79,7 +79,7 @@ const revealStyle = (delay: number) => ({
         :style="isVisible ? revealStyle(600 + index * 100) : undefined"
       >
         <p class="highlight-card-header">
-          <span aria-hidden="true" class="highlight-icon gradient-text">{{
+          <span aria-hidden="true" class="highlight-icon gradient-text bg-white rounded-full">{{
             item.icon
           }}</span>
           <span class="font-bold">{{ item.label }}</span>
