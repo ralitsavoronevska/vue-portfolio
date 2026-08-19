@@ -100,7 +100,7 @@
         .skills-container-skills {
           @apply flex flex-wrap justify-center gap-1.5 sm:justify-start;
           .skill-pill {
-            @apply rounded-md px-2.5 py-1 text-xs dark:bg-indigo-500 whitespace-nowrap;
+            @apply rounded-md px-2.5 py-1 text-xs bg-indigo-500 whitespace-nowrap;
           }
         }
       }
