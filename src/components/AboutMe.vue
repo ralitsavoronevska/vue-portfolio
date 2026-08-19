@@ -82,7 +82,7 @@ const revealStyle = (delay: number) => ({
           <span aria-hidden="true" class="highlight-icon gradient-text">{{
             item.icon
           }}</span>
-          <span class="gradient-text">{{ item.label }}</span>
+          <span>{{ item.label }}</span>
         </p>
         <p class="highlight-card-text">{{ item.text }}</p>
       </div>
