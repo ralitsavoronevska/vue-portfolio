@@ -55,7 +55,7 @@
 
   /* Hero Section */
   .hero {
-    @apply flex items-center justify-center w-full min-h-screen flex-col pt-20 pb-20 scroll-mt-40;
+    @apply flex items-center justify-center w-full min-h-screen flex-col pt-20 pb-20 scroll-mt-40 text-white;
     .hero-and-socials {
       @apply flex flex-col mt-13 md:mt-34 xl:mt-13;
       .name-and-info {
@@ -100,7 +100,7 @@
         .skills-container-skills {
           @apply flex flex-wrap justify-center gap-1.5 sm:justify-start;
           .skill-pill {
-            @apply rounded-md px-2.5 py-1 text-xs dark:bg-indigo-500 whitespace-nowrap;
+            @apply rounded-md px-2.5 py-1 text-xs bg-indigo-500 whitespace-nowrap;
           }
         }
       }
