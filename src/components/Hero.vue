@@ -1,6 +1,6 @@
 <template>
   <!-- start of Hero Section -->
-  <section id="welcome-section" class="hero">
+  <section id="hero" class="hero">
     <!-- start of hero-and-socials -->
     <div class="hero-and-socials">
       <!-- Hero Image -->

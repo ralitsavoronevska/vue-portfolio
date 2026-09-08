@@ -1,6 +1,4 @@
-import monsterSlayerImage from "@/assets/projects/monster-slayer-game.webp";
 import maptyAppImage from "@/assets/projects/mapty-app.webp";
-import pigGameImage from "@/assets/projects/pig-game.webp";
 import restApiImage from "@/assets/projects/rest-api-with-nodejs.webp";
 import vuePortfolioImage from "@/assets/projects/vue-portfolio.webp";
 import zendeskPulseImage from "@/assets/projects/zd-pulse.webp";
@@ -24,6 +22,8 @@ export interface Tech {
   file_name: string;
 }
 
+type ProjectCategory = "professional" | "personal";
+
 export interface Project {
   image: string;
   title: string;
@@ -31,15 +31,21 @@ export interface Project {
   techDescription: string;
   techStack: Tech[];
   links: SocialIcon[];
+  category: ProjectCategory;
 }
 
 export const PAGES_CONTENT = {
   hero_subtitle: "Vue.js Front-end Developer",
   about_me_subtitle: "Hi, I'm Ralitsa Voronevska!",
-  about_me_description: `Front-end developer with 6 years of experience building performant, scalable, and fully responsive web solutions 
-  with a mobile-first approach in mind. I am focused on solutions that serve both user needs and business objectives. I adapt quickly
-  across differing codebase conventions and team structures. Since early 2026, I’ve been working on refreshing my basic Python skills.`,
-  projects_subtitle: "My latest projects built with cutting-edge technologies!",
+  about_me_description: `Frontend Developer with 6+ years of professional experience building scalable, responsive web applications with Vue and JavaScript/TypeScript.
+
+  I specialize in Vue 3 (Composition API) and TypeScript, with experience in frontend architecture, REST APIs, state management, authentication, testing, performance and accessibility.
+
+  I focus on clean, maintainable solutions that balance technical quality, user experience and business requirements.
+
+  Based in Varna, Bulgaria — open to remote opportunities.`,
+  projects_subtitle:
+    "A selection of professional and personal projects showcasing my work with Vue, TypeScript, Nuxt, APIs, and modern frontend development.",
 };
 
 export const HERO_SOCIAL_LINKS: SocialIcon[] = [
@@ -75,26 +81,27 @@ export const SKILLS: string[] = [
   "Vite",
   "Vitest",
   "TypeScript",
-  "Nuxt v4",
+  "JavaScript",
+  "Nuxt 4",
   "Pinia",
-  "Tailwind v4",
+  "Tailwind 4",
 ];
 
 export const HIGHLIGHTS: Highlight[] = [
   {
     icon: "⚡",
     label: "Performance",
-    text: "Faster load times through code-splitting, lazy loading, and smart caching",
+    text: "Performance-conscious interfaces, responsive UI and efficient frontend architecture",
   },
   {
     icon: "✨",
-    label: "AI-assisted workflow",
-    text: "Integrating AI platforms to speed up delivery without compromising code quality",
+    label: "Code Quality",
+    text: "Reusable components, testing and clean, maintainable TypeScript/Javascript/Vue code",
   },
   {
-    icon: "</>",
-    label: "Code quality",
-    text: "SOLID principles, design patterns, best practices, clean, and well-documented code",
+    icon: "🪄",
+    label: "Product Engineering",
+    text: "REST APIs, authentication, state management and end-to-end feature delivery",
   },
 ];
 
@@ -147,6 +154,7 @@ export const PROJECTS: Project[] = [
         file_name: "live",
       },
     ],
+    category: "personal",
   },
   {
     image: restApiImage,
@@ -170,6 +178,7 @@ export const PROJECTS: Project[] = [
       { name: "CodePen", url: "", file_name: "grayCodePen" },
       { name: "Live", url: "", file_name: "grayLive" },
     ],
+    category: "personal",
   },
   {
     image: maptyAppImage,
@@ -197,73 +206,13 @@ export const PROJECTS: Project[] = [
         file_name: "live",
       },
     ],
-  },
-  {
-    image: monsterSlayerImage,
-    title: "Monster Slayer Game",
-    description: "Give the Monster A Good Lesson",
-    techDescription: "Battle sounds powered by Howler.js",
-    techStack: [
-      { name: "Vue.js", file_name: "vue-js" },
-      { name: "Vite.js", file_name: "vite-js" },
-      { name: "Vitest", file_name: "vitest" },
-      { name: "TypeScript", file_name: "typescript" },
-      { name: "Pinia", file_name: "pinia" },
-      { name: "Tailwind CSS", file_name: "tailwind-css" },
-    ],
-    links: [
-      {
-        name: "GitHub",
-        url: "https://github.com/ralitsavoronevska/monster-slayer-game/",
-        file_name: "github",
-      },
-      {
-        name: "CodePen",
-        url: "https://codepen.io/ralitsavoronevska/pen/gbPyXbV/",
-        file_name: "codepen",
-      },
-      {
-        name: "Live",
-        url: "https://ralitsavoronevska.github.io/monster-slayer-game/",
-        file_name: "live",
-      },
-    ],
-  },
-  {
-    image: pigGameImage,
-    title: "Pig Game",
-    description: "A Single Dice Game for two players",
-    techDescription: "Game sounds powered by Howler.js",
-    techStack: [
-      { name: "Vue.js", file_name: "vue-js" },
-      { name: "Vite.js", file_name: "vite-js" },
-      { name: "Vitest", file_name: "vitest" },
-      { name: "TypeScript", file_name: "typescript" },
-      { name: "Tailwind CSS", file_name: "tailwind-css" },
-    ],
-    links: [
-      {
-        name: "GitHub",
-        url: "https://github.com/ralitsavoronevska/pig-game/",
-        file_name: "github",
-      },
-      {
-        name: "CodePen",
-        url: "https://codepen.io/ralitsavoronevska/pen/MYyqdXe/",
-        file_name: "codepen",
-      },
-      {
-        name: "Live",
-        url: "https://ralitsavoronevska.github.io/pig-game/",
-        file_name: "live",
-      },
-    ],
+    category: "personal",
   },
   {
     image: zendeskPulseImage,
     title: "Zendesk Pulse",
-    description: "Modern PrimeVue UI for Zendesk",
-    techDescription: "JWT + Postman + Swagger + Prism",
+    description: "Internal Zendesk Management UI",
+    techDescription: "Vue 3 · PrimeVue · REST APIs · JWT",
     techStack: [
       { name: "Vue.js", file_name: "vue-js" },
       { name: "Vite.js", file_name: "vite-js" },
@@ -286,6 +235,7 @@ export const PROJECTS: Project[] = [
         file_name: "live",
       },
     ],
+    category: "professional",
   },
   {
     image: elevationMarketingImage,
@@ -312,6 +262,7 @@ export const PROJECTS: Project[] = [
         file_name: "live",
       },
     ],
+    category: "professional",
   },
   {
     image: maximaCxImage,
@@ -338,6 +289,7 @@ export const PROJECTS: Project[] = [
         file_name: "live",
       },
     ],
+    category: "professional",
   },
   // {
   //   image: "",

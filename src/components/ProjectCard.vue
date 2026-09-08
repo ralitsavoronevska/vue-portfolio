@@ -1,11 +1,15 @@
 <template>
   <!-- start of Project Card -->
-  <article ref="cardRef" class="group" :class="[
+  <article
+    ref="cardRef"
+    class="group"
+    :class="[
       isVisible
         ? `opacity-100 translate-y-0 delay-${(index + 1) * 100}`
         : 'opacity-0 translate-y-8',
       'transition-all duration-700 ease-out',
-    ]">
+    ]"
+  >
     <div class="card">
       <!-- Project Image -->
       <img
@@ -30,10 +34,10 @@
           class="glow-icons"
           :class="
             techStack.length === 7
-              ? 'gap-1.75 md:gap-2.5 lg:gap-4'
-              : techStack.length > 5
-                ? 'gap-4 md:gap-5 lg:gap-6.5'
-                : 'gap-7 md:gap-8 lg:gap-10'
+              ? 'gap-1.5 md:gap-2.5 lg:gap-2.5'
+              : techStack.length === 5
+                ? 'gap-3.5 md:gap-4.5 lg:gap-6'
+                : 'gap-3.5 md:gap-4.5 lg:gap-4.5'
           "
         >
           <!-- Glow Icons -->

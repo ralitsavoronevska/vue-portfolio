@@ -79,10 +79,10 @@ const revealStyle = (delay: number) => ({
         :style="isVisible ? revealStyle(600 + index * 100) : undefined"
       >
         <p class="highlight-card-header">
-          <span aria-hidden="true" class="highlight-icon gradient-text">{{
+          <span aria-hidden="true" class="highlight-card-icon">{{
             item.icon
           }}</span>
-          <span class="gradient-text">{{ item.label }}</span>
+          <span class="highligh-card-label">{{ item.label }}</span>
         </p>
         <p class="highlight-card-text">{{ item.text }}</p>
       </div>
@@ -101,10 +101,10 @@ const revealStyle = (delay: number) => ({
         <button class="btn-styles" type="button">View Projects</button>
       </a>
       <a
-        href="https://ralitsavoronevska.com/assets/Ralitsa-Voronevska-CV.pdf"
+        href="https://ralitsavoronevska.com/assets/Ralitsa-Voronevska-Frontend-CV.pdf"
         target="_blank"
         rel="noopener"
-        download="Ralitsa-Voronevska-CV.pdf"
+        download="Ralitsa-Voronevska-Frontend-CV.pdf"
         role="button"
         aria-label="Download my Resume"
         :class="revealClasses"
