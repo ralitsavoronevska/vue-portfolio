@@ -101,10 +101,10 @@ const revealStyle = (delay: number) => ({
         <button class="btn-styles" type="button">View Projects</button>
       </a>
       <a
-        href="https://ralitsavoronevska.com/assets/Ralitsa-Voronevska-Frontend-CV.pdf"
+        href="https://ralitsavoronevska.com/assets/Ralitsa-Voronevska-Frontend-DeveloperCV.pdf"
         target="_blank"
         rel="noopener"
-        download="Ralitsa-Voronevska-Frontend-CV.pdf"
+        download="Ralitsa-Voronevska-Frontend-Developer-CV.pdf"
         role="button"
         aria-label="Download my Resume"
         :class="revealClasses"
