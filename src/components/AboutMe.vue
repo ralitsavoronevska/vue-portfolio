@@ -101,7 +101,7 @@ const revealStyle = (delay: number) => ({
         <button class="btn-styles" type="button">View Projects</button>
       </a>
       <a
-        href="https://ralitsavoronevska.com/assets/Ralitsa-Voronevska-Frontend-DeveloperCV.pdf"
+        href="https://ralitsavoronevska.com/assets/Ralitsa-Voronevska-Frontend-Developer-CV.pdf"
         target="_blank"
         rel="noopener"
         download="Ralitsa-Voronevska-Frontend-Developer-CV.pdf"
