@@ -5,9 +5,9 @@ import ProjectCard from "@/components/ProjectCard.vue";
 import SocialIcons from "@/components/SocialIcons.vue";
 
 describe("ProjectsList", () => {
-  it("renders all 8 projects", () => {
+  it("renders all 6 projects", () => {
     const wrapper = mount(ProjectsList);
-    expect(wrapper.findAllComponents(ProjectCard)).toHaveLength(8);
+    expect(wrapper.findAllComponents(ProjectCard)).toHaveLength(6);
   });
 });
 

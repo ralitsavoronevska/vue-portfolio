@@ -7,12 +7,18 @@
 
 /* === Base Styles === */
 @layer base {
+  img {
+    content-visibility: auto;
+  }
+
   .bg-container {
-    @apply bg-scroll md:bg-fixed fixed top-0 left-0 w-full h-screen -z-2 will-change-transform bg-cover bg-center flex items-center justify-center bg-no-repeat;
+    @apply bg-scroll fixed top-0 left-0 w-full h-screen -z-2 will-change-transform bg-cover bg-center flex items-center justify-center bg-no-repeat;
+    background-attachment: scroll;
   }
 
   .overlay {
-    @apply bg-slate-950/85 bg-scroll md:bg-fixed fixed top-0 left-0 w-full h-screen -z-1;
+    @apply bg-slate-950/85 bg-scroll fixed top-0 left-0 w-full h-screen -z-1;
+    background-attachment: scroll;
   }
 
   .content-wrapper {
@@ -24,6 +30,26 @@
 
   .gradient-text {
     @apply bg-linear-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent;
+  }
+}
+
+@media (max-width: 767px) {
+  .bg-container,
+  .overlay,
+  footer {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

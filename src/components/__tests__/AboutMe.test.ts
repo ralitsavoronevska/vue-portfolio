@@ -24,7 +24,7 @@ describe("AboutMe", () => {
     expect(buttons).toHaveLength(2);
     expect(buttons.at(0)?.attributes("href")).toBe("#projects");
     expect(buttons.at(1)?.attributes("href")).toBe(
-      "https://ralitsavoronevska.com/assets/Ralitsa-Voronevska-CV.pdf",
+      "https://ralitsavoronevska.com/assets/Ralitsa-Voronevska-Frontend-Developer-CV.pdf",
     );
   });
 

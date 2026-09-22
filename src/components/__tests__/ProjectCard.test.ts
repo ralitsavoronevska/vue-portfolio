@@ -109,19 +109,34 @@ describe("ProjectCard", () => {
     );
   });
 
-  it("adds smaller gap class when techStack has more than 5 items", () => {
+  it("adds bigger gap class when techStack has 5 items", () => {
     mockUseInView.mockReturnValue({
       sectionRef: ref(null),
       isVisible: ref(true),
     });
-    const longTechStack = Array.from({ length: 6 }, (_, i) => ({
+    const longTechStack = Array.from({ length: 5 }, (_, i) => ({
       name: `Tech ${i}`,
       file_name: "vuejs",
     }));
     const wrapper = mount(ProjectCard, {
       props: { ...defaultProps, techStack: longTechStack },
     });
-    expect(wrapper.find(".glow-icons").classes()).toContain("gap-4");
+    expect(wrapper.find(".glow-icons").classes()).toContain("gap-3.5");
+  } );
+  
+  it("adds smaller gap class when techStack has 7 items", () => {
+    mockUseInView.mockReturnValue({
+      sectionRef: ref(null),
+      isVisible: ref(true),
+    });
+    const longTechStack = Array.from({ length: 7 }, (_, i) => ({
+      name: `Tech ${i}`,
+      file_name: "vuejs",
+    }));
+    const wrapper = mount(ProjectCard, {
+      props: { ...defaultProps, techStack: longTechStack },
+    });
+    expect(wrapper.find(".glow-icons").classes()).toContain("gap-1.5");
   });
 
   it("renders gracefully with empty project URLs (future projects)", async () => {
@@ -159,14 +174,14 @@ describe("ProjectCard", () => {
     ]);
   });
 
-  it("Monster Slayer Game has correct live links", () => {
+  it("Vue.js 3 Portfolio has correct live links", () => {
     const { projects } = usePortfolioData();
-    const monster = projects.find((p) => p.title === "Monster Slayer Game")!;
-    const urls = (monster.links as { url: string }[]).map((l) => l.url);
+    const portfolio = projects.find((p) => p.title === "Vue.js 3 Portfolio")!;
+    const urls = (portfolio.links as { url: string }[]).map((l) => l.url);
     expect(urls).toEqual([
-      "https://github.com/ralitsavoronevska/monster-slayer-game/",
-      "https://codepen.io/ralitsavoronevska/pen/gbPyXbV/",
-      "https://ralitsavoronevska.github.io/monster-slayer-game/",
+      "https://github.com/ralitsavoronevska/vue-portfolio/",
+      "https://codepen.io/ralitsavoronevska/pen/KOdQJZ/",
+      "https://ralitsavoronevska.com/",
     ]);
   });
 });

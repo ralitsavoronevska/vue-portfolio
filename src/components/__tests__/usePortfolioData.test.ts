@@ -60,9 +60,9 @@ describe("usePortfolioData", () => {
     expect(names).toContain("Nodemon");
   });
 
-  it("returns 8 projects", () => {
+  it("returns 6 projects", () => {
     const { projects } = usePortfolioData();
-    expect(projects).toHaveLength(8);
+    expect(projects).toHaveLength(6);
   });
 
   it("second project has correct title and tech stack", () => {
@@ -86,15 +86,15 @@ describe("usePortfolioData", () => {
     ]);
   });
 
-  it("Monster Slayer Game has correct live links", () => {
+  it("Vue.js 3 Portfolio has correct live links", () => {
     const { projects } = usePortfolioData();
-    const monster = projects.find((p) => p.title === "Monster Slayer Game")!;
+    const portfolio = projects.find((p) => p.title === "Vue.js 3 Portfolio")!;
 
-    const urls = (monster.links as { url: string }[]).map((l) => l.url);
+    const urls = (portfolio.links as { url: string }[]).map((l) => l.url);
     expect(urls).toEqual([
-      "https://github.com/ralitsavoronevska/monster-slayer-game/",
-      "https://codepen.io/ralitsavoronevska/pen/gbPyXbV/",
-      "https://ralitsavoronevska.github.io/monster-slayer-game/",
+      "https://github.com/ralitsavoronevska/vue-portfolio/",
+      "https://codepen.io/ralitsavoronevska/pen/KOdQJZ/",
+      "https://ralitsavoronevska.com/",
     ]);
   });
 
