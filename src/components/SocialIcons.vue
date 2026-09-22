@@ -7,12 +7,13 @@
     rel="noopener noreferrer"
     class="social-link rounded-full"
     :aria-label="getAriaLabel(icon)"
+    :aria-disabled="getInactiveIcons(icon)"
   >
     <img
       :src="getSrc(icon)"
       class="social-icon"
       data-testid="social-icon"
-      :alt="getAriaLabel(icon)"
+      :alt="getAriaLabel(icon)" 
       loading="lazy"
     />
   </a>
@@ -55,6 +56,10 @@ const socialIcons = import.meta.glob("@/assets/icons/social-icons/*.svg", {
 const getSrc = (icon: { file_name: string }) => {
   const path = `/src/assets/icons/social-icons/${icon.file_name}.svg`;
   return socialIcons[path] ?? "";
+};
+
+const getInactiveIcons = (icon: { file_name: string }) => {
+  return icon.file_name.includes("gray");
 };
 </script>
 
