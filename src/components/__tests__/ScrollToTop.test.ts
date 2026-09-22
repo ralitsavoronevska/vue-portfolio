@@ -77,6 +77,16 @@ describe("ScrollToTop", () => {
     expect(wrapper.find(".scroll-to-top").exists()).toBe(false);
   });
 
+  it("keeps the button hidden when scrollY is exactly 500", async () => {
+    wrapper = mount(ScrollToTop);
+    window.scrollY = 500;
+
+    window.dispatchEvent(new Event("scroll"));
+    await flushRaf();
+
+    expect(wrapper.find(".scroll-to-top").exists()).toBe(false);
+  });
+
   it("scrolls to the top smoothly when clicked", async () => {
     wrapper = mount(ScrollToTop);
     window.scrollY = 600;

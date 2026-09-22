@@ -9,6 +9,40 @@ describe("ProjectsList", () => {
     const wrapper = mount(ProjectsList);
     expect(wrapper.findAllComponents(ProjectCard)).toHaveLength(6);
   });
+
+  it("renders the professional and personal project sections with the correct headings", () => {
+    const wrapper = mount(ProjectsList);
+
+    expect(wrapper.text()).toContain("Selected Work");
+    expect(wrapper.text()).toContain("Professional");
+    expect(wrapper.text()).toContain("Personal");
+    expect(wrapper.findAll(".project-group")).toHaveLength(2);
+  });
+
+  it("passes the expected metadata into the project cards for both categories", () => {
+    const wrapper = mount(ProjectsList);
+    const cards = wrapper.findAllComponents(ProjectCard);
+
+    expect(cards[0]?.props("title")).toBe("Zendesk Pulse");
+    expect(cards[0]?.props("index")).toBe(0);
+    expect(cards.at(-1)?.props("title")).toBe("Mapty App");
+    expect(cards.at(-1)?.props("index")).toBe(2);
+  });
+
+  it("groups professional and personal projects separately", () => {
+    const wrapper = mount(ProjectsList);
+    const groups = wrapper.findAll(".project-group");
+
+    expect(groups).toHaveLength(2);
+    expect(groups[0]?.text()).toContain("Professional");
+    expect(groups[1]?.text()).toContain("Personal");
+
+    const professionalCards = groups[0]?.findAllComponents(ProjectCard);
+    const personalCards = groups[1]?.findAllComponents(ProjectCard);
+
+    expect(professionalCards).toHaveLength(3);
+    expect(personalCards).toHaveLength(3);
+  });
 });
 
 describe("SocialIcons", () => {

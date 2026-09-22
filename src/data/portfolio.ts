@@ -35,7 +35,7 @@ export interface Project {
 }
 
 export const PAGES_CONTENT = {
-  hero_subtitle: "Vue.js Front-end Developer",
+  hero_subtitle: "Vue.js Frontend Developer",
   about_me_subtitle: "Hi, I'm Ralitsa Voronevska!",
   about_me_description: `Frontend Developer with 6+ years of professional experience building scalable, responsive web applications with Vue and JavaScript/TypeScript.
 

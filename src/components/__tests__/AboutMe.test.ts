@@ -37,5 +37,19 @@ describe("AboutMe", () => {
     const wrapper = mount(AboutMe);
     const h2 = wrapper.find("h2");
     expect(h2.html()).toContain("100ms");
+    expect(h2.classes()).toContain("opacity-100");
+  });
+
+  it("applies hidden reveal classes when the section is not visible", () => {
+    mockUseInView.mockReturnValue({
+      sectionRef: ref(null),
+      isVisible: ref(false),
+    });
+
+    const wrapper = mount(AboutMe);
+    const h2 = wrapper.find("h2");
+    expect(h2.classes()).toContain("opacity-0");
+    expect(h2.attributes("style")).toBeUndefined();
+    expect(wrapper.findAll(".highlight-card")).toHaveLength(3);
   });
 });

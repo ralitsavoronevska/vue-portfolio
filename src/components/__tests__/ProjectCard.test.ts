@@ -122,8 +122,23 @@ describe("ProjectCard", () => {
       props: { ...defaultProps, techStack: longTechStack },
     });
     expect(wrapper.find(".glow-icons").classes()).toContain("gap-3.5");
-  } );
-  
+  });
+
+  it("adds the default gap class when techStack has a normal size", () => {
+    mockUseInView.mockReturnValue({
+      sectionRef: ref(null),
+      isVisible: ref(true),
+    });
+    const normalTechStack = Array.from({ length: 3 }, (_, i) => ({
+      name: `Tech ${i}`,
+      file_name: "vuejs",
+    }));
+    const wrapper = mount(ProjectCard, {
+      props: { ...defaultProps, techStack: normalTechStack },
+    });
+    expect(wrapper.find(".glow-icons").classes()).toContain("gap-3.5");
+  });
+
   it("adds smaller gap class when techStack has 7 items", () => {
     mockUseInView.mockReturnValue({
       sectionRef: ref(null),
@@ -137,6 +152,29 @@ describe("ProjectCard", () => {
       props: { ...defaultProps, techStack: longTechStack },
     });
     expect(wrapper.find(".glow-icons").classes()).toContain("gap-1.5");
+  });
+
+  it("uses default values when optional props are missing", () => {
+    mockUseInView.mockReturnValue({
+      sectionRef: ref(null),
+      isVisible: ref(false),
+    });
+
+    const wrapper = mount(ProjectCard, {
+      props: {
+        image: "",
+        title: undefined,
+        description: undefined,
+        techDescription: undefined,
+        techStack: undefined,
+        icons: undefined,
+        index: undefined,
+      },
+    });
+
+    expect(wrapper.find("img").attributes("src")).toContain("coming-soon");
+    expect(wrapper.find("h4").text()).toBe("");
+    expect(wrapper.find(".card-desc").text()).toBe("");
   });
 
   it("renders gracefully with empty project URLs (future projects)", async () => {
