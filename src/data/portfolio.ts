@@ -128,7 +128,7 @@ export const PROJECTS: Project[] = [
     image: vuePortfolioImage,
     title: "Vue.js 3 Portfolio",
     description: "Original, built from scratch",
-    techDescription: "Modern Matrix-themed Portfolio",
+    techDescription: "Responsive UI · Reusable Components · Interactive Effects",
     techStack: [
       { name: "Vue.js", file_name: "vue-js" },
       { name: "Vite.js", file_name: "vite-js" },
@@ -160,7 +160,7 @@ export const PROJECTS: Project[] = [
     image: restApiImage,
     title: "Secure Node.js REST API",
     description: "RESTful API with Authentication",
-    techDescription: "Multer + Morgan + JWT + Bcrypt",
+    techDescription: "API Architecture · Authentication · File Handling",
     techStack: [
       { name: "Node.js", file_name: "node-js" },
       { name: "Express.js", file_name: "express-js" },
@@ -184,7 +184,7 @@ export const PROJECTS: Project[] = [
     image: maptyAppImage,
     title: "Mapty App",
     description: "Map your Workout Activities",
-    techDescription: "OpenStreetMap + Leaflet.js",
+    techDescription: "Interactive Maps · Geolocation · Workout Tracking",
     techStack: [
       { name: "Vue.js", file_name: "vue-js" },
       { name: "Vite.js", file_name: "vite-js" },
@@ -212,7 +212,7 @@ export const PROJECTS: Project[] = [
     image: zendeskPulseImage,
     title: "Zendesk Pulse",
     description: "Internal Zendesk Management UI",
-    techDescription: "Vue 3 · PrimeVue · REST APIs · JWT",
+    techDescription: "Data-Driven UI · Reusable Components · API Integration",
     techStack: [
       { name: "Vue.js", file_name: "vue-js" },
       { name: "Vite.js", file_name: "vite-js" },
@@ -241,7 +241,7 @@ export const PROJECTS: Project[] = [
     image: elevationMarketingImage,
     title: "Elevation Marketing",
     description: "Modern Marketing Agency Website",
-    techDescription: "Custom branding, theme and visuals",
+    techDescription: "Responsive UI · Component Architecture · Custom Styling",
     techStack: [
       { name: "Nuxt.js", file_name: "nuxt-js" },
       { name: "Vue.js", file_name: "vue-js" },
@@ -268,7 +268,7 @@ export const PROJECTS: Project[] = [
     image: maximaCxImage,
     title: "Maxima CX",
     description: "Customer Support Agency Website",
-    techDescription: "Brand identity, theme and content",
+    techDescription: "Responsive UI · Reusable Components · Custom Styling",
     techStack: [
       { name: "Nuxt.js", file_name: "nuxt-js" },
       { name: "Vue.js", file_name: "vue-js" },
