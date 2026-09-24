@@ -22,8 +22,6 @@ export interface Tech {
   file_name: string;
 }
 
-type ProjectCategory = "professional" | "personal";
-
 export interface Project {
   image: string;
   title: string;
@@ -31,7 +29,6 @@ export interface Project {
   techDescription: string;
   techStack: Tech[];
   links: SocialIcon[];
-  category: ProjectCategory;
 }
 
 export const PAGES_CONTENT = {
@@ -46,6 +43,8 @@ export const PAGES_CONTENT = {
   Based in Varna, Bulgaria — open to remote opportunities.`,
   projects_subtitle:
     "A selection of professional and personal projects showcasing my work with Vue, TypeScript, Nuxt, APIs, and modern frontend development.",
+  professional_projects_subtitle: "Projects developed in a professional environment, focused on real business requirements and production-ready frontend solutions.",
+  personal_projects_subtitle: "Projects developed independently, showcasing creativity, experimentation, and personal growth in frontend development.",
 };
 
 export const HERO_SOCIAL_LINKS: SocialIcon[] = [
@@ -123,7 +122,90 @@ export const TECH_STACK: Tech[] = [
   { name: "Nodemon", file_name: "nodemon" },
 ];
 
-export const PROJECTS: Project[] = [
+export const PROFESSIONAL_PROJECTS: Project[] = [
+  {
+    image: zendeskPulseImage,
+    title: "Zendesk Pulse",
+    description: "Internal Zendesk Management UI",
+    techDescription: "Data-Driven UI · Reusable Components · API Integration",
+    techStack: [
+      { name: "Vue.js", file_name: "vue-js" },
+      { name: "Vite.js", file_name: "vite-js" },
+      { name: "Vitest", file_name: "vitest" },
+      { name: "JavaScript", file_name: "javascript" },
+      { name: "Pinia", file_name: "pinia" },
+      { name: "Tailwind CSS", file_name: "tailwind-css" },
+      { name: "FireBase", file_name: "firebase" },
+    ],
+    links: [
+      {
+        name: "GitHub",
+        url: "https://github.com/ralitsavoronevska/zd-pulse/",
+        file_name: "github",
+      },
+      { name: "CodePen", url: "", file_name: "grayCodePen" },
+      {
+        name: "Live",
+        url: "https://ralitsavoronevska.github.io/zd-pulse/",
+        file_name: "live",
+      },
+    ],
+  },
+  {
+    image: elevationMarketingImage,
+    title: "Elevation Marketing",
+    description: "Modern Marketing Agency Website",
+    techDescription: "Responsive UI · Component Architecture · Custom Styling",
+    techStack: [
+      { name: "Nuxt.js", file_name: "nuxt-js" },
+      { name: "Vue.js", file_name: "vue-js" },
+      { name: "Vite.js", file_name: "vite-js" },
+      { name: "TypeScript", file_name: "typescript" },
+      { name: "Tailwind CSS", file_name: "tailwind-css" },
+    ],
+    links: [
+      {
+        name: "GitHub",
+        url: "https://github.com/ralitsavoronevska/elevation-marketing/",
+        file_name: "github",
+      },
+      { name: "CodePen", url: "", file_name: "grayCodePen" },
+      {
+        name: "Live",
+        url: "https://ralitsavoronevska.github.io/elevation-marketing/",
+        file_name: "live",
+      },
+    ],
+  },
+  {
+    image: maximaCxImage,
+    title: "Maxima CX",
+    description: "Customer Support Agency Website",
+    techDescription: "Responsive UI · Reusable Components · Custom Styling",
+    techStack: [
+      { name: "Nuxt.js", file_name: "nuxt-js" },
+      { name: "Vue.js", file_name: "vue-js" },
+      { name: "Vite.js", file_name: "vite-js" },
+      { name: "TypeScript", file_name: "typescript" },
+      { name: "Tailwind CSS", file_name: "tailwind-css" },
+    ],
+    links: [
+      {
+        name: "GitHub",
+        url: "https://github.com/ralitsavoronevska/maxima-cx/",
+        file_name: "github",
+      },
+      { name: "CodePen", url: "", file_name: "grayCodePen" },
+      {
+        name: "Live",
+        url: "https://ralitsavoronevska.github.io/maxima-cx/",
+        file_name: "live",
+      },
+    ],
+  },
+];
+
+export const PERSONAL_PROJECTS: Project[] = [
   {
     image: vuePortfolioImage,
     title: "Vue.js 3 Portfolio",
@@ -154,13 +236,12 @@ export const PROJECTS: Project[] = [
         file_name: "live",
       },
     ],
-    category: "personal",
   },
   {
     image: restApiImage,
     title: "Secure Node.js REST API",
     description: "RESTful API with Authentication",
-    techDescription: "API Architecture · Authentication · File Handling",
+    techDescription: "API Architecture · Authentication · File Upload Handling",
     techStack: [
       { name: "Node.js", file_name: "node-js" },
       { name: "Express.js", file_name: "express-js" },
@@ -178,13 +259,12 @@ export const PROJECTS: Project[] = [
       { name: "CodePen", url: "", file_name: "grayCodePen" },
       { name: "Live", url: "", file_name: "grayLive" },
     ],
-    category: "personal",
   },
   {
     image: maptyAppImage,
     title: "Mapty App",
     description: "Map your Workout Activities",
-    techDescription: "Interactive Maps · Geolocation · Workout Tracking",
+    techDescription: "Interactive Maps · Geolocation · Running and Cycling Tracking",
     techStack: [
       { name: "Vue.js", file_name: "vue-js" },
       { name: "Vite.js", file_name: "vite-js" },
@@ -206,89 +286,6 @@ export const PROJECTS: Project[] = [
         file_name: "live",
       },
     ],
-    category: "personal",
-  },
-  {
-    image: zendeskPulseImage,
-    title: "Zendesk Pulse",
-    description: "Internal Zendesk Management UI",
-    techDescription: "Data-Driven UI · Reusable Components · API Integration",
-    techStack: [
-      { name: "Vue.js", file_name: "vue-js" },
-      { name: "Vite.js", file_name: "vite-js" },
-      { name: "Vitest", file_name: "vitest" },
-      { name: "JavaScript", file_name: "javascript" },
-      { name: "Pinia", file_name: "pinia" },
-      { name: "Tailwind CSS", file_name: "tailwind-css" },
-      { name: "FireBase", file_name: "firebase" },
-    ],
-    links: [
-      {
-        name: "GitHub",
-        url: "https://github.com/ralitsavoronevska/zd-pulse/",
-        file_name: "github",
-      },
-      { name: "CodePen", url: "", file_name: "grayCodePen" },
-      {
-        name: "Live",
-        url: "https://ralitsavoronevska.github.io/zd-pulse/",
-        file_name: "live",
-      },
-    ],
-    category: "professional",
-  },
-  {
-    image: elevationMarketingImage,
-    title: "Elevation Marketing",
-    description: "Modern Marketing Agency Website",
-    techDescription: "Responsive UI · Component Architecture · Custom Styling",
-    techStack: [
-      { name: "Nuxt.js", file_name: "nuxt-js" },
-      { name: "Vue.js", file_name: "vue-js" },
-      { name: "Vite.js", file_name: "vite-js" },
-      { name: "TypeScript", file_name: "typescript" },
-      { name: "Tailwind CSS", file_name: "tailwind-css" },
-    ],
-    links: [
-      {
-        name: "GitHub",
-        url: "https://github.com/ralitsavoronevska/elevation-marketing/",
-        file_name: "github",
-      },
-      { name: "CodePen", url: "", file_name: "grayCodePen" },
-      {
-        name: "Live",
-        url: "https://ralitsavoronevska.github.io/elevation-marketing/",
-        file_name: "live",
-      },
-    ],
-    category: "professional",
-  },
-  {
-    image: maximaCxImage,
-    title: "Maxima CX",
-    description: "Customer Support Agency Website",
-    techDescription: "Responsive UI · Reusable Components · Custom Styling",
-    techStack: [
-      { name: "Nuxt.js", file_name: "nuxt-js" },
-      { name: "Vue.js", file_name: "vue-js" },
-      { name: "Vite.js", file_name: "vite-js" },
-      { name: "TypeScript", file_name: "typescript" },
-      { name: "Tailwind CSS", file_name: "tailwind-css" },
-    ],
-    links: [
-      {
-        name: "GitHub",
-        url: "https://github.com/ralitsavoronevska/maxima-cx/",
-        file_name: "github",
-      },
-      { name: "CodePen", url: "", file_name: "grayCodePen" },
-      {
-        name: "Live",
-        url: "https://ralitsavoronevska.github.io/maxima-cx/",
-        file_name: "live",
-      },
-    ],
-    category: "professional",
   },
 ];
+

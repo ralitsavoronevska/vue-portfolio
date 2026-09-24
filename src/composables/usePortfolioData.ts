@@ -1,4 +1,3 @@
-// src/composables/usePortfolioData.ts
 import {
   PAGES_CONTENT,
   SKILLS,
@@ -9,7 +8,8 @@ import {
   type SocialIcon,
   TECH_STACK,
   type Tech,
-  PROJECTS,
+  PROFESSIONAL_PROJECTS,
+  PERSONAL_PROJECTS,
   type Project,
 } from "@/data/portfolio";
 
@@ -22,8 +22,11 @@ export function usePortfolioData() {
     skills: SKILLS as string[],
     highlights: HIGHLIGHTS as Highlight[],
     projectsSubtitle: PAGES_CONTENT.projects_subtitle,
+    professionalProjectsSubtitle: PAGES_CONTENT.professional_projects_subtitle,
+    personalProjectsSubtitle: PAGES_CONTENT.personal_projects_subtitle,
+    professionalProjects: PROFESSIONAL_PROJECTS as Project[],
+    personalProjects: PERSONAL_PROJECTS as Project[],
     techStack: TECH_STACK as Tech[],
-    projects: PROJECTS as Project[],
     contactSocialIcons: CONTACT_SOCIAL_LINKS as SocialIcon[],
   };
 }
