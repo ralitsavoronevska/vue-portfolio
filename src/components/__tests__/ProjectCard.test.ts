@@ -48,7 +48,7 @@ describe("ProjectCard", () => {
       isVisible: ref(true), // ← visible
     });
 
-    const wrapper = mount(ProjectCard, { props: defaultProps });
+    const wrapper = mount(ProjectCard, { props: { project: defaultProps as any, index: defaultProps.index } });
 
     const article = wrapper.find("article");
 
@@ -62,7 +62,7 @@ describe("ProjectCard", () => {
       isVisible: ref(false), // ← hidden
     });
 
-    const wrapper = mount(ProjectCard, { props: defaultProps });
+    const wrapper = mount(ProjectCard, { props: { project: defaultProps as any, index: defaultProps.index } });
     const article = wrapper.find("article");
 
     expect(article.classes()).toContain("opacity-0");
@@ -76,11 +76,12 @@ describe("ProjectCard", () => {
     });
 
     const wrapper = mount(ProjectCard, {
-      props: { ...defaultProps, index: 1 },
+      props: { project: defaultProps as any, index: 1 },
     });
     const article = wrapper.find("article");
 
-    expect(article.classes()).toContain("delay-200");
+    // transitionDelay should be set to 200ms for index=1
+    expect(article.element.style.transitionDelay).toBe("200ms");
   });
 
   it("renders project image with correct src and alt", () => {
@@ -88,7 +89,7 @@ describe("ProjectCard", () => {
       sectionRef: ref(null),
       isVisible: ref(true),
     });
-    const wrapper = mount(ProjectCard, { props: defaultProps });
+    const wrapper = mount(ProjectCard, { props: { project: defaultProps as any, index: defaultProps.index } });
     const img = wrapper.find(".card-img");
     expect(img.attributes("src")).toBe(
       "/assets/projects/rest-api-with-nodejs.webp",
@@ -102,7 +103,7 @@ describe("ProjectCard", () => {
       isVisible: ref(true),
     });
     const wrapper = mount(ProjectCard, {
-      props: { ...defaultProps, image: undefined },
+      props: { project: { ...defaultProps, image: undefined } as any, index: defaultProps.index },
     });
     expect(wrapper.find("img").attributes("src")).toBe(
       "/src/assets/projects/coming-soon.webp",
@@ -119,7 +120,7 @@ describe("ProjectCard", () => {
       file_name: "vuejs",
     }));
     const wrapper = mount(ProjectCard, {
-      props: { ...defaultProps, techStack: longTechStack },
+      props: { project: { ...defaultProps, techStack: longTechStack } as any, index: defaultProps.index },
     });
     expect(wrapper.find(".glow-icons").classes()).toContain("gap-3.5");
   });
@@ -134,7 +135,7 @@ describe("ProjectCard", () => {
       file_name: "vuejs",
     }));
     const wrapper = mount(ProjectCard, {
-      props: { ...defaultProps, techStack: normalTechStack },
+      props: { project: { ...defaultProps, techStack: normalTechStack } as any, index: defaultProps.index },
     });
     expect(wrapper.find(".glow-icons").classes()).toContain("gap-3.5");
   });
@@ -149,7 +150,7 @@ describe("ProjectCard", () => {
       file_name: "vuejs",
     }));
     const wrapper = mount(ProjectCard, {
-      props: { ...defaultProps, techStack: longTechStack },
+      props: { project: { ...defaultProps, techStack: longTechStack } as any, index: defaultProps.index },
     });
     expect(wrapper.find(".glow-icons").classes()).toContain("gap-1.5");
   });
@@ -161,15 +162,7 @@ describe("ProjectCard", () => {
     });
 
     const wrapper = mount(ProjectCard, {
-      props: {
-        image: "",
-        title: undefined,
-        description: undefined,
-        techDescription: undefined,
-        techStack: undefined,
-        icons: undefined,
-        index: undefined,
-      },
+      props: { project: { image: '', title: undefined, description: undefined, techDescription: undefined, techStack: undefined, links: undefined } as any, index: undefined },
     });
 
     expect(wrapper.find("img").attributes("src")).toContain("coming-soon");

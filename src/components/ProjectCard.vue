@@ -2,20 +2,16 @@
   <!-- start of Project Card -->
   <article
     ref="cardRef"
-    class="group"
-    :class="[
-      isVisible
-        ? `opacity-100 translate-y-0 delay-${(index + 1) * 100}`
-        : 'opacity-0 translate-y-8',
-      'transition-all duration-700 ease-out',
-    ]"
+    class="group transition-all duration-700 ease-out"
+    :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
+    :style="isVisible ? { transitionDelay: `${(index + 1) * 100}ms` } : {}"
   >
     <div class="card">
       <!-- Project Image -->
       <img
         :src="projectImage(image)"
         :alt="description"
-        class="card-img"
+        :class="projectImageClass(image, title)"
         loading="lazy"
       />
 
@@ -33,12 +29,12 @@
         <div
           class="glow-icons"
           :class="
-            techStack.length === 7
-              ? 'gap-1.25 md:gap-1.75 lg:gap-2.5'
-              : techStack.length === 5
-                ? 'gap-3.5 md:gap-4.5 lg:gap-6'
-                : 'gap-3 md:gap-4 lg:gap-4.5'
-          "
+              techStack.length === 7
+                ? 'gap-1.5 md:gap-1.75 lg:gap-2.5'
+                : techStack.length === 5
+                  ? 'gap-3.5 md:gap-4.5 lg:gap-6'
+                  : 'gap-3.5 md:gap-4 lg:gap-4.5'
+            "
         >
           <!-- Glow Icons -->
           <GlowIcons
@@ -71,13 +67,10 @@ import GlowIcons from "./GlowIcons.vue";
 import { useInView } from "@/composables/useInView";
 import { useTemplateRef } from "vue";
 
+import type { Project } from '@/data/portfolio'
+
 const props = defineProps<{
-  image?: string;
-  title?: string;
-  description?: string;
-  techDescription?: string;
-  icons?: Array<{ name: string; url: string; file_name: string }>;
-  techStack?: Array<{ name: string; file_name: string }>;
+  project?: Project;
   index?: number;
 }>();
 
@@ -86,12 +79,18 @@ const { isVisible } = useInView(cardRef);
 
 // safe locals for template usage
 const index = props.index ?? 0;
-const image = props.image ?? "";
-const techStack = props.techStack ?? [];
-const icons = props.icons ?? [];
-const title = props.title ?? "";
-const description = props.description ?? "";
-const techDescription = props.techDescription ?? "";
+const project = props.project ?? { image: '', title: '', description: '', techDescription: '', techStack: [], links: [] } as Project;
+const image = project.image ?? "";
+const techStack = project.techStack ?? [];
+const icons = project.links ?? [];
+const title = project.title ?? "";
+const description = project.description ?? "";
+const techDescription = project.techDescription ?? "";
 
 const projectImage = (image: string) => (image ? image : commingSoonImg);
+
+  const projectImageClass = (image: string, title: string) => {
+    const imageTitle = title.toLowerCase().replace(/\s+/g, "-");
+    return image ? `card-img card-img-${imageTitle}` : "card-img coming-soon-img";
+  }
 </script>

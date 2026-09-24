@@ -23,10 +23,11 @@ describe("ProjectsList", () => {
     const wrapper = mount(ProjectsList);
     const cards = wrapper.findAllComponents(ProjectCard);
 
-    expect(cards[0]?.props("title")).toBe("Zendesk Pulse");
-    expect(cards[0]?.props("index")).toBe(0);
-    expect(cards.at(-1)?.props("title")).toBe("Mapty App");
-    expect(cards.at(-1)?.props("index")).toBe(2);
+    // project prop now contains the project object
+    expect(((cards[0]!.props() as any).project as any).title).toBe("Zendesk Pulse");
+    expect((cards[0]!.props() as any).index).toBe(0);
+    expect(((cards.at(-1)!.props() as any).project as any).title).toBe("Mapty App");
+    expect((cards.at(-1)!.props() as any).index).toBe(2);
   });
 
   it("groups professional and personal projects separately", () => {

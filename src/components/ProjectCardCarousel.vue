@@ -42,15 +42,7 @@ const carouselConfig = {
       class="cards-grid"
     >
       <div class="project-carousel__card-wrapper">
-        <ProjectCard
-          :image="project.image"
-          :title="project.title"
-          :description="project.description"
-          :icons="project.links"
-          :techDescription="project.techDescription"
-          :techStack="project.techStack"
-          :index="index"
-        />
+        <ProjectCard :project="project" :index="index" />
       </div>
     </Slide>
 
