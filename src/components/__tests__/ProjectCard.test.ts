@@ -137,7 +137,7 @@ describe("ProjectCard", () => {
     const wrapper = mount(ProjectCard, {
       props: { project: { ...defaultProps, techStack: normalTechStack } as any, index: defaultProps.index },
     });
-    expect(wrapper.find(".glow-icons").classes()).toContain("gap-3.5");
+    expect(wrapper.find(".glow-icons").classes()).toContain("gap-3");
   });
 
   it("adds smaller gap class when techStack has 7 items", () => {
@@ -152,7 +152,7 @@ describe("ProjectCard", () => {
     const wrapper = mount(ProjectCard, {
       props: { project: { ...defaultProps, techStack: longTechStack } as any, index: defaultProps.index },
     });
-    expect(wrapper.find(".glow-icons").classes()).toContain("gap-1.5");
+    expect(wrapper.find(".glow-icons").classes()).toContain("gap-1.25");
   });
 
   it("uses default values when optional props are missing", () => {
@@ -189,13 +189,13 @@ describe("ProjectCard", () => {
 
   // Keep your data tests (they belong in usePortfolioData.test.ts — but okay for now)
   // → Later we can move them, but they pass now
-  it("second project has correct title, description and tech", () => {
+  it("fifth project has correct title, description and tech", () => {
     const { projects } = usePortfolioData();
-    const second = projects[1];
-    expect(second?.title).toBe("Secure Node.js REST API");
-    expect(second?.description).toBe("RESTful API with Authentication");
-    expect(second?.techDescription).toBe("Multer + Morgan + JWT + Bcrypt");
-    expect(second?.techStack.map((t: any) => t.name)).toEqual([
+    const fifth = projects[4];
+    expect(fifth?.title).toBe("Secure Node.js REST API");
+    expect(fifth?.description).toBe("RESTful API with Authentication");
+    expect(fifth?.techDescription).toBe("API Architecture · Authentication · File Upload Handling");
+    expect(fifth?.techStack.map((t: any) => t.name)).toEqual([
       "Node.js",
       "Express.js",
       "MongoDB",

@@ -209,12 +209,15 @@
       .card {
         @apply bg-slate-950/75 rounded-3xl p-3 md:p-4 shadow-3xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1;
         .card-img {
-          @apply w-full h-65 object-cover rounded-2xl mb-6;
-          &.card-img-zendesk-pulse, {
+          @apply w-full h-60 object-cover rounded-2xl mb-6;
+          &.card-img-zendesk-pulse, 
+          &.card-img-maxima-cx,
+          &.card-img-mapty-app {
             @apply object-top;
           }
           &.card-img-elevation-marketing, 
-          &.card-img-maxima-cx,{
+          &.card-img-vue-js-3-portfolio,
+          &.card-img-secure-node-js-rest-api {
             @apply object-center;
           }
         }

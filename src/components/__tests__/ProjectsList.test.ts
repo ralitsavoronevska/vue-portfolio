@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
 import ProjectsList from "@/components/ProjectsList.vue";
 import ProjectCard from "@/components/ProjectCard.vue";
+import type { Project } from '@/data/portfolio'
 import SocialIcons from "@/components/SocialIcons.vue";
 
 describe("ProjectsList", () => {
@@ -24,10 +25,13 @@ describe("ProjectsList", () => {
     const cards = wrapper.findAllComponents(ProjectCard);
 
     // project prop now contains the project object
-    expect(((cards[0]!.props() as any).project as any).title).toBe("Zendesk Pulse");
-    expect((cards[0]!.props() as any).index).toBe(0);
-    expect(((cards.at(-1)!.props() as any).project as any).title).toBe("Mapty App");
-    expect((cards.at(-1)!.props() as any).index).toBe(2);
+    const firstProps = cards[0]!.props() as { project: Project; index: number };
+    const lastProps = cards.at(-1)!.props() as { project: Project; index: number };
+
+    expect(firstProps.project.title).toBe("Zendesk Pulse");
+    expect(firstProps.index).toBe(0);
+    expect(lastProps.project.title).toBe("Mapty App");
+    expect(lastProps.index).toBe(2);
   });
 
   it("groups professional and personal projects separately", () => {

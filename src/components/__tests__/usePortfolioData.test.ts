@@ -65,15 +65,15 @@ describe("usePortfolioData", () => {
     expect(projects).toHaveLength(6);
   });
 
-  it("second project has correct title and tech stack", () => {
+  it("fifth project has correct title and tech stack", () => {
     const { projects } = usePortfolioData();
-    const second = projects[1];
+    const fifth = projects[4];
 
-    expect(second?.title).toBe("Secure Node.js REST API");
-    expect(second?.description).toBe("RESTful API with Authentication");
-    expect(second?.techDescription).toBe("Multer + Morgan + JWT + Bcrypt");
+    expect(fifth?.title).toBe("Secure Node.js REST API");
+    expect(fifth?.description).toBe("RESTful API with Authentication");
+    expect(fifth?.techDescription).toBe("API Architecture · Authentication · File Upload Handling");
 
-    const techNames = (second?.techStack as { name: string }[]).map(
+    const techNames = (fifth?.techStack as { name: string }[]).map(
       (t) => t.name,
     );
     expect(techNames).toEqual([

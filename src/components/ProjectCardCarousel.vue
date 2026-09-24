@@ -227,6 +227,13 @@ const carouselConfig = {
 
 /* Desktop: all projects are visible */
 
+@media (min-width: 1024px) {
+  .project-carousel {
+    max-width: 900px;
+    margin-inline: auto;
+  }
+}
+
 @media (min-width: 1280px) {
   .project-carousel {
     max-width: 1200px;

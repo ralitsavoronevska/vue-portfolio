@@ -241,7 +241,7 @@ export const PERSONAL_PROJECTS: Project[] = [
     image: restApiImage,
     title: "Secure Node.js REST API",
     description: "RESTful API with Authentication",
-    techDescription: "Multer + Morgan + JWT + Bcrypt",
+    techDescription: "API Architecture · Authentication · File Upload Handling",
     techStack: [
       { name: "Node.js", file_name: "node-js" },
       { name: "Express.js", file_name: "express-js" },

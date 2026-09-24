@@ -30,10 +30,10 @@
           class="glow-icons"
           :class="
               techStack.length === 7
-                ? 'gap-1.5 md:gap-1.75 lg:gap-2.5'
+                ? 'gap-1.25 md:gap-1.75 lg:gap-2.5'
                 : techStack.length === 5
                   ? 'gap-3.5 md:gap-4.5 lg:gap-6'
-                  : 'gap-3.5 md:gap-4 lg:gap-4.5'
+                  : 'gap-3 md:gap-4 lg:gap-4.5'
             "
         >
           <!-- Glow Icons -->
@@ -90,7 +90,7 @@ const techDescription = project.techDescription ?? "";
 const projectImage = (image: string) => (image ? image : commingSoonImg);
 
   const projectImageClass = (image: string, title: string) => {
-    const imageTitle = title.toLowerCase().replace(/\s+/g, "-");
+    const imageTitle = title.toLowerCase().replace(/[\s.]+/g, "-");
     return image ? `card-img card-img-${imageTitle}` : "card-img coming-soon-img";
   }
 </script>
