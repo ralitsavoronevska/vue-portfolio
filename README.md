@@ -86,7 +86,8 @@ Mobile:
 # ✨ Features:
 
 ✅ Modern Matrix-like Themed Personal Portfolio Webpage  
-✅ Fixed navigation with slick blur and smooth scroll  
+✅ Fixed navigation with slick blur and smooth scroll                                                              
+✅ Projects Section presented via [Vue3-carousel](https://vue3-carousel.ismail9k.com/)                             
 ✅ Colorful Classic Developer icons  
 ✅ Elegant scroll-to-top button
 
