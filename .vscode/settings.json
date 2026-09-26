@@ -57,4 +57,12 @@
   "vue.format.script.initialIndent": true,
   "vue.format.style.initialIndent": true,
   "vue.hover.rich": true
+  ,
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+  "tailwindCSS.includeLanguages": {
+    "vue": "html",
+    "postcss": "css"
+  }
 }

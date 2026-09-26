@@ -2,7 +2,23 @@
 
 @theme {
   --font-display: "Playfair Display", sans-serif;
-  --shadow-3xl: 3px 3px 12px oklch(71.8% 0.202 349.761 / 0.25);
+  
+  /* Brand colors */
+  --color-brand-pink: #f6339a;
+  --color-brand-indigo: #615fff;
+
+  /* Surfaces */
+  --color-surface-dark: rgb(5 5 27 / 95%);
+
+  /* Effects */
+  --color-brand-glow: oklch(71.8% 0.202 349.761 / 0.25);
+  --color-indigo-glow: rgb(99 102 241 / 12%);
+  --color-pink-glow-strong: rgb(217 70 239 / 32%);
+
+  --shadow-3xl: 3px 3px 12px var(--color-brand-glow);
+  --shadow-brand-glow:
+    0 0 8px var(--color-brand-glow),
+    3px 3px 12px var(--color-brand-glow);
 }
 
 /* === Base Styles === */
@@ -55,30 +71,6 @@
 
 /* === Components Styles === */
 @layer components {
-  /* Header */
-  header {
-    @apply fixed inset-x-0 top-0 flex justify-between items-center h-21 z-20 shadow-3xl backdrop-blur-2xl;
-    .logo-link:focus-visible,
-    .logo-link:-webkit-any-link:focus-visible,
-    .logo:focus-visible,
-    .logo:-webkit-any-link:focus-visible {
-      @apply outline-none ring-0;
-    }
-    .logo {
-      @apply w-20 h-21 bg-cover bg-center flex items-center justify-center bg-no-repeat
-      scale-[0.7059] transition-transform duration-300 ease-in-out hover:scale-75;
-    }
-    nav {
-      @apply flex;
-      ul {
-        @apply flex items-center justify-center space-x-4 md:space-x-12 mr-4;
-        a {
-          @apply text-xl font-medium transition-colors hover:text-indigo-500;
-        }
-      }
-    }
-  }
-
   /* Hero Section */
   .hero {
     @apply flex items-center justify-center w-full min-h-screen flex-col pt-20 pb-20 scroll-mt-40 text-white;

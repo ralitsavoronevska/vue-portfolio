@@ -10,17 +10,20 @@
 
 <img src="public/assets/read-me-md/vue-portfolio-desktop-preview.png" loading="lazy">
 
+## 📱 Tablet Preview
+
+<img src="public/assets/read-me-md/vue-portfolio-tablet-preview.png" loading="lazy">
+
 <table width="100%">
   <thead>
     <tr>
-      <th width="65%">📱 Tablet Preview</th>
-      <th width="35%">📱 Mobile Preview</th>
+      <th>📱 Mobile Preview</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td width="65%"><img src="public/assets/read-me-md/vue-portfolio-tablet-preview.png" loading="lazy"></td>
-      <td width="35%"><img src="public/assets/read-me-md/vue-portfolio-mobile-preview.png" loading="lazy"></td>
+      <td width="50%"><img src="public/assets/read-me-md/vue-portfolio-mobile-with-closed-menu-preview.png" loading="lazy"></td>
+      <td width="50%"><img src="public/assets/read-me-md/vue-portfolio-mobile-with-opened-menu-preview.png" loading="lazy"></td>
     </tr>
   </tbody>
 </table>
