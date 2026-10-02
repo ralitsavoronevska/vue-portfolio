@@ -6,19 +6,15 @@
       :class="revealClasses"
       :style="isVisible ? revealStyle(100) : undefined"
     >
-      Contact <span class="gradient-text">Me</span>
+      {{ contactTitle }}
+      <span class="gradient-text">{{ contactTitleHighlight }}</span>
     </h2>
     <p
       class="contact-me-text"
       :class="revealClasses"
       :style="isVisible ? revealStyle(200) : undefined"
-    >
-      I'd love if you reach out to me. Even if it's to say:
-      <span class="gradient-text">"Hey!"</span>
-      <br />
-      Don't hesitate! Drop me a line and I’ll reply to you
-      <span class="gradient-text">ASAP</span>!
-    </p>
+      v-html="contactText"
+    ></p>
 
     <p
       class="location"
@@ -31,7 +27,7 @@
         alt="Map Marker icon"
         loading="lazy"
       />
-      <span>Sofia, Bulgaria</span>
+      <span>{{ contactLocation }}</span>
     </p>
     <!-- end of headings -->
 
@@ -55,7 +51,13 @@ import { usePortfolioData } from "@/composables/usePortfolioData";
 import { useInView } from "@/composables/useInView";
 import mapMarker from "@/assets/icons/map-marker.svg";
 
-const { contactSocialIcons } = usePortfolioData();
+const {
+  contactSocialIcons,
+  contactTitle,
+  contactTitleHighlight,
+  contactText,
+  contactLocation,
+} = usePortfolioData();
 const sectionRef = useTemplateRef<HTMLElement>("sectionRef");
 const { isVisible } = useInView(sectionRef);
 

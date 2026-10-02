@@ -2,8 +2,9 @@ import { describe, it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
 import ProjectsList from "@/components/ProjectsList.vue";
 import ProjectCard from "@/components/ProjectCard.vue";
-import type { Project } from '@/data/portfolio'
+import type { Project } from "@/data/portfolio";
 import SocialIcons from "@/components/SocialIcons.vue";
+import { usePortfolioData } from "@/composables/usePortfolioData";
 
 describe("ProjectsList", () => {
   it("renders all 6 projects", () => {
@@ -12,11 +13,15 @@ describe("ProjectsList", () => {
   });
 
   it("renders the professional and personal project sections with the correct headings", () => {
+    const { projectsTitle, projectsTitleHighlight, professionalTitle, personalTitle, personalTitleHighlight } =
+      usePortfolioData();
     const wrapper = mount(ProjectsList);
 
-    expect(wrapper.text()).toContain("Selected Work");
-    expect(wrapper.text()).toContain("Professional");
-    expect(wrapper.text()).toContain("Personal");
+    expect(wrapper.find("h2").text()).toContain(projectsTitle);
+    expect(wrapper.find("h2").text()).toContain(projectsTitleHighlight);
+    expect(wrapper.text()).toContain(professionalTitle);
+    expect(wrapper.text()).toContain(personalTitle);
+    expect(wrapper.text()).toContain(personalTitleHighlight);
     expect(wrapper.findAll(".project-group")).toHaveLength(2);
   });
 

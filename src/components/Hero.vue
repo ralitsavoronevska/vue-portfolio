@@ -8,7 +8,10 @@
 
       <!-- start of name-and-info -->
       <div class="name-and-info">
-        <h1>Ralitsa <span class="gradient-text">Voronevska</span></h1>
+        <h1>
+          {{ author.split(" ")[0] }}
+          <span class="gradient-text">{{ author.split(" ").slice(1).join(" ") }}</span>
+        </h1>
         <h2>{{ heroSubtitle }}</h2>
       </div>
       <!-- end of name-and-info -->
@@ -29,5 +32,5 @@ defineOptions({ name: "AppHero" });
 import HeroImage from "./HeroImage.vue";
 import SocialIcons from "./SocialIcons.vue";
 import { usePortfolioData } from "@/composables/usePortfolioData";
-const { heroSubtitle, heroSocialIcons } = usePortfolioData();
+const { author, heroSubtitle, heroSocialIcons } = usePortfolioData();
 </script>

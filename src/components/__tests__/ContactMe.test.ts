@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { mount } from "@vue/test-utils";
 import { ref } from "vue";
 import ContactMe from "@/components/ContactMe.vue";
+import { usePortfolioData } from "@/composables/usePortfolioData";
 
 const mockUseInView = vi.fn();
 vi.mock("@/composables/useInView", () => ({
@@ -26,6 +27,19 @@ describe("ContactMe", () => {
       "mailto:r.voronevska@gmail.com",
     );
     expect(wrapper.find("h2").attributes("style")).toContain("100ms");
+  });
+
+  it("reads the contact content from portfolio data", () => {
+    const { contactTitle, contactText, contactLocation } = usePortfolioData();
+
+    expect(contactTitle).toBe("Contact");
+    expect(contactText).toContain("I'd love if you reach out to me.");
+    expect(contactLocation).toBe("Sofia, Bulgaria");
+
+    const wrapper = mount(ContactMe);
+    expect(contactText).toContain("I'd love if you reach out to me.");
+    expect(wrapper.text()).toContain("I'd love if you reach out to me.");
+    expect(wrapper.find(".location").text()).toContain(contactLocation);
   });
 
   it("applies hidden reveal classes when the section is not visible", () => {

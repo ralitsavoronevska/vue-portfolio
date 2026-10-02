@@ -32,7 +32,10 @@ export interface Project {
 }
 
 export const PAGES_CONTENT = {
+  author: "Ralitsa Voronevska",
   hero_subtitle: "Vue.js Frontend Developer",
+  about_me_title: "About",
+  about_me_title_highlight: "Me",
   about_me_subtitle: "Hi, I'm Ralitsa Voronevska!",
   about_me_description: `Frontend Developer with 6+ years of professional experience building scalable, responsive web applications with Vue and JavaScript/TypeScript.
 
@@ -41,10 +44,25 @@ export const PAGES_CONTENT = {
   I focus on clean, maintainable solutions that balance technical quality, user experience and business requirements.
 
   Based in Sofia, Bulgaria — open to remote opportunities.`,
+  projects_title: "Selected",
+  projects_title_highlight: "Work",
   projects_subtitle:
     "A selection of professional and personal projects showcasing my work with Vue, TypeScript, Nuxt, APIs, and modern frontend development.",
+  professional_title: "Professional",
+  professional_title_suffix: "Work",
   professional_projects_subtitle: "Projects developed in a professional environment, focused on real business requirements and production-ready frontend solutions.",
+  personal_title: "Selected",
+  personal_title_highlight: "Personal",
+  personal_title_suffix: "Projects",
   personal_projects_subtitle: "Projects developed independently, showcasing creativity, experimentation, and personal growth in frontend development.",
+  contact_title: "Contact",
+  contact_title_highlight: "Me",
+  contact_text:
+    'I\'d love if you reach out to me. Even if it\'s to say: <span class="gradient-text">"Hey!"</span><br />Don\'t hesitate! Drop me a line and I’ll reply to you <span class="gradient-text">ASAP</span>!',
+  contact_location: "Sofia, Bulgaria",
+  view_projects: "View Projects",
+  download_resume: "Download Resume",
+  footer_text: "All rights reserved.",
 };
 
 export const HERO_SOCIAL_LINKS: SocialIcon[] = [

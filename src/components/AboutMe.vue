@@ -4,8 +4,16 @@ import HeroImage from "./HeroImage.vue";
 import { usePortfolioData } from "@/composables/usePortfolioData";
 import { useInView } from "@/composables/useInView";
 
-const { aboutMeSubtitle, aboutMeDescription, skills, highlights } =
-  usePortfolioData();
+const {
+  aboutMeTitle,
+  aboutMeTitleHighlight,
+  aboutMeSubtitle,
+  aboutMeDescription,
+  skills,
+  highlights,
+  viewProjectsLabel,
+  downloadResumeLabel,
+} = usePortfolioData();
 
 const sectionRef = useTemplateRef<HTMLElement>("sectionRef");
 const { isVisible } = useInView(sectionRef);
@@ -29,7 +37,7 @@ const revealStyle = (delay: number) => ({
       :class="revealClasses"
       :style="isVisible ? revealStyle(100) : undefined"
     >
-      About <span class="gradient-text">Me</span>
+      {{ aboutMeTitle }} <span class="gradient-text">{{ aboutMeTitleHighlight }}</span>
     </h2>
     <h3
       :class="revealClasses"
@@ -98,7 +106,7 @@ const revealStyle = (delay: number) => ({
         :class="revealClasses"
         :style="isVisible ? revealStyle(900) : undefined"
       >
-        <button class="btn-styles" type="button">View Projects</button>
+        <button class="btn-styles" type="button">{{ viewProjectsLabel }}</button>
       </a>
       <a
         href="https://ralitsavoronevska.com/assets/Ralitsa-Voronevska-Frontend-Developer-CV.pdf"
@@ -110,7 +118,7 @@ const revealStyle = (delay: number) => ({
         :class="revealClasses"
         :style="isVisible ? revealStyle(1000) : undefined"
       >
-        <button class="btn-styles" type="button">Download Resume</button>
+        <button class="btn-styles" type="button">{{ downloadResumeLabel }}</button>
       </a>
     </div>
     <!-- end of CTA Buttons -->
