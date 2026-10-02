@@ -40,7 +40,7 @@ export const PAGES_CONTENT = {
 
   I focus on clean, maintainable solutions that balance technical quality, user experience and business requirements.
 
-  Based in Varna, Bulgaria — open to remote opportunities.`,
+  Based in Sofia, Bulgaria — open to remote opportunities.`,
   projects_subtitle:
     "A selection of professional and personal projects showcasing my work with Vue, TypeScript, Nuxt, APIs, and modern frontend development.",
   professional_projects_subtitle: "Projects developed in a professional environment, focused on real business requirements and production-ready frontend solutions.",

@@ -31,7 +31,7 @@
         alt="Map Marker icon"
         loading="lazy"
       />
-      <span>Varna, Bulgaria</span>
+      <span>Sofia, Bulgaria</span>
     </p>
     <!-- end of headings -->
 

@@ -2,7 +2,7 @@
   <footer>
     <p>
       <a
-        href="https://ralitsavoronevska.github.io/modern-portfolio/"
+        href="https://ralitsavoronevska.com/"
         target="_blank"
         rel="noopener"
       >
