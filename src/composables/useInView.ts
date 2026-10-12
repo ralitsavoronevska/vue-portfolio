@@ -19,6 +19,8 @@ export function useInView<T extends Element = Element>(
 
   let observer: IntersectionObserverLike | null = null;
 
+  let fallbackTimer: ReturnType<typeof setTimeout> | undefined;
+
   onMounted(() => {
     if (!sectionRef.value) return;
 
@@ -35,9 +37,16 @@ export function useInView<T extends Element = Element>(
       observer = new IO(
         (entries: IOEntry[]) => {
           const entry = entries[0];
-          if (entry?.isIntersecting) {
+          if (!entry) return;
+
+          if (entry.isIntersecting) {
             isVisible.value = true;
-            if (once) observer?.unobserve?.(entry.target);
+
+            if (once) {
+              observer?.unobserve?.(entry.target);
+            }
+          } else if (!once) {
+            isVisible.value = false;
           }
         },
         { threshold },
@@ -55,6 +64,9 @@ export function useInView<T extends Element = Element>(
 
   onUnmounted(() => {
     observer?.disconnect?.();
+    if (fallbackTimer !== undefined) {
+      clearTimeout(fallbackTimer);
+    }
   });
 
   return { sectionRef, isVisible };

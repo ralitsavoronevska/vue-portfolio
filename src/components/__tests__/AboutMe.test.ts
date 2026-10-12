@@ -1,31 +1,20 @@
+
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { mount } from "@vue/test-utils";
-import { ref } from "vue";
+import { nextTick, ref } from "vue";
 import AboutMe from "@/components/AboutMe.vue";
 
-const mockUseInView = vi.fn();
+const { mockUseInView } = vi.hoisted(() => ({
+  mockUseInView: vi.fn(),
+}));
+
 vi.mock("@/composables/useInView", () => ({
-  useInView: () => mockUseInView(),
+  useInView: mockUseInView,
 }));
 
 describe("AboutMe", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-  });
-
-  it("displays 2 buttons - one to view projects and one to download CV", () => {
-    mockUseInView.mockReturnValue({
-      sectionRef: ref(null),
-      isVisible: ref(true),
-    });
-
-    const wrapper = mount(AboutMe);
-    const buttons = wrapper.findAll("a");
-    expect(buttons).toHaveLength(2);
-    expect(buttons.at(0)?.attributes("href")).toBe("#projects");
-    expect(buttons.at(1)?.attributes("href")).toBe(
-      "https://ralitsavoronevska.com/assets/Ralitsa-Voronevska-Frontend-Developer-CV.pdf",
-    );
   });
 
   it("applies reveal classes when the section becomes visible", () => {
@@ -36,8 +25,10 @@ describe("AboutMe", () => {
 
     const wrapper = mount(AboutMe);
     const h2 = wrapper.find("h2");
-    expect(h2.html()).toContain("100ms");
+
     expect(h2.classes()).toContain("opacity-100");
+    expect(h2.classes()).toContain("translate-y-0");
+    expect(h2.attributes("style")).toContain("100ms");
   });
 
   it("applies hidden reveal classes when the section is not visible", () => {
@@ -48,8 +39,31 @@ describe("AboutMe", () => {
 
     const wrapper = mount(AboutMe);
     const h2 = wrapper.find("h2");
+
     expect(h2.classes()).toContain("opacity-0");
+    expect(h2.classes()).toContain("translate-y-8");
     expect(h2.attributes("style")).toBeUndefined();
     expect(wrapper.findAll(".highlight-card")).toHaveLength(3);
+  });
+
+  it("reactively updates reveal classes when visibility changes", async () => {
+    const isVisible = ref(false);
+
+    mockUseInView.mockReturnValue({
+      sectionRef: ref(null),
+      isVisible,
+    });
+
+    const wrapper = mount(AboutMe);
+    const h2 = wrapper.find("h2");
+
+    expect(h2.classes()).toContain("opacity-0");
+
+    isVisible.value = true;
+    await nextTick();
+
+    expect(h2.classes()).toContain("opacity-100");
+    expect(h2.classes()).not.toContain("opacity-0");
+    expect(h2.attributes("style")).toContain("100ms");
   });
 });

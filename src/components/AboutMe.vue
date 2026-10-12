@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed, useTemplateRef } from "vue";
-import HeroImage from "./HeroImage.vue";
 import { usePortfolioData } from "@/composables/usePortfolioData";
-import { useInView } from "@/composables/useInView";
+import { useReveal } from "@/composables/useReveal";
+import { useTemplateRef } from "vue";
+import HeroImage from "./HeroImage.vue";
 
 const {
   aboutMeTitle,
@@ -11,22 +11,10 @@ const {
   aboutMeDescription,
   skills,
   highlights,
-  viewProjectsLabel,
-  downloadResumeLabel,
 } = usePortfolioData();
 
 const sectionRef = useTemplateRef<HTMLElement>("sectionRef");
-const { isVisible } = useInView(sectionRef);
-
-const revealClasses = computed(() => ({
-  "transition-all duration-700 ease-out": true,
-  "opacity-100 translate-y-0": isVisible.value,
-  "opacity-0 translate-y-8": !isVisible.value,
-}));
-
-const revealStyle = (delay: number) => ({
-  transitionDelay: `${delay}ms`,
-});
+const { isVisible, revealClasses, revealStyle } = useReveal(sectionRef);
 </script>
 
 <template>
@@ -96,32 +84,6 @@ const revealStyle = (delay: number) => ({
       </div>
     </div>
     <!-- end of Highlight Cards -->
-
-    <!-- start of CTA Buttons: 2 on a flex row -->
-    <div class="btns-container">
-      <a
-        href="#projects"
-        role="button"
-        aria-label="View my Projects"
-        :class="revealClasses"
-        :style="isVisible ? revealStyle(900) : undefined"
-      >
-        <button class="btn-styles" type="button">{{ viewProjectsLabel }}</button>
-      </a>
-      <a
-        href="https://ralitsavoronevska.com/assets/Ralitsa-Voronevska-Frontend-Developer-CV.pdf"
-        target="_blank"
-        rel="noopener"
-        download="Ralitsa-Voronevska-Frontend-Developer-CV.pdf"
-        role="button"
-        aria-label="Download my Resume"
-        :class="revealClasses"
-        :style="isVisible ? revealStyle(1000) : undefined"
-      >
-        <button class="btn-styles" type="button">{{ downloadResumeLabel }}</button>
-      </a>
-    </div>
-    <!-- end of CTA Buttons -->
   </section>
   <!-- end of About Section -->
 </template>

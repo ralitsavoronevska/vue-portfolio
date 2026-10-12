@@ -1,8 +1,23 @@
-import { describe, it, expect } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { mount } from "@vue/test-utils";
+import { ref } from "vue";
 import Hero from "@/components/Hero.vue";
 
-describe("Hero", () => {
+vi.mock("@/composables/useReveal", () => ({
+  useReveal: () => ({
+    isVisible: ref(true),
+    revealClasses: ref({
+      "transition-all duration-700 ease-out": true,
+      "opacity-100 translate-y-0": true,
+    }),
+    revealStyle: (delay: number) => ({
+      transitionDelay: `${delay}ms`,
+    }),
+  }),
+}));
+
+describe( "Hero", () => {
+  
   it("renders hero with correct name, title and social links", () => {
     const wrapper = mount(Hero);
     expect(wrapper.text()).toContain("Ralitsa Voronevska");
@@ -20,4 +35,16 @@ describe("Hero", () => {
     expect(img.attributes("width")).toBe("320");
     expect(img.attributes("height")).toBe("320");
   });
+  
+  it("renders two CTA links for projects and resume", () => {
+
+      const wrapper = mount(Hero);
+      const buttons = wrapper.findAll("a.btn-styles");
+      expect(buttons).toHaveLength(2);
+      expect(buttons.at(0)?.attributes("href")).toBe("#projects");
+      expect(buttons.at(1)?.attributes("href")).toBe(
+        "https://ralitsavoronevska.com/assets/Ralitsa-Voronevska-Frontend-Developer-CV.pdf",
+      );
+    });
 });
+

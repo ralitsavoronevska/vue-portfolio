@@ -1,6 +1,6 @@
 <template>
   <!-- start of Hero Section -->
-  <section id="hero" class="hero">
+  <section ref="sectionRef" id="hero" class="hero">
     <!-- start of hero-and-socials -->
     <div class="hero-and-socials">
       <!-- Hero Image -->
@@ -23,6 +23,27 @@
       <SocialIcons :icons="heroSocialIcons" />
     </div>
     <!-- end of social-icons -->
+
+    <!-- start of CTA Buttons: 2 on a flex row -->
+    <div class="btns-container">
+      <a
+        href="#projects"
+        :class="[revealClasses, 'btn-styles']"
+        :style="isVisible ? revealStyle(900) : undefined"
+      >
+        {{ viewProjectsLabel }}
+      </a>
+      <a
+        href="https://ralitsavoronevska.com/assets/Ralitsa-Voronevska-Frontend-Developer-CV.pdf"
+        rel="noopener"
+        download="Ralitsa-Voronevska-Frontend-Developer-CV.pdf"
+        :class="[revealClasses, 'btn-styles']"
+        :style="isVisible ? revealStyle(1000) : undefined"
+      >
+        {{ downloadResumeLabel }}
+      </a>
+    </div>
+    <!-- end of CTA Buttons -->
   </section>
   <!-- end of Hero Section -->
 </template>
@@ -32,5 +53,19 @@ defineOptions({ name: "AppHero" });
 import HeroImage from "./HeroImage.vue";
 import SocialIcons from "./SocialIcons.vue";
 import { usePortfolioData } from "@/composables/usePortfolioData";
-const { author, heroSubtitle, heroSocialIcons } = usePortfolioData();
+import { useReveal } from "@/composables/useReveal";
+import { useTemplateRef } from "vue";
+
+const sectionRef = useTemplateRef<HTMLElement>("sectionRef");
+const { isVisible, revealClasses, revealStyle } = useReveal(sectionRef);
+
+const {
+  author,
+  heroSubtitle,
+  heroSocialIcons,
+  viewProjectsLabel,
+  downloadResumeLabel,
+} = usePortfolioData();
+
+
 </script>
