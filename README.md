@@ -88,11 +88,26 @@ Mobile:
 
 # ✨ Features:
 
-✅ Modern Matrix-like Themed Personal Portfolio Webpage  
-✅ Fixed navigation with slick blur and smooth scroll                                                              
-✅ Projects Section presented via [Vue3-carousel](https://vue3-carousel.ismail9k.com/)                             
-✅ Colorful Classic Developer icons  
-✅ Elegant scroll-to-top button
+✅ Modern Matrix-like themed personal portfolio webpage  
+✅ Fixed navigation with sleek blur, smooth scroll, and quick section jumps  
+✅ Hero, About, Tech Skills, Certifications, Projects, and Contact sections with consistent storytelling flow  
+✅ Dynamic portfolio content powered by centralized data and reusable composables  
+✅ Technical skills section with grouped expertise, previous experience, and learning interests  
+✅ Certifications and learning roadmap section for completed, in-progress, and planned milestones  
+✅ Responsive project cards and portfolio data-driven sections for a polished, maintainable layout  
+✅ Footer showcasing the portfolio project tech stack with real SVG icons and aligned layout  
+✅ Colorful developer-style icons and an elegant scroll-to-top button  
+✅ Mobile-first responsive design with refined tablet and desktop layouts  
+✅ Test coverage for portfolio sections and key behaviors
+
+<br>
+
+# 🆕 Recent updates:
+
+✨ Centralized reusable portfolio copy and metadata into data-driven structures  
+✨ Added dedicated Tech Skills and Certifications sections to showcase capabilities and learning journey  
+✨ Refined footer content and layout for clearer branding and project stack visibility  
+✨ Improved accessibility, content consistency, and component structure across the portfolio
 
 <br>
 
@@ -104,11 +119,11 @@ Mobile:
 
 # 🌐 Browser Support:
 
-(Last updated and tested: 03/08/2026)  
-🌟 Chrome 150.0.7871.187 (64-bit)  
-🦊 Firefox 153.0.1 (64-bit)  
-🏴‍☠️ Opera 133.0.5932.85 (64-bit)  
-🪟 Edge 151.0.4129.59 (64-bit)
+(Last updated and tested: 13/10/2026)  
+🌟 Chrome 155.0.8059.40 (64-bit)  
+🦊 Firefox 158.0 (64-bit)  
+🏴‍☠️ Opera 137.0.6036.39 (64-bit)  
+🪟 Edge 155.0.4283.45 (64-bit)
 
 <br>
 
