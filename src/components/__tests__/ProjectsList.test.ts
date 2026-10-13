@@ -79,31 +79,78 @@ describe("SocialIcons", () => {
         icons: [
           { name: "Live", url: "https://example.com", file_name: "live" },
         ],
-        aria: "Portfolio",
+        aria: "Vue.js 3 Portfolio",
       },
     });
 
     expect(liveWrapper.find("a").attributes("aria-label")).toBe(
-      "Visit my Portfolio Project's Live Preview",
+      "Visit my Vue.js 3 Portfolio Project's Live Preview",
     );
-    expect(liveWrapper.find("img").attributes("alt")).toBe(
-      "Visit my Portfolio Project's Live Preview",
-    );
+    expect(liveWrapper.find("img").attributes("alt")).toBe("",);
 
     const githubWrapper = mount(SocialIcons, {
       props: {
         icons: [
           { name: "GitHub", url: "https://github.com", file_name: "github" },
         ],
-        aria: "Portfolio",
+        aria: "Vue.js 3 Portfolio",
       },
     });
 
     expect(githubWrapper.find("a").attributes("aria-label")).toBe(
-      "View my Portfolio Project in GitHub",
+      "View my Vue.js 3 Portfolio Project in GitHub",
     );
-    expect(githubWrapper.find("img").attributes("alt")).toBe(
-      "View my Portfolio Project in GitHub",
-    );
+    expect(githubWrapper.find("img").attributes("alt")).toBe("",);
+  });
+
+  it("renders inactive icons without links", () => {
+    const wrapper = mount(SocialIcons, {
+      props: {
+        icons: [
+          {
+            name: "CodePen",
+            url: "",
+            file_name: "grayCodePen",
+          },
+        ],
+      },
+    });
+
+    expect(wrapper.findAll("a")).toHaveLength(0);
+    expect(wrapper.findAll("span.social-link")).toHaveLength(1);
+  });
+
+  it("renders an icon with a URL as an active link regardless of its asset name", () => {
+    const wrapper = mount(SocialIcons, {
+      props: {
+        icons: [
+          {
+            name: "CodePen",
+            url: "https://codepen.io",
+            file_name: "grayCodePen",
+          },
+        ],
+      },
+    });
+
+    expect(wrapper.findAll("a")).toHaveLength(1);
+    expect(wrapper.findAll("span.social-link")).toHaveLength(0);
+  });
+
+  it("renders an icon without a URL as an inactive span", () => {
+    const wrapper = mount(SocialIcons, {
+      props: {
+        icons: [
+          {
+            name: "GitHub",
+            url: "",
+            file_name: "github",
+          },
+        ],
+      },
+    });
+
+    expect(wrapper.findAll("a")).toHaveLength(0);
+    expect(wrapper.findAll("span.social-link")).toHaveLength(1);
   });
 });

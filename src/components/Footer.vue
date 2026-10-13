@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>
+    <p class="footer-brand">
       <a
         href="https://ralitsavoronevska.com/"
         rel="noopener"
@@ -8,8 +8,9 @@
         &lt;{{ author }}/&gt;
       </a>
       <span>© {{ year }}</span>
-      <span>{{ footerText }}</span>
     </p>
+
+    <p class="footer-copy">{{ footerText }}</p>
   </footer>
 </template>
 

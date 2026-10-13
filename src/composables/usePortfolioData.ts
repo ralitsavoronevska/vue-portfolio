@@ -1,6 +1,5 @@
 import {
   PAGES_CONTENT,
-  SKILLS,
   HIGHLIGHTS,
   type Highlight,
   HERO_SOCIAL_LINKS,
@@ -8,9 +7,15 @@ import {
   type SocialIcon,
   TECH_STACK,
   type Tech,
+  TECH_SKILL_GROUPS,
+  PREVIOUS_TECH_SKILLS,
+  TECH_INTEREST_GROUPS,
+  type TechSkillGroup,
   PROFESSIONAL_PROJECTS,
   PERSONAL_PROJECTS,
   type Project,
+  CERTIFICATIONS,
+  type Certification,
 } from "@/data/portfolio";
 
 export function usePortfolioData() {
@@ -22,8 +27,13 @@ export function usePortfolioData() {
     aboutMeTitleHighlight: PAGES_CONTENT.about_me_title_highlight,
     aboutMeSubtitle: PAGES_CONTENT.about_me_subtitle,
     aboutMeDescription: PAGES_CONTENT.about_me_description,
-    skills: SKILLS as string[],
     highlights: HIGHLIGHTS as Highlight[],
+    techSkillsTitle: PAGES_CONTENT.tech_skills_title,
+    techSkillsTitleHighlight: PAGES_CONTENT.tech_skills_title_highlight,
+    techSkillsSubtitle: PAGES_CONTENT.tech_skills_subtitle,
+    techSkillGroups: TECH_SKILL_GROUPS as TechSkillGroup[],
+    previousTechSkills: PREVIOUS_TECH_SKILLS as TechSkillGroup[],
+    techInterestGroups: TECH_INTEREST_GROUPS as TechSkillGroup[],
     projectsTitle: PAGES_CONTENT.projects_title,
     projectsTitleHighlight: PAGES_CONTENT.projects_title_highlight,
     projectsSubtitle: PAGES_CONTENT.projects_subtitle,
@@ -36,7 +46,13 @@ export function usePortfolioData() {
     personalProjectsSubtitle: PAGES_CONTENT.personal_projects_subtitle,
     professionalProjects: PROFESSIONAL_PROJECTS as Project[],
     personalProjects: PERSONAL_PROJECTS as Project[],
-    projects: [...PROFESSIONAL_PROJECTS, ...PERSONAL_PROJECTS] as Project[],
+    projects: [ ...PROFESSIONAL_PROJECTS, ...PERSONAL_PROJECTS ] as Project[],
+    certificationsTitle: PAGES_CONTENT.certifications_title,
+    certificationsTitleHighlight:
+    PAGES_CONTENT.certifications_title_highlight,
+    certificationsSubtitle:
+    PAGES_CONTENT.certifications_subtitle,
+    certifications: CERTIFICATIONS as Certification[],
     techStack: TECH_STACK as Tech[],
     contactSocialIcons: CONTACT_SOCIAL_LINKS as SocialIcon[],
     contactTitle: PAGES_CONTENT.contact_title,

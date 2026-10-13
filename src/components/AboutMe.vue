@@ -9,7 +9,6 @@ const {
   aboutMeTitleHighlight,
   aboutMeSubtitle,
   aboutMeDescription,
-  skills,
   highlights,
 } = usePortfolioData();
 
@@ -34,8 +33,8 @@ const { isVisible, revealClasses, revealStyle } = useReveal(sectionRef);
       {{ aboutMeSubtitle }}
     </h3>
 
-    <!-- start of Header: stacked + centered on mobile, side-by-side from sm: up -->
-    <div class="hero-and-skills">
+    <!-- start of Hero: stacked + centered on mobile, side-by-side from sm: up -->
+    <div class="hero-and-description">
       <div
         :class="revealClasses"
         :style="isVisible ? revealStyle(300) : undefined"
@@ -43,27 +42,17 @@ const { isVisible, revealClasses, revealStyle } = useReveal(sectionRef);
         <HeroImage />
       </div>
 
-      <div class="skills-container">
+      <div class="about-me-description-container">
         <p
-          class="skills-container-text"
+          class="about-me-description-text"
           :class="revealClasses"
           :style="isVisible ? revealStyle(400) : undefined"
         >
           {{ aboutMeDescription }}
         </p>
-
-        <div
-          class="skills-container-skills"
-          :class="revealClasses"
-          :style="isVisible ? revealStyle(500) : undefined"
-        >
-          <span v-for="skill in skills" :key="skill" class="skill-pill">
-            {{ skill }}
-          </span>
-        </div>
       </div>
     </div>
-    <!-- end of Header -->
+    <!-- end of Hero -->
 
     <!-- start of Highlight Cards: 1 col on mobile, 2 on tablet, 3 from md: up -->
     <div class="highlights-container">
@@ -78,7 +67,7 @@ const { isVisible, revealClasses, revealStyle } = useReveal(sectionRef);
           <span aria-hidden="true" class="highlight-card-icon">{{
             item.icon
           }}</span>
-          <span class="highligh-card-label">{{ item.label }}</span>
+          <span class="highlight-card-label">{{ item.label }}</span>
         </p>
         <p class="highlight-card-text">{{ item.text }}</p>
       </div>

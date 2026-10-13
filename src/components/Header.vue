@@ -58,7 +58,9 @@ const headerRef = ref<HTMLElement | null>(null);
 
 const navItems = [
   { label: "About", href: "#about" },
+  { label: "Skills", href: "#tech-skills" },
   { label: "Projects", href: "#projects" },
+  { label: "Certifications", href: "#certifications" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -142,7 +144,7 @@ header nav {
 }
 
 header nav ul {
-  @apply mr-4 flex items-center justify-center md:space-x-12;
+  @apply mr-4 flex items-center justify-center md:space-x-8;
 }
 
 header nav li {

@@ -1,23 +1,38 @@
+
 <template>
-  <a
-    v-for="icon in icons"
-    :key="icon.file_name"
-    :href="icon.url || '#'"
-    :target="getTarget(icon)"
-    rel="noopener noreferrer"
-    class="social-link rounded-full"
-    :aria-label="getAriaLabel(icon)"
-    :aria-disabled="getInactiveIcons(icon)"
-  >
-    <img
-      :src="getSrc(icon)"
-      class="social-icon"
-      data-testid="social-icon"
-      :alt="getAriaLabel(icon)" 
-      loading="lazy"
-    />
-  </a>
+  <template v-for="icon in icons" :key="icon.file_name">
+    <a
+      v-if="icon.url?.trim()"
+      :href="icon.url"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-link rounded-full"
+      :aria-label="getAriaLabel(icon)"
+    >
+      <img
+        :src="getSrc(icon)"
+        class="social-icon"
+        data-testid="social-icon"
+        alt=""
+        loading="lazy"
+      />
+    </a>
+
+    <span
+      v-else
+      class="social-link rounded-full"
+      aria-hidden="true"
+    >
+      <img
+        :src="getSrc(icon)"
+        class="social-icon"
+        alt=""
+        loading="lazy"
+      />
+    </span>
+  </template>
 </template>
+
 
 <script setup lang="ts">
 const props = defineProps<{
@@ -28,10 +43,6 @@ const props = defineProps<{
   }>;
   aria?: string;
 }>();
-
-const getTarget = (icon: { url: string }) => {
-  return icon.url !== "" ? "_blank" : "_self";
-};
 
 const getAriaLabel = (icon: { name: string; file_name: string }) => {
   if (props.aria) {
@@ -56,10 +67,6 @@ const socialIcons = import.meta.glob("@/assets/icons/social-icons/*.svg", {
 const getSrc = (icon: { file_name: string }) => {
   const path = `/src/assets/icons/social-icons/${icon.file_name}.svg`;
   return socialIcons[path] ?? "";
-};
-
-const getInactiveIcons = (icon: { file_name: string }) => {
-  return icon.file_name.includes("gray");
 };
 </script>
 
