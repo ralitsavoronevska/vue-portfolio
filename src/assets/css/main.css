@@ -75,7 +75,7 @@
   .hero {
     @apply flex items-center justify-center w-full min-h-screen flex-col pt-20 pb-20 scroll-mt-40 text-white;
     .hero-and-socials {
-      @apply flex flex-col mt-13 md:mt-34 xl:mt-13;
+      @apply flex flex-col mt-5 md:mt-18 xl:mt-13;
       .name-and-info {
         @apply text-center items-center justify-center mt-7 md:mt-8;
         h1 {

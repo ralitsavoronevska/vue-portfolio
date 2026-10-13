@@ -216,4 +216,25 @@ const carouselConfig = {
     transition: none;
   }
 }
+
+
+/* Increase pagination touch targets without enlarging the dots */
+:deep(.carousel__pagination) {
+  gap: .25rem;
+}
+
+:deep(.carousel__pagination-button) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  min-height: 2rem;
+  padding: .5rem;
+  box-sizing: border-box;
+}
+
+:deep(.carousel__pagination-button::after) {
+  width: .5rem;
+  height: .5rem;
+}
 </style>
