@@ -61,6 +61,5 @@ export function usePortfolioData() {
     contactLocation: PAGES_CONTENT.contact_location,
     viewProjectsLabel: PAGES_CONTENT.view_projects,
     downloadResumeLabel: PAGES_CONTENT.download_resume,
-    footerText: PAGES_CONTENT.footer_text,
   };
 }

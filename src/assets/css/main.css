@@ -456,11 +456,27 @@
 
     .footer-brand,
     .footer-copy {
-      @apply m-0 w-full text-center text-lg font-bold md:w-auto lg:text-2xl;
+      @apply m-0 w-full text-center text-lg font-bold md:w-auto lg:text-xl;
     }
 
     .footer-copy {
-      @apply md:text-right;
+      @apply flex items-center justify-center gap-2 md:justify-end md:text-right;
+    }
+
+    .footer-tech-group {
+      @apply inline-flex items-center justify-center gap-2 md:justify-end;
+    }
+
+    .footer-tech-label {
+      @apply text-sm font-medium text-slate-300 md:text-base;
+    }
+
+    .footer-tech-icons {
+      @apply inline-flex flex-wrap items-center justify-center gap-2 md:justify-end;
+    }
+
+    .footer-tech-icon {
+      @apply h-5 w-5 object-contain md:h-6 md:w-6;
     }
 
     a {

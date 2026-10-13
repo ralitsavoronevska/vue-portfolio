@@ -95,7 +95,6 @@ export const PAGES_CONTENT = {
   contact_location: "Sofia, Bulgaria",
   view_projects: "View Projects",
   download_resume: "Download Resume",
-  footer_text: "All rights reserved.",
 };
 
 export const HERO_SOCIAL_LINKS: SocialIcon[] = [
