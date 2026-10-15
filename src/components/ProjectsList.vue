@@ -37,8 +37,12 @@
 </template>
 
 <script setup lang="ts">
-import ProjectCarousel from "./ProjectCardCarousel.vue";
+import { defineAsyncComponent } from "vue";
 import { usePortfolioData } from "@/composables/usePortfolioData";
+
+const ProjectCarousel = defineAsyncComponent(
+  () => import("./ProjectCardCarousel.vue"),
+);
 
 const {
   projectsTitle,

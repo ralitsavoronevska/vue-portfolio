@@ -436,7 +436,6 @@ export const PERSONAL_PROJECTS: Project[] = [
       { name: "Vite.js", file_name: "vite-js" },
       { name: "Vitest", file_name: "vitest" },
       { name: "TypeScript", file_name: "typescript" },
-      { name: "Pinia", file_name: "pinia" },
       { name: "Tailwind CSS", file_name: "tailwind-css" },
     ],
     links: [
