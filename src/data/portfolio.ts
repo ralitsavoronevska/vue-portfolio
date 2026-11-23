@@ -1,15 +1,14 @@
 import maptyAppImage from "@/assets/projects/mapty-app.webp";
 import restApiImage from "@/assets/projects/rest-api-with-nodejs.webp";
-import vuePortfolioImage from "@/assets/projects/vue-portfolio.webp";
 import zendeskPulseImage from "@/assets/projects/zd-pulse.webp";
 import elevationMarketingImage from "@/assets/projects/elevation-marketing.webp";
 import maximaCxImage from "@/assets/projects/maxima-cx.webp";
-import vueCertificateImage from "@/assets/certificates/vue-complete-guide.webp";
-import javascriptWeirdPartsImage from "@/assets/certificates/javascript-weird-parts.webp";
-import javascriptCourseImage from "@/assets/certificates/javascript-complete-course.webp";
-import scrumCertificateImage from "@/assets/certificates/scrum-fundamentals.webp";
-import agileCertificateImage from "@/assets/certificates/agile-crash-course.webp";
+import professionalWorkExperienceImage from "@/assets/certificates/professional-work-experience-lsa.webp";
+import programmingBasicsImage from "@/assets/certificates/programming-basics-python.webp";
 import aspireCertificateImage from "@/assets/certificates/aspire-ai-masterclass.webp";
+import vueCertificateImage from "@/assets/certificates/vue-complete-guide.webp";
+import javascriptCourseImage from "@/assets/certificates/javascript-complete-course.webp";
+import javascriptWeirdPartsImage from "@/assets/certificates/javascript-weird-parts.webp";
 import comingSoonImage from "@/assets/certificates/coming-soon.webp";
 
 
@@ -75,7 +74,13 @@ export const PAGES_CONTENT = {
   Based in Sofia, Bulgaria — open to remote opportunities.`,
   tech_skills_title: "Technical",
   tech_skills_title_highlight: "Skills",
-  tech_skills_subtitle: "Technologies I work with, previous experience, and areas I'm exploring.",
+  tech_skills_subtitle: "Technologies from professional work, hands-on projects, and ongoing learning.",
+  tech_skills_core_title: "Core Expertise",
+  tech_skills_core_description: "Professional experience & hands-on project skills",
+  tech_skills_previous_title: "Previous Experience",
+  tech_skills_previous_description: "Technologies from previous roles",
+  tech_skills_interests_title: "Exploring & Interested In",
+  tech_skills_interests_description: "Technologies I'm interested in learning and exploring further",
   certifications_title: "Certifications",
   certifications_title_highlight: "& Learning",
   certifications_subtitle: "Professional certifications, ongoing education, and future learning goals.",
@@ -182,6 +187,20 @@ export const TECH_SKILL_GROUPS: TechSkillGroup[] = [
     ],
   },
   {
+    title: "Full-Stack & Data",
+    skills: [
+      "React",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "JWT Authentication",
+      "RBAC",
+      "Recharts",
+      "shadcn/ui",
+    ],
+  },
+  {
     title: "Styling & UI",
     skills: [
       "Tailwind CSS 4",
@@ -207,9 +226,8 @@ export const TECH_SKILL_GROUPS: TechSkillGroup[] = [
 
 export const PREVIOUS_TECH_SKILLS: TechSkillGroup[] = [
   {
-    title: "Previous Experience & Refreshing",
+    title: "Previous Experience",
     skills: [
-      "Python",
       "jQuery",
       "Backbone.js",
       "Vuex",
@@ -221,7 +239,7 @@ export const PREVIOUS_TECH_SKILLS: TechSkillGroup[] = [
 export const TECH_INTEREST_GROUPS: TechSkillGroup[] = [
   {
     title: "Frameworks & Languages",
-    skills: ["React", "Astro"],
+    skills: ["Astro"],
   },
   {
     title: "Vue Ecosystem",
@@ -237,7 +255,6 @@ export const TECH_INTEREST_GROUPS: TechSkillGroup[] = [
   {
     title: "UI Libraries",
     skills: [
-      "shadcn/ui",
       "Material UI (MUI)",
       "daisyUI",
     ],
@@ -251,6 +268,20 @@ export const TECH_INTEREST_GROUPS: TechSkillGroup[] = [
 
 export const CERTIFICATIONS: Certification[] = [
   // Completed training
+  {
+    title: "Developer (software - Web) Internship",
+    issuer: "London Success Academy",
+    status: "completed",
+    year: 2026,
+    image: professionalWorkExperienceImage,
+  },
+  {
+    title: "Programming Basics (Python)",
+    issuer: "Software University",
+    status: "completed",
+    year: 2026,
+    image: programmingBasicsImage,
+  },
   {
     title: "Enter the World of AI",
     issuer: "Aspire Bulgaria Foundation",
@@ -279,20 +310,6 @@ export const CERTIFICATIONS: Certification[] = [
     year: 2021,
     image: javascriptWeirdPartsImage,
   },
-  {
-    title: "Agile Crash Course: Agile Project Management, Agile Delivery",
-    issuer: "Udemy",
-    status: "completed",
-    year: 2020,
-    image: agileCertificateImage,
-  },
-  {
-    title: "Scrum Fundamentals Certified (SFC)",
-    issuer: "SCRUMstudy",
-    status: "completed",
-    year: 2018,
-    image: scrumCertificateImage,
-  },
 
   // Currently pursuing
   {
@@ -302,18 +319,15 @@ export const CERTIFICATIONS: Certification[] = [
     image: comingSoonImage,
   },
   {
-    title: "Python Basics",
-    issuer: "SoftUni",
+    title: "C Programming In Windows (intermediate) Certification",
+    issuer: "DragonZap",
     status: "in-progress",
-    description: "Refreshing Python fundamentals through structured coursework.",
     image: comingSoonImage,
   },
   {
-    title: "Developer (Software - Web) Internship",
-    issuer: "London Success Academy",
+    title: "Mid TypeScript Developer Certification",
+    issuer: "certificates.dev",
     status: "in-progress",
-    type: "internship",
-    description: "Ongoing internship, ending 8 November 2026.",
     image: comingSoonImage,
   },
 
@@ -324,11 +338,16 @@ export const CERTIFICATIONS: Certification[] = [
     status: "planned",
   },
   {
-    title: "Certified Full-Stack Developer Curriculum",
-    issuer: "freeCodeCamp",
+    title: "Mastering Pinia Certification",
+    issuer: "Mastering Pinia",
     status: "planned",
-    description: "Long-term goal involving completion of the required curriculum.",
   },
+  // {
+  //   title: "Certified Full-Stack Developer Curriculum",
+  //   issuer: "freeCodeCamp",
+  //   status: "planned",
+  //   description: "Long-term goal involving completion of the required curriculum.",
+  // },
   {
     title: "Junior React Developer Certification",
     issuer: "Vue School",
@@ -363,9 +382,8 @@ export const PROFESSIONAL_PROJECTS: Project[] = [
         url: "https://github.com/ralitsavoronevska/zd-pulse/",
         file_name: "github",
       },
-      { name: "CodePen", url: "", file_name: "grayCodePen" },
       {
-        name: "Live",
+        name: "Live Link",
         url: "https://ralitsavoronevska.github.io/zd-pulse/",
         file_name: "live",
       },
@@ -389,9 +407,8 @@ export const PROFESSIONAL_PROJECTS: Project[] = [
         url: "https://github.com/ralitsavoronevska/elevation-marketing/",
         file_name: "github",
       },
-      { name: "CodePen", url: "", file_name: "grayCodePen" },
       {
-        name: "Live",
+        name: "Live Link",
         url: "https://ralitsavoronevska.github.io/elevation-marketing/",
         file_name: "live",
       },
@@ -415,9 +432,8 @@ export const PROFESSIONAL_PROJECTS: Project[] = [
         url: "https://github.com/ralitsavoronevska/maxima-cx/",
         file_name: "github",
       },
-      { name: "CodePen", url: "", file_name: "grayCodePen" },
       {
-        name: "Live",
+        name: "Live Link",
         url: "https://ralitsavoronevska.github.io/maxima-cx/",
         file_name: "live",
       },
@@ -426,36 +442,6 @@ export const PROFESSIONAL_PROJECTS: Project[] = [
 ];
 
 export const PERSONAL_PROJECTS: Project[] = [
-  {
-    image: vuePortfolioImage,
-    title: "Vue.js 3 Portfolio",
-    description: "Original, built from scratch",
-    techDescription: "Responsive UI · Reusable Components · Interactive Effects",
-    techStack: [
-      { name: "Vue.js", file_name: "vue-js" },
-      { name: "Vite.js", file_name: "vite-js" },
-      { name: "Vitest", file_name: "vitest" },
-      { name: "TypeScript", file_name: "typescript" },
-      { name: "Tailwind CSS", file_name: "tailwind-css" },
-    ],
-    links: [
-      {
-        name: "GitHub",
-        url: "https://github.com/ralitsavoronevska/vue-portfolio/",
-        file_name: "github",
-      },
-      {
-        name: "CodePen",
-        url: "https://codepen.io/ralitsavoronevska/pen/KOdQJZ/",
-        file_name: "codepen",
-      },
-      {
-        name: "Live",
-        url: "https://ralitsavoronevska.com/",
-        file_name: "live",
-      },
-    ],
-  },
   {
     image: restApiImage,
     title: "Secure Node.js REST API",
@@ -475,8 +461,11 @@ export const PERSONAL_PROJECTS: Project[] = [
         url: "https://github.com/ralitsavoronevska/rest-api-with-nodejs/",
         file_name: "github",
       },
-      { name: "CodePen", url: "", file_name: "grayCodePen" },
-      { name: "Live", url: "", file_name: "grayLive" },
+      {
+        name: "Live Link",
+        url: "",
+        file_name: "grayLive"
+      },
     ],
   },
   {
@@ -498,13 +487,44 @@ export const PERSONAL_PROJECTS: Project[] = [
         url: "https://github.com/ralitsavoronevska/mapty-app/",
         file_name: "github",
       },
-      { name: "CodePen", url: "", file_name: "grayCodePen" },
       {
-        name: "Live",
+        name: "Live Link",
         url: "https://ralitsavoronevska.github.io/mapty-app/",
         file_name: "live",
       },
     ],
   },
+  {
+    image: "",
+    title: "Call Analytics Dashboard",
+    description: "Full-Stack Telecom Analytics",
+    techDescription: "React Dashboard · FastAPI Backend · PostgreSQL · JWT/RBAC",
+    techStack: [
+      { name: "React.js", file_name: "react-js" },
+      { name: "Vite.js", file_name: "vite-js" },
+      { name: "TypeScript", file_name: "typescript" },
+      { name: "Tailwind CSS", file_name: "tailwind-css" },
+      { name: "Python", file_name: "python" },
+      { name: "FastAPI", file_name: "fastapi" },
+      { name: "PostgreSQL", file_name: "postgresql" },
+      // { name: "Swagger", file_name: "swagger" },
+    ],
+    links: [
+      {
+        name: "GitHub Frontend",
+        url: "https://github.com/ralitsavoronevska/call-analytics-dashboard",
+        file_name: "github",
+      },
+      {
+        name: "GitHub Backend",
+        url: "https://github.com/ralitsavoronevska/call-analytics-backend",
+        file_name: "github",
+      },
+      {
+        name: "Live Link",
+        url: "https://call-analytics-dashboard-xi.vercel.app/",
+        file_name: "live",
+      },
+    ],
+  },
 ];
-

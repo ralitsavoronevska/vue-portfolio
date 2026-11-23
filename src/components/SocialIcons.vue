@@ -1,11 +1,12 @@
 
 <template>
-  <template v-for="icon in icons" :key="icon.file_name">
+  <template v-for="icon in icons" :key="`${icon.file_name}-${icon.url}`">
     <a
       v-if="icon.url?.trim()"
       :href="icon.url"
       target="_blank"
       rel="noopener noreferrer"
+      :title="icon.name"
       class="social-link rounded-full"
       :aria-label="getAriaLabel(icon)"
     >

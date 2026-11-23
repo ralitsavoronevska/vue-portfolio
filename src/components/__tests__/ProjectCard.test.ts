@@ -170,49 +170,29 @@ describe("ProjectCard", () => {
     expect(wrapper.find(".card-desc").text()).toBe("");
   });
 
-  it("renders gracefully with empty project URLs (future projects)", async () => {
-    // Make sure the mock is set BEFORE mounting
-    mockUseInView.mockReturnValue({
-      sectionRef: ref(null),
-      isVisible: ref(true),
-    });
-
-    const { projects } = usePortfolioData();
-    const maptyApp = projects.find((p) => p.title === "Mapty App")!;
-    const urls = (maptyApp.links as { url: string }[]).map((l) => l.url);
-    expect(urls).toEqual([
-      "https://github.com/ralitsavoronevska/mapty-app/",
-      "",
-      "https://ralitsavoronevska.github.io/mapty-app/",
-    ]);
-  });
-
-  // Keep your data tests (they belong in usePortfolioData.test.ts — but okay for now)
-  // → Later we can move them, but they pass now
   it("fifth project has correct title, description and tech", () => {
     const { projects } = usePortfolioData();
     const fifth = projects[4];
-    expect(fifth?.title).toBe("Secure Node.js REST API");
-    expect(fifth?.description).toBe("RESTful API with Authentication");
-    expect(fifth?.techDescription).toBe("API Architecture · Authentication · File Upload Handling");
+    expect(fifth?.title).toBe("Mapty App");
+    expect(fifth?.description).toBe("Map your Workout Activities");
+    expect(fifth?.techDescription).toBe("Interactive Maps · Geolocation · Running and Cycling Tracking");
     expect(fifth?.techStack.map((t: any) => t.name)).toEqual([
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Mongoose",
-      "Nodemon",
-      "PostMan",
+      "Vue.js",
+      "Vite.js",
+      "Vitest",
+      "TypeScript",
+      "Pinia",
+      "Tailwind CSS",
     ]);
   });
 
-  it("Vue.js 3 Portfolio has correct live links", () => {
+  it("Secure Node.js REST API has correct live links", () => {
     const { projects } = usePortfolioData();
-    const portfolio = projects.find((p) => p.title === "Vue.js 3 Portfolio")!;
+    const portfolio = projects.find((p) => p.title === "Secure Node.js REST API")!;
     const urls = (portfolio.links as { url: string }[]).map((l) => l.url);
     expect(urls).toEqual([
-      "https://github.com/ralitsavoronevska/vue-portfolio/",
-      "https://codepen.io/ralitsavoronevska/pen/KOdQJZ/",
-      "https://ralitsavoronevska.com/",
+      "https://github.com/ralitsavoronevska/rest-api-with-nodejs/",
+      "",
     ]);
   });
 });

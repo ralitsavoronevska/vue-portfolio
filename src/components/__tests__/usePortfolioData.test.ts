@@ -69,32 +69,20 @@ describe("usePortfolioData", () => {
     const { projects } = usePortfolioData();
     const fifth = projects[4];
 
-    expect(fifth?.title).toBe("Secure Node.js REST API");
-    expect(fifth?.description).toBe("RESTful API with Authentication");
-    expect(fifth?.techDescription).toBe("API Architecture · Authentication · File Upload Handling");
+    expect(fifth?.title).toBe("Mapty App");
+    expect(fifth?.description).toBe("Map your Workout Activities");
+    expect(fifth?.techDescription).toBe("Interactive Maps · Geolocation · Running and Cycling Tracking");
 
     const techNames = (fifth?.techStack as { name: string }[]).map(
       (t) => t.name,
     );
     expect(techNames).toEqual([
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Mongoose",
-      "Nodemon",
-      "PostMan",
-    ]);
-  });
-
-  it("Vue.js 3 Portfolio has correct live links", () => {
-    const { projects } = usePortfolioData();
-    const portfolio = projects.find((p) => p.title === "Vue.js 3 Portfolio")!;
-
-    const urls = (portfolio.links as { url: string }[]).map((l) => l.url);
-    expect(urls).toEqual([
-      "https://github.com/ralitsavoronevska/vue-portfolio/",
-      "https://codepen.io/ralitsavoronevska/pen/KOdQJZ/",
-      "https://ralitsavoronevska.com/",
+      "Vue.js",
+      "Vite.js",
+      "Vitest",
+      "TypeScript",
+      "Pinia",
+      "Tailwind CSS",
     ]);
   });
 

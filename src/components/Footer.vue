@@ -31,13 +31,17 @@
 <script setup lang="ts">
 import { usePortfolioData } from "@/composables/usePortfolioData";
 
-const { author, personalProjects } = usePortfolioData();
+const { author } = usePortfolioData();
 defineOptions({ name: "AppFooter" });
 const year = new Date().getFullYear();
 
-const techStack =
-  personalProjects.find((project) => project.title === "Vue.js 3 Portfolio")
-    ?.techStack ?? [];
+const techStack = [
+  { name: "Vue.js", file_name: "vue-js" },
+  { name: "Vite.js", file_name: "vite-js" },
+  { name: "Vitest", file_name: "vitest" },
+  { name: "TypeScript", file_name: "typescript" },
+  { name: "Tailwind CSS", file_name: "tailwind-css" },
+]
 
 const icons = import.meta.glob("@/assets/icons/*.svg", {
   eager: true,

@@ -1,4 +1,3 @@
-
 import { describe, expect, it, vi } from "vitest";
 import { mount } from "@vue/test-utils";
 import { ref } from "vue";
@@ -34,7 +33,7 @@ describe("TechSkills", () => {
     expect(headings).toHaveLength(3);
     expect(headings.map((heading) => heading.text())).toEqual([
       "Core Expertise",
-      "Previous Experience & Refreshing",
+      "Previous Experience",
       "Exploring & Interested In",
     ]);
   });
@@ -45,10 +44,11 @@ describe("TechSkills", () => {
 
     expect(categories[0]!.text()).toContain("Vue 3");
     expect(categories[0]!.text()).toContain("TypeScript");
+    expect(categories[0]!.text()).toContain("Python");
 
-    expect(categories[1]!.text()).toContain("Python");
+    expect(categories[1]!.text()).toContain("jQuery");
 
-    expect(categories[2]!.text()).toContain("React");
+    expect(categories[2]!.text()).toContain("Astro");
     expect(categories[2]!.text()).toContain("Playwright");
     expect(categories[2]!.text()).toContain("shadcn-vue");
 

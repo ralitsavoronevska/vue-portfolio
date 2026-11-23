@@ -7,6 +7,12 @@ const {
   techSkillsTitle,
   techSkillsTitleHighlight,
   techSkillsSubtitle,
+  techSkillsCoreTitle,
+  techSkillsCoreDescription,
+  techSkillsPreviousTitle,
+  techSkillsPreviousDescription,
+  techSkillsInterestsTitle,
+  techSkillsInterestsDescription,
   techSkillGroups,
   previousTechSkills,
   techInterestGroups,
@@ -40,9 +46,9 @@ const { isVisible, revealClasses, revealStyle } = useReveal(sectionRef);
       :class="revealClasses"
       :style="isVisible ? revealStyle(200) : undefined"
     >
-      <h3>Core Expertise</h3>
+      <h3>{{ techSkillsCoreTitle }}</h3>
       <p class="tech-skills-category-description">
-        Professional experience &amp; hands-on technologies
+        {{ techSkillsCoreDescription }}
       </p>
 
       <div class="tech-skills-grid">
@@ -67,9 +73,9 @@ const { isVisible, revealClasses, revealStyle } = useReveal(sectionRef);
       :class="revealClasses"
       :style="isVisible ? revealStyle(300) : undefined"
     >
-      <h3>Previous Experience &amp; Refreshing</h3>
+      <h3>{{ techSkillsPreviousTitle }}</h3>
       <p class="tech-skills-category-description">
-        Technologies from previous roles and skills I'm revisiting
+        {{ techSkillsPreviousDescription }}
       </p>
 
       <div class="tech-skills-grid">
@@ -94,9 +100,9 @@ const { isVisible, revealClasses, revealStyle } = useReveal(sectionRef);
       :class="revealClasses"
       :style="isVisible ? revealStyle(400) : undefined"
     >
-      <h3>Exploring &amp; Interested In</h3>
+      <h3>{{ techSkillsInterestsTitle }}</h3>
       <p class="tech-skills-category-description">
-        Technologies I'm interested in learning and exploring further
+        {{ techSkillsInterestsDescription }}
       </p>
 
       <div class="tech-skills-grid">

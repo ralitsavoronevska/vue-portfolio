@@ -79,7 +79,7 @@ const carouselConfig = {
 ======================================== */
 
 .project-carousel__controls {
-  @apply relative mt-5 flex min-h-11 items-center justify-center
+  @apply relative mt-5 flex min-h-13 items-center justify-center
          gap-32 xl:hidden;
 }
 
@@ -164,19 +164,32 @@ const carouselConfig = {
    Pagination
 ======================================== */
 
+/* ========================================
+   Pagination
+======================================== */
+
 .project-carousel__controls :deep(.carousel__pagination) {
-  @apply order-2 m-0 flex items-center gap-[0.4rem] px-1;
+  @apply order-2 m-0 flex items-center justify-center
+         self-center gap-1 px-1;
 }
 
 .project-carousel__controls :deep(.carousel__pagination-button) {
-  @apply relative h-[0.55rem] w-[0.55rem] rounded-full border-0
-         bg-white p-0;
+  @apply flex min-h-8 min-w-8 items-center justify-center
+         border-0 bg-transparent p-0;
+
+  transition: transform 200ms ease;
+}
+
+/* Visible pagination indicators */
+
+.project-carousel__controls :deep(.carousel__pagination-button::after) {
+  content: "";
+  @apply block h-[0.4rem] w-[0.55rem] rounded-full bg-white;
 
   transition:
     width 200ms ease,
     background 200ms ease,
-    box-shadow 200ms ease,
-    transform 200ms ease;
+    box-shadow 200ms ease;
 }
 
 /* ========================================
@@ -184,23 +197,21 @@ const carouselConfig = {
 ======================================== */
 
 .project-carousel__controls
-  :deep(.carousel__pagination-button--active) {
+  :deep(.carousel__pagination-button--active::after) {
   @apply w-6 bg-linear-to-r from-pink-500 to-indigo-500;
 
   box-shadow: var(--shadow-3xl);
 }
 
-/* ========================================
-   Pagination Hover
-======================================== */
+/* Pagination hover */
 
 .project-carousel__controls
   :deep(
     .carousel__pagination-button:hover:not(
       .carousel__pagination-button--active
-    )
+    )::after
   ) {
-  @apply scale-115 bg-brand-pink;
+  @apply bg-brand-pink;
 
   box-shadow: var(--shadow-3xl);
 }
@@ -212,29 +223,9 @@ const carouselConfig = {
 @media (prefers-reduced-motion: reduce) {
   .project-carousel__controls :deep(.carousel__prev),
   .project-carousel__controls :deep(.carousel__next),
-  .project-carousel__controls :deep(.carousel__pagination-button) {
+  .project-carousel__controls :deep(.carousel__pagination-button),
+  .project-carousel__controls :deep(.carousel__pagination-button::after) {
     transition: none;
   }
-}
-
-
-/* Increase pagination touch targets without enlarging the dots */
-:deep(.carousel__pagination) {
-  gap: .25rem;
-}
-
-:deep(.carousel__pagination-button) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 2rem;
-  min-height: 2rem;
-  padding: .5rem;
-  box-sizing: border-box;
-}
-
-:deep(.carousel__pagination-button::after) {
-  width: .5rem;
-  height: .5rem;
 }
 </style>

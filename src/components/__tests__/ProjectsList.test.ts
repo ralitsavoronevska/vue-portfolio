@@ -1,21 +1,29 @@
 import { describe, it, expect } from "vitest";
-import { mount } from "@vue/test-utils";
+import { mount, shallowMount } from "@vue/test-utils";
 import ProjectsList from "@/components/ProjectsList.vue";
-import ProjectCard from "@/components/ProjectCard.vue";
 import type { Project } from "@/data/portfolio";
 import SocialIcons from "@/components/SocialIcons.vue";
 import { usePortfolioData } from "@/composables/usePortfolioData";
 
-describe("ProjectsList", () => {
-  it("renders all 6 projects", () => {
-    const wrapper = mount(ProjectsList);
-    expect(wrapper.findAllComponents(ProjectCard)).toHaveLength(6);
-  });
+const carouselStub = {
+  name: "ProjectCarousel",
+  props: ["projects"],
+  template: "<div />",
+};
 
+const mountOptions = {
+  global: {
+    stubs: {
+      ProjectCarousel: carouselStub,
+    },
+  },
+};
+
+describe("ProjectsList", () => {
   it("renders the professional and personal project sections with the correct headings", () => {
     const { projectsTitle, projectsTitleHighlight, professionalTitle, personalTitle, personalTitleHighlight } =
       usePortfolioData();
-    const wrapper = mount(ProjectsList);
+    const wrapper = shallowMount(ProjectsList, mountOptions);
 
     expect(wrapper.find("h2").text()).toContain(projectsTitle);
     expect(wrapper.find("h2").text()).toContain(projectsTitleHighlight);
@@ -25,33 +33,42 @@ describe("ProjectsList", () => {
     expect(wrapper.findAll(".project-group")).toHaveLength(2);
   });
 
-  it("passes the expected metadata into the project cards for both categories", () => {
-    const wrapper = mount(ProjectsList);
-    const cards = wrapper.findAllComponents(ProjectCard);
+  it("passes the expected metadata into the project carousels for both categories", () => {
+    const wrapper = shallowMount(ProjectsList, mountOptions);
+    const carousels = wrapper.findAllComponents(carouselStub);
 
-    // project prop now contains the project object
-    const firstProps = cards[0]!.props() as { project: Project; index: number };
-    const lastProps = cards.at(-1)!.props() as { project: Project; index: number };
+    const professionalProjects = carousels[0]!.props("projects") as Project[];
+    const personalProjects = carousels[1]!.props("projects") as Project[];
 
-    expect(firstProps.project.title).toBe("Zendesk Pulse");
-    expect(firstProps.index).toBe(0);
-    expect(lastProps.project.title).toBe("Mapty App");
-    expect(lastProps.index).toBe(2);
+    expect(professionalProjects[0]?.title).toBe("Zendesk Pulse");
+    expect(personalProjects.at(-1)?.title).toBe("Call Analytics Dashboard");
   });
 
   it("groups professional and personal projects separately", () => {
-    const wrapper = mount(ProjectsList);
+    const wrapper = shallowMount(ProjectsList, mountOptions);
     const groups = wrapper.findAll(".project-group");
 
     expect(groups).toHaveLength(2);
     expect(groups[0]?.text()).toContain("Professional");
     expect(groups[1]?.text()).toContain("Personal");
 
-    const professionalCards = groups[0]?.findAllComponents(ProjectCard);
-    const personalCards = groups[1]?.findAllComponents(ProjectCard);
+    const carousels = wrapper.findAllComponents(carouselStub);
+    expect(carousels[0]!.props("projects") as Project[]).toHaveLength(3);
+    expect(carousels[1]!.props("projects") as Project[]).toHaveLength(3);
+  });
 
-    expect(professionalCards).toHaveLength(3);
-    expect(personalCards).toHaveLength(3);
+  it("passes all 6 projects to the two carousels", () => {
+    const wrapper = shallowMount(ProjectsList, mountOptions);
+    const carousels = wrapper.findAllComponents(carouselStub);
+
+    expect(carousels).toHaveLength(2);
+
+    const professionalProjects = carousels[0]!.props("projects") as Project[];
+    const personalProjects = carousels[1]!.props("projects") as Project[];
+
+    expect(professionalProjects).toHaveLength(3);
+    expect(personalProjects).toHaveLength(3);
+    expect([...professionalProjects, ...personalProjects]).toHaveLength(6);
   });
 });
 
