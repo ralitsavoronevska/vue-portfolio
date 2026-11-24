@@ -119,11 +119,11 @@ Mobile:
 
 # 🌐 Browser Support:
 
-(Last updated and tested: 13/10/2026)  
-🌟 Chrome 155.0.8059.40 (64-bit)  
-🦊 Firefox 158.0 (64-bit)  
-🏴‍☠️ Opera 137.0.6036.39 (64-bit)  
-🪟 Edge 155.0.4283.45 (64-bit)
+(Last updated and tested: 24/11/2026)  
+🌟 Chrome 158.0.8127.89 (64-bit)  
+🦊 Firefox 161.0 (64-bit)  
+🏴‍☠️ Opera 140.0.6074.36 (64-bit)  
+🪟 Edge 158.0.4370.33 (64-bit)
 
 <br>
 
@@ -175,7 +175,7 @@ npm run preview
 # 🌟 Inspiration & Credits:
 
 🪄 [Grok 4](https://grok.com/)  
-:octocat: [GitHub Coplit](https://github.com/features/copilot)  
+:octocat: [GitHub Copilot](https://github.com/features/copilot)  
 🌃 [Adobe Firefly](https://firefly.adobe.com/)  
 📑 https://mdbootstrap.com/docs/standard/components/cards  
 :globe_with_meridians: [Abdullah Iqbal's Vercel Portfolio](https://abdullah-portfolio-dev.vercel.app/)

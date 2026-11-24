@@ -61,7 +61,7 @@
 </template>
 
 <script setup lang="ts">
-import commingSoonImg from "@/assets/projects/coming-soon.webp";
+import comingSoonImg from "@/assets/projects/coming-soon.webp";
 import SocialIcons from "./SocialIcons.vue";
 import GlowIcons from "./GlowIcons.vue";
 import { useReveal } from "@/composables/useReveal";
@@ -89,7 +89,7 @@ const title = project.title ?? "";
 const description = project.description ?? "";
 const techDescription = project.techDescription ?? "";
 
-const projectImage = (image: string) => (image ? image : commingSoonImg);
+const projectImage = (image: string) => (image ? image : comingSoonImg);
 
   const projectImageClass = (image: string, title: string) => {
     const imageTitle = title.toLowerCase().replace(/[\s.]+/g, "-");
