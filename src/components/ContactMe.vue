@@ -45,10 +45,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed, useTemplateRef } from "vue";
+import { useTemplateRef } from "vue";
 import SocialIcons from "./SocialIcons.vue";
 import { usePortfolioData } from "@/composables/usePortfolioData";
-import { useInView } from "@/composables/useInView";
+import { useReveal } from "@/composables/useReveal";
 import mapMarker from "@/assets/icons/map-marker.svg";
 
 const {
@@ -58,16 +58,9 @@ const {
   contactText,
   contactLocation,
 } = usePortfolioData();
+
 const sectionRef = useTemplateRef<HTMLElement>("sectionRef");
-const { isVisible } = useInView(sectionRef);
 
-const revealClasses = computed(() => ({
-  "transition-all duration-700 ease-out": true,
-  "opacity-100 translate-y-0": isVisible.value,
-  "opacity-0 translate-y-8": !isVisible.value,
-}));
-
-const revealStyle = (delay: number) => ({
-  transitionDelay: `${delay}ms`,
-});
+const { isVisible, revealClasses, revealStyle } =
+  useReveal(sectionRef);
 </script>

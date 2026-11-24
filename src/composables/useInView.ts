@@ -53,19 +53,24 @@ export function useInView<T extends Element = Element>(
       );
 
       observer?.observe(sectionRef.value);
-    } else {
-      // Fallback for environments without IntersectionObserver
-      // Mark visible after a small timeout so animations still trigger
-      setTimeout(() => {
-        isVisible.value = true;
-      }, 100);
-    }
+    
+      } else {
+        // Fallback for environments without IntersectionObserver
+        // Mark visible after a small timeout so animations still trigger
+        fallbackTimer = setTimeout(() => {
+          isVisible.value = true;
+          fallbackTimer = undefined;
+        }, 100);
+      }
   });
 
   onUnmounted(() => {
     observer?.disconnect?.();
+    observer = null;
+
     if (fallbackTimer !== undefined) {
       clearTimeout(fallbackTimer);
+      fallbackTimer = undefined;
     }
   });
 

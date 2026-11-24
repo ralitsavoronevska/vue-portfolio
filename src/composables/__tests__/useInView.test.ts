@@ -8,6 +8,18 @@ type EntryLike = {
   target?: unknown;
 };
 
+afterEach(() => {
+  vi.restoreAllMocks();
+  vi.useRealTimers();
+
+  Reflect.deleteProperty(
+    globalThis as typeof globalThis & {
+      IntersectionObserver?: unknown;
+    },
+    "IntersectionObserver",
+  );
+});
+
 function installMockObserver() {
   const observe = vi.fn();
   const unobserve = vi.fn();
@@ -65,18 +77,64 @@ describe("useInView", () => {
     expect(wrapper.vm.isVisible).toBe(false);
   });
 
-  it("does nothing when IntersectionObserver is unavailable", () => {
+  it("sets visible to true after 100ms when IntersectionObserver is unavailable", () => {
+    vi.useFakeTimers();
+    Reflect.deleteProperty(globalThis, "IntersectionObserver");
+
     const wrapper = mount({
       template: "<div />",
       setup() {
         const el = document.createElement("section");
         const sectionRef = ref(el);
         const { isVisible } = useInView(sectionRef);
+
         return { isVisible };
       },
     });
 
     expect(wrapper.vm.isVisible).toBe(false);
+
+    vi.advanceTimersByTime(99);
+
+    expect(wrapper.vm.isVisible).toBe(false);
+
+    vi.advanceTimersByTime(1);
+
+    expect(wrapper.vm.isVisible).toBe(true);
+
+    wrapper.unmount();
+  });
+  
+  it("clears the fallback timer when the component is unmounted", () => {
+    vi.useFakeTimers();
+    Reflect.deleteProperty(globalThis, "IntersectionObserver");
+
+    const state = {
+      visibility: ref(false),
+    };
+
+    const wrapper = mount({
+      template: "<div />",
+      setup() {
+        const el = document.createElement("section");
+        const sectionRef = ref(el);
+        const { isVisible } = useInView(sectionRef);
+
+        state.visibility = isVisible;
+
+        return { isVisible };
+      },
+    });
+
+    expect(state.visibility.value).toBe(false);
+
+    vi.advanceTimersByTime(50);
+
+    wrapper.unmount();
+
+    vi.advanceTimersByTime(100);
+
+    expect(state.visibility.value).toBe(false);
   });
 
   it("sets visible to true when the target intersects", () => {
@@ -135,5 +193,40 @@ describe("useInView", () => {
 
     wrapper.unmount();
     expect(disconnect).toHaveBeenCalledTimes(1);
+  });
+
+  it("updates visibility when the target enters and leaves the viewport with once disabled", () => {
+    const { trigger, unobserve } = installMockObserver();
+    const el = document.createElement("section");
+    const sectionRef = ref(el);
+
+    const wrapper = mount({
+      template: "<div />",
+      setup() {
+        const { isVisible } = useInView(sectionRef, 0.1, {
+          once: false,
+        });
+
+        return { isVisible };
+      },
+    });
+
+    expect(wrapper.vm.isVisible).toBe(false);
+
+    trigger([{ isIntersecting: true, target: el }]);
+
+    expect(wrapper.vm.isVisible).toBe(true);
+
+    trigger([{ isIntersecting: false, target: el }]);
+
+    expect(wrapper.vm.isVisible).toBe(false);
+
+    trigger([{ isIntersecting: true, target: el }]);
+
+    expect(wrapper.vm.isVisible).toBe(true);
+
+    expect(unobserve).not.toHaveBeenCalled();
+
+    wrapper.unmount();
   });
 });

@@ -6,7 +6,7 @@ export function useReveal(sectionRef: Readonly<Ref<HTMLElement | null>>){
 
   const revealClasses = computed(() => ({
     "transition-all duration-700 ease-out": true,
-    "motion-reduce:opacity-100 motion-reduce:translate-y-0": true,
+    "motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none": true,
     "opacity-100 translate-y-0": isVisible.value,
     "opacity-0 translate-y-8": !isVisible.value,
   }));

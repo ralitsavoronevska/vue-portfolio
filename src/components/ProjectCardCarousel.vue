@@ -90,7 +90,7 @@ const carouselConfig = {
 .project-carousel__controls :deep(.carousel__prev),
 .project-carousel__controls :deep(.carousel__next) {
   @apply static m-0 h-10 w-10 shrink-0 rounded-full border
-         bg-[#ccc] text-brand-indigo;
+         bg-white text-brand-indigo;
 
   border-color: var(--color-brand-indigo);
   transform: none;
@@ -131,7 +131,7 @@ const carouselConfig = {
 
 .project-carousel__controls :deep(.carousel__prev:hover:not(:disabled)),
 .project-carousel__controls :deep(.carousel__next:hover:not(:disabled)) {
-  @apply -translate-y-0.5 bg-white text-brand-indigo;
+  @apply motion-safe:-translate-y-0.5 bg-white text-brand-indigo;
 
   border-color: var(--color-brand-indigo);
 
@@ -147,8 +147,7 @@ const carouselConfig = {
 .project-carousel__controls :deep(.carousel__prev:focus-visible),
 .project-carousel__controls :deep(.carousel__next:focus-visible),
 .project-carousel__controls :deep(.carousel__pagination-button:focus-visible) {
-  outline: 2px solid var(--color-brand-glow);
-  outline-offset: 3px;
+  @apply outline-2 outline-offset-3 outline-pink-400;
 }
 
 /* ========================================
@@ -221,6 +220,7 @@ const carouselConfig = {
 ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
+  .project-carousel :deep(.carousel__track),
   .project-carousel__controls :deep(.carousel__prev),
   .project-carousel__controls :deep(.carousel__next),
   .project-carousel__controls :deep(.carousel__pagination-button),

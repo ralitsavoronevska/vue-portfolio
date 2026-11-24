@@ -1,30 +1,46 @@
 <template>
   <div
-    class="glow-box group"
+    class="glow-box group/tech transition-all duration-500 ease-out
+      motion-reduce:opacity-100 motion-reduce:scale-100
+      motion-reduce:translate-y-0 motion-reduce:transition-none
+      focus-visible:outline-2 focus-visible:outline-offset-4
+      focus-visible:outline-pink-400"
     :class="[
       isVisible
-        ? `opacity-100 scale-100 translate-y-0 delay-${(index + 1) * 100}`
+        ? 'opacity-100 scale-100 translate-y-0'
         : 'opacity-0 scale-75 translate-y-4',
-      'transition-all duration-500 ease-out',
       boxSizes,
     ]"
+    :style="
+      isVisible
+        ? { transitionDelay: `${(index + 1) * 100}ms` }
+        : undefined
+    "
     tabindex="0"
     role="img"
     :aria-label="`${tech.name} Logo`"
   >
-    <div class="glow-icon" :class="`${iconSizes}`">
+    <div class="glow-icon" :class="iconSizes">
       <img
         :src="iconSrc"
         :alt="`${tech.name} Logo`"
         class="glow-img text-3xl p-2"
-        :class="`${imgSizes}`"
+        :class="imgSizes"
         loading="lazy"
       />
     </div>
 
     <!-- start of tooltip -->
     <span
-      class="tooltip group-hover/tech:opacity-100 group-hover/tech:visible group-hover/tech:translate-y-0 group-focus/tech:opacity-100 group-focus/tech:visible group-focus/tech:translate-y-0"
+      class="tooltip
+        group-hover/tech:opacity-100
+        group-hover/tech:visible
+        group-hover/tech:translate-y-0
+        group-focus/tech:opacity-100
+        group-focus/tech:visible
+        group-focus/tech:translate-y-0
+        motion-reduce:translate-y-0
+        motion-reduce:transition-none"
     >
       {{ tech.name }}
     </span>
@@ -35,7 +51,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-// Pre-load all icons at build time (executed once, not per instance)
 const icons = import.meta.glob("@/assets/icons/*.svg", {
   eager: true,
   query: "?url",
@@ -51,7 +66,6 @@ const { tech, index, boxSizes, iconSizes, imgSizes, isVisible } = defineProps<{
   isVisible: boolean;
 }>();
 
-// Compute src (ensure the computed returns a string)
 const iconSrc = computed<string>(() => {
   const path = `/src/assets/icons/${tech.file_name}.svg`;
   return icons[path] ?? "";

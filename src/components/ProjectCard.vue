@@ -2,9 +2,9 @@
   <!-- start of Project Card -->
   <article
     ref="cardRef"
-    class="group transition-all duration-700 ease-out"
-    :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
-    :style="isVisible ? { transitionDelay: `${(index + 1) * 100}ms` } : {}"
+    class="group"
+    :class="revealClasses"
+    :style="isVisible ? revealStyle((index + 1) * 100) : undefined"
   >
     <div class="card">
       <!-- Project Image -->
@@ -64,7 +64,7 @@
 import commingSoonImg from "@/assets/projects/coming-soon.webp";
 import SocialIcons from "./SocialIcons.vue";
 import GlowIcons from "./GlowIcons.vue";
-import { useInView } from "@/composables/useInView";
+import { useReveal } from "@/composables/useReveal";
 import { useTemplateRef } from "vue";
 
 import type { Project } from '@/data/portfolio'
@@ -74,8 +74,10 @@ const props = defineProps<{
   index?: number;
 }>();
 
-const cardRef = useTemplateRef<HTMLDivElement>("cardRef");
-const { isVisible } = useInView(cardRef);
+const cardRef = useTemplateRef<HTMLElement>("cardRef");
+
+const { isVisible, revealClasses, revealStyle } =
+  useReveal(cardRef);
 
 // safe locals for template usage
 const index = props.index ?? 0;

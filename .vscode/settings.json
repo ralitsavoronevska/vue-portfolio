@@ -64,5 +64,15 @@
   "tailwindCSS.includeLanguages": {
     "vue": "html",
     "postcss": "css"
-  }
+  },
+  "cSpell.enabled": true,
+  "cSpell.words": [
+      "Ralitsa",
+      "Voronevska",
+      "Playfair",
+      "oklch",
+      "rgba",
+      "nowrap",
+      "mapty"
+  ]
 }
